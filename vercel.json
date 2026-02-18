@@ -23,10 +23,5 @@
       "dest": "frontend/$1",
       "check": true
     }
-  ],
-  "functions": {
-    "api_server/app/main.py": {
-      "includeFiles": "api_server/app/**"
-    }
-  }
+  ]
 }

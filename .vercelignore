@@ -1,0 +1,15 @@
+models/
+backend/ai-worker-requirements.txt
+backend/Dockerfile
+docker-compose.yml
+.git/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+backend/__pycache__/
+*.pth
+*.onnx
+*.bin
+*.safetensors
+*.msgpack
+*.h5

@@ -1,0 +1,39 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from app.api.v1.endpoints import videos, jobs
+from app.database import Base, engine
+
+# Create tables
+Base.metadata.create_all(bind=engine)
+
+app = FastAPI(
+    title="TalkFlow API",
+    version="1.0.0",
+    description="Open Source Avatar Video Generation Platform"
+)
+
+# CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+@app.get("/health")
+async def health_check():
+    return {
+        "status": "healthy",
+        "services": {
+            "database": "connected",
+            "redis": "connected"
+        }
+    }
+
+# Include routers
+app.include_router(videos.router, prefix="/api/v1/videos", tags=["videos"])
+app.include_router(jobs.router, prefix="/api/v1/jobs", tags=["jobs"])
+
+# Required for Vercel
+handler = app

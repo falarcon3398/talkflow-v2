@@ -1,0 +1,30 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+dist/
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+.pytest_cache/
+
+# Project specific
+models/
+data/
+backend/app/database.sqlite
+frontend/dist/
+frontend/node_modules/
+backend/venv/
+
+# Vercel
+.vercel/

@@ -2,6 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.v1.endpoints import videos, jobs, avatars
 from app.database import Base, engine
+from fastapi.staticfiles import StaticFiles
+from app.config import settings
+from pathlib import Path
 
 # Create tables
 Base.metadata.create_all(bind=engine)
@@ -20,6 +23,11 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Static Files
+static_avatars_path = Path(settings.STATIC_DIR)
+if static_avatars_path.exists():
+    app.mount("/avatars", StaticFiles(directory=str(static_avatars_path / "avatars")), name="avatars")
 
 @app.get("/health")
 async def health_check():

@@ -3,33 +3,15 @@ from pathlib import Path
 from app.config import settings
 
 def generate_speech(text: str, voice_id: str, job_id: str) -> str:
-    """
-    Wrapper for Piper TTS.
-    """
-    models_dir = Path(settings.MODELS_PATH) / "piper"
+    """Stubbed generate_speech for local development."""
     output_dir = Path(settings.PROCESSING_DIR) / job_id
     output_dir.mkdir(parents=True, exist_ok=True)
-    
     audio_output = output_dir / "speech.wav"
-    voice_model = models_dir / f"{voice_id}.onnx"
     
-    # Check if model exists, if not use fallback or raise error
-    if not voice_model.exists():
-        # For MVP development, we might just use a placeholder or log failure
-        pass
-
-    # Command implementation as per PRD
-    cmd = [
-        "piper",
-        "--model", str(voice_model),
-        "--output_file", str(audio_output)
-    ]
+    # Create empty wav file if it doesn't exist
+    if not audio_output.exists():
+        with open(audio_output, 'wb') as f:
+            f.write(b'RIFF\x24\x00\x00\x00WAVEfmt \x10\x00\x00\x00\x01\x00\x01\x00\x44\xac\x00\x00\x44\xac\x00\x00\x01\x00\x08\x00data\x00\x00\x00\x00')
     
-    try:
-        subprocess.run(cmd, input=text.encode(), check=True, capture_output=True)
-    except subprocess.CalledProcessError as e:
-        print(f"Piper TTS failed: {e.stderr.decode()}")
-        # In a real dev env, we'd handle missing models here
-        raise
-
+    print(f"STUB: Generated speech for {job_id} at {audio_output}")
     return str(audio_output)

@@ -8,6 +8,11 @@ from app.database import get_db
 from app.models.job import Job
 from app.config import settings
 from app.workers.celery_app import celery_app
+from app.workers.tasks import (
+    process_text_to_video_task,
+    process_audio_to_video_task,
+    process_video_to_video_task
+)
 
 router = APIRouter()
 
@@ -47,10 +52,9 @@ async def create_text_to_video(
     db.add(job)
     db.commit()
     
-    # Queue task using string name to avoid heavy imports
-    task = celery_app.send_task(
-        "app.workers.tasks.process_text_to_video_task",
-        args=[job_id, str(avatar_path), text, voice_id, output_resolution]
+    # Use delay() which respects task_always_eager
+    task = process_text_to_video_task.delay(
+        job_id, str(avatar_path), text, voice_id, output_resolution
     )
     
     job.task_id = task.id
@@ -90,10 +94,44 @@ async def create_audio_to_video(
     db.add(job)
     db.commit()
     
-    # Queue task using string name to avoid heavy imports
-    task = celery_app.send_task(
-        "app.workers.tasks.process_audio_to_video_task",
-        args=[job_id, str(avatar_path), str(audio_path), enhance_quality]
+    # Use delay() which respects task_always_eager
+    task = process_audio_to_video_task.delay(
+        job_id, str(avatar_path), str(audio_path), enhance_quality
+    )
+    
+    job.task_id = task.id
+    db.commit()
+    
+    return {"job_id": job_id, "status": "queued"}
+@router.post("/video-to-video")
+async def create_video_to_video(
+    reference_video: UploadFile = File(...),
+    enhance_quality: bool = Form(default=True),
+    db: Session = Depends(get_db)
+):
+    # This involves extracting frames/motion from a reference video
+    job_id = str(uuid.uuid4())
+    
+    upload_dir = Path(settings.UPLOAD_DIR) / job_id
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    
+    video_path = upload_dir / f"reference{Path(reference_video.filename).suffix}"
+    
+    with video_path.open("wb") as f:
+        f.write(await reference_video.read())
+        
+    job = Job(
+        id=job_id,
+        type="video_to_video",
+        status="queued",
+        params={"enhance_quality": enhance_quality}
+    )
+    db.add(job)
+    db.commit()
+    
+    # Use delay()
+    task = process_video_to_video_task.delay(
+        job_id, str(video_path), enhance_quality
     )
     
     job.task_id = task.id

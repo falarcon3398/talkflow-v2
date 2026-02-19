@@ -9,6 +9,19 @@ from app.config import settings
 
 router = APIRouter()
 
+@router.get("/")
+async def list_jobs(db: Session = Depends(get_db)):
+    jobs = db.query(Job).order_by(Job.created_at.desc()).all()
+    return [{
+        "job_id": job.id,
+        "status": job.status,
+        "progress": job.progress,
+        "result_url": job.result_url,
+        "error_message": job.error_message,
+        "created_at": job.created_at,
+        "updated_at": job.updated_at
+    } for job in jobs]
+
 @router.get("/{job_id}")
 async def get_job_status(job_id: str, db: Session = Depends(get_db)):
     job = db.query(Job).filter(Job.id == job_id).first()

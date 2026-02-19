@@ -15,3 +15,8 @@ def process_audio_to_video_task(self, job_id, avatar_image_path, audio_file_path
     logger.info(f"Starting audio-to-video task for job {job_id}")
     # TODO: Implement audio-to-video in orchestrator (similar flow without TTS)
     return {"status": "success", "job_id": job_id}
+@celery_app.task(bind=True)
+def process_video_to_video_task(self, job_id, video_path, enhance):
+    logger.info(f"Starting video-to-video task for job {job_id}")
+    # TODO: Implement video-to-video in orchestrator
+    return {"status": "success", "job_id": job_id}

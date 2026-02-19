@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.v1.endpoints import videos, jobs
+from app.api.v1.endpoints import videos, jobs, avatars
 from app.database import Base, engine
 
 # Create tables
@@ -34,6 +34,7 @@ async def health_check():
 # Include routers
 app.include_router(videos.router, prefix="/api/v1/videos", tags=["videos"])
 app.include_router(jobs.router, prefix="/api/v1/jobs", tags=["jobs"])
+app.include_router(avatars.router, prefix="/api/v1/avatars", tags=["avatars"])
 
 # Required for Vercel
 handler = app

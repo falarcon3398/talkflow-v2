@@ -369,6 +369,7 @@ const AvatarCreateModal = ({ isOpen, onClose, onSave }) => {
 const PromptFormModal = ({ isOpen, onClose, prompt, onSave, categories }) => {
   const [formData, setFormData] = useState({ title: '', category: '', description: '' })
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (isOpen) setFormData(prompt || { title: '', category: '', description: '' })
   }, [isOpen, prompt])
   const handleChange = (e) => {
@@ -646,11 +647,10 @@ const ScriptsView = ({ script, setScript }) => {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab.toLowerCase())}
-                  className={`border-b-2 px-8 py-4 text-xs font-bold transition-all ${
-                    activeTab === tab.toLowerCase()
-                      ? 'border-blue-600 bg-blue-50/20 text-blue-600'
-                      : 'border-transparent text-slate-400 hover:text-slate-600'
-                  }`}
+                  className={`border-b-2 px-8 py-4 text-xs font-bold transition-all ${activeTab === tab.toLowerCase()
+                    ? 'border-blue-600 bg-blue-50/20 text-blue-600'
+                    : 'border-transparent text-slate-400 hover:text-slate-600'
+                    }`}
                 >
                   {tab}
                 </button>
@@ -753,11 +753,13 @@ const ScriptsView = ({ script, setScript }) => {
 }
 
 const VideoClipGenerateView = ({ initialPrompt }) => {
-  const [duration, setDuration] = useState(5)
   const [prompt, setPrompt] = useState(initialPrompt || '')
   useEffect(() => {
-    if (initialPrompt) setPrompt(initialPrompt)
-  }, [initialPrompt])
+    if (initialPrompt && initialPrompt !== prompt) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setPrompt(initialPrompt)
+    }
+  }, [initialPrompt, prompt])
 
   return (
     <div className="space-y-6">
@@ -844,15 +846,15 @@ const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
     jobs.length > 0
       ? jobs
       : [
-          {
-            id: 1,
-            title: 'Demo Classroom',
-            params: { avatar_id: 1 },
-            status: 'completed',
-            duration: '0:45',
-            created_at: new Date().toISOString()
-          }
-        ]
+        {
+          id: 1,
+          title: 'Demo Classroom',
+          params: { avatar_id: 1 },
+          status: 'completed',
+          duration: '0:45',
+          created_at: new Date().toISOString()
+        }
+      ]
 
   return (
     <div className="space-y-6">
@@ -865,6 +867,8 @@ const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
             ? avatar.image_url || avatar.image
             : '/avatars/marcus_aurelius.jpg'
 
+          const jobDate = job.created_at ? new Date(job.created_at) : new Date()
+
           return (
             <VideoClipCard
               key={job.job_id || job.id}
@@ -876,7 +880,7 @@ const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
                     ? `TalkFlow Video ${String(job.job_id || job.id).slice(0, 8)}`
                     : `Job ${job.status}`,
                 duration: '0:10',
-                time: new Date(job.created_at || Date.now()).toLocaleDateString(),
+                time: jobDate.toLocaleDateString(),
                 image: jobAvatarId === 'custom' ? '/avatars/monk.jpg' : avatarImage,
                 url: job.result_url,
                 status: job.status
@@ -951,6 +955,7 @@ const GenerateAvatarView = ({
   script,
   setScript,
   selectedAvatarId,
+  // eslint-disable-next-line no-unused-vars
   setSelectedAvatarId,
   avatarList,
   setView
@@ -1344,9 +1349,11 @@ function App() {
       }
     }
     if (isAuthenticated) {
-      fetchJobs()
-      fetchAvatars()
-      const interval = setInterval(fetchJobs, 10000) // Poll every 10s
+      const initDashboard = async () => {
+        await Promise.all([fetchJobs(), fetchAvatars()]);
+      };
+      initDashboard();
+      const interval = setInterval(fetchJobs, 10000); // Poll every 10s
       return () => clearInterval(interval)
     }
   }, [isAuthenticated, view])

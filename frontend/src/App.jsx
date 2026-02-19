@@ -571,13 +571,13 @@ const VideoClipCard = ({ video }) => (
   </div>
 )
 
-const GenerateAvatarView = ({ script, selectedAvatarId, avatarList }) => {
+const GenerateAvatarView = ({ script, setScript, selectedAvatarId, setSelectedAvatarId, avatarList, setView }) => {
   const [method, setMethod] = useState('photo');
   const [file, setFile] = useState(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [status, setStatus] = useState(null); // 'queued', 'error', 'success'
 
-  const selectedAvatar = avatarList.find(a => a.id === selectedAvatarId) || avatarList[0];
+  const selectedAvatar = avatarList.find(a => String(a.id) === String(selectedAvatarId)) || avatarList[0];
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -589,14 +589,14 @@ const GenerateAvatarView = ({ script, selectedAvatarId, avatarList }) => {
   const handleGenerate = async () => {
     let currentFile = file;
 
-    // If no file uploaded but we have a selected avatar, use a dummy file
-    // to satisfy the backend's MultiPart requirement.
+    // Use selected avatar image if no manual file is uploaded
     if (!currentFile && selectedAvatar) {
+      // Create a dummy blob to satisfy MultiPart file requirement if we're using a preset
       currentFile = new File([""], "preset_avatar.jpg", { type: "image/jpeg" });
     }
 
-    if (!currentFile) {
-      alert("Please upload a file or select an avatar first!");
+    if (!currentFile || !script.trim()) {
+      alert("Please enter a script and select an avatar/upload a photo!");
       return;
     }
 
@@ -609,10 +609,12 @@ const GenerateAvatarView = ({ script, selectedAvatarId, avatarList }) => {
 
       if (method === 'photo') {
         formData.append('avatar_image', currentFile);
-        formData.append('text', script || "Welcome to TalkFlow, your AI human avatar.");
+        formData.append('text', script);
+        // If it's a preset avatar, we should ideally tell the backend which one,
+        // but for now, the backend stubs just use the uploaded image.
         result = await videoApi.generateTextToVideo(formData);
       } else if (method === 'audio') {
-        formData.append('avatar_image', new File([], "dummy.jpg")); // Placeholder
+        formData.append('avatar_image', currentFile);
         formData.append('audio_file', file);
         result = await videoApi.generateAudioToVideo(formData);
       } else if (method === 'video') {
@@ -622,6 +624,7 @@ const GenerateAvatarView = ({ script, selectedAvatarId, avatarList }) => {
 
       console.log("Generation started:", result);
       setStatus('success');
+      setTimeout(() => setView('video-library'), 2000);
     } catch (error) {
       console.error("Generation failed:", error);
       setStatus('error');
@@ -740,26 +743,38 @@ const GenerateAvatarView = ({ script, selectedAvatarId, avatarList }) => {
                 <p className="text-xs text-white/70 mt-2">Uploading file and queuing task</p>
               </div>
             )}
+          </div>
+          <div className="mt-6 space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="font-bold text-slate-800">Script Content</h3>
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{script.length} characters</span>
+            </div>
+            <textarea
+              value={script}
+              onChange={(e) => setScript(e.target.value)}
+              placeholder="Enter the text you want the avatar to speak..."
+              className="w-full h-32 p-4 bg-white/40 border border-slate-200 rounded-2xl outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100 transition-all text-sm resize-none"
+            />
+          </div>
+          <div className="mt-8 flex items-center justify-between">
             <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
               <div className="flex items-center justify-between">
-                <span className="text-white/70 text-[10px] font-bold uppercase tracking-widest">Awaiting Input</span>
+                <span className="text-white/70 text-[10px] font-bold uppercase tracking-widest">{selectedAvatar?.name || 'Awaiting Input'}</span>
                 <span className="w-2 h-2 rounded-full bg-blue-400"></span>
               </div>
             </div>
           </div>
-          <div className="mt-8 flex items-center justify-between">
-            <div className="space-y-1">
-              <h3 className="font-bold text-slate-800">Live Preview</h3>
-              <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Selected: {method.toUpperCase()}</p>
-            </div>
-            <button
-              disabled={isGenerating || (!file && !selectedAvatarId)}
-              onClick={handleGenerate}
-              className={`btn-primary px-8 py-3 rounded-2xl shadow-lg transition-all flex items-center gap-3 ${isGenerating || (!file && !selectedAvatarId) ? 'opacity-50 grayscale cursor-not-allowed shadow-none' : 'shadow-blue-500/20 active:scale-95'}`}
-            >
-              {isGenerating ? 'Deploying Model...' : 'Generate Avatar'}
-            </button>
+          <div className="space-y-1">
+            <h3 className="font-bold text-slate-800">Live Preview</h3>
+            <p className="text-xs font-bold text-slate-400 uppercase tracking-widest">Selected: {selectedAvatar?.name || method.toUpperCase()}</p>
           </div>
+          <button
+            disabled={isGenerating || (!file && !selectedAvatarId) || !script.trim()}
+            onClick={handleGenerate}
+            className={`btn-primary px-8 py-3 rounded-2xl shadow-lg transition-all flex items-center gap-3 ${isGenerating || ((!file && !selectedAvatarId) || !script.trim()) ? 'opacity-50 grayscale cursor-not-allowed shadow-none' : 'shadow-blue-500/20 active:scale-95'}`}
+          >
+            {isGenerating ? 'Deploying Model...' : 'Generate Avatar'}
+          </button>
         </div>
       </div>
     </div>
@@ -870,7 +885,16 @@ function App() {
               onAddAvatar={() => setIsAvatarModalOpen(true)}
             />
           )}
-          {view === 'generate' && <GenerateAvatarView script={script} selectedAvatarId={selectedAvatarId} avatarList={avatars} />}
+          {view === 'generate' && (
+            <GenerateAvatarView
+              script={script}
+              setScript={setScript}
+              selectedAvatarId={selectedAvatarId}
+              setSelectedAvatarId={setSelectedAvatarId}
+              avatarList={avatars}
+              setView={setView}
+            />
+          )}
           {view === 'scripts' && <ScriptsView script={script} setScript={setScript} />}
           {view === 'video-generate' && <VideoClipGenerateView initialPrompt={pendingVideoPrompt} />}
           {view === 'video-library' && <MyVideoClipsView setView={setView} jobs={jobs} />}

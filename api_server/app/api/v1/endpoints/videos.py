@@ -40,8 +40,7 @@ async def create_text_to_video(
             if avatar.image_url.startswith("/avatars/"):
                 # Use absolute path relative to this file
                 # app/api/v1/endpoints/videos.py -> 3 levels up -> app/static
-                base_path = Path(__file__).resolve().parent.parent.parent.parent
-                avatar_path = base_path / "static" / avatar.image_url.lstrip("/")
+                avatar_path = Path(settings.BASE_DIR) / "static" / avatar.image_url.lstrip("/")
             else:
                 # Custom avatar, image_url is "/api/v1/avatars/image/ID.ext"
                 # Parse ID/filename from URL
@@ -102,8 +101,7 @@ async def create_audio_to_video(
         avatar = db.query(Avatar).filter(Avatar.id == avatar_id).first()
         if avatar:
             if avatar.image_url.startswith("/avatars/"):
-                base_path = Path(__file__).resolve().parent.parent.parent.parent
-                avatar_path = base_path / "static" / avatar.image_url.lstrip("/")
+                avatar_path = Path(settings.BASE_DIR) / "static" / avatar.image_url.lstrip("/")
             else:
                 filename = avatar.image_url.split("/")[-1]
                 avatar_path = Path(settings.UPLOAD_DIR) / "avatars" / filename

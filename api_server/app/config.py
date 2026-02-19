@@ -1,6 +1,10 @@
 import os
+from pathlib import Path
 from pydantic_settings import BaseSettings
 from typing import Optional
+
+# Base directory
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 class Settings(BaseSettings):
     APP_NAME: str = "TalkFlow"
@@ -10,7 +14,11 @@ class Settings(BaseSettings):
     IS_VERCEL: bool = os.environ.get("VERCEL") == "1"
     
     # Database
-    DATABASE_URL: str = "sqlite:////tmp/talkflow.db" if os.environ.get("VERCEL") == "1" else "sqlite:///./talkflow.db"
+    DATABASE_URL: str = (
+        "sqlite:////tmp/talkflow.db" 
+        if os.environ.get("VERCEL") == "1" 
+        else f"sqlite:///{BASE_DIR}/talkflow.db"
+    )
     
     # Redis
     REDIS_URL: str = "redis://localhost:6379/0"
@@ -22,11 +30,11 @@ class Settings(BaseSettings):
     MINIO_SECURE: bool = False
     MINIO_BUCKET: str = "talkflow"
     
-    # Paths (Local)
-    MODELS_PATH: str = "./models"
-    UPLOAD_DIR: str = "/tmp/uploads" if os.environ.get("VERCEL") == "1" else "./uploads"
-    PROCESSING_DIR: str = "/tmp/processing" if os.environ.get("VERCEL") == "1" else "./processing"
-    OUTPUT_DIR: str = "/tmp/outputs" if os.environ.get("VERCEL") == "1" else "./outputs"
+    # Paths (Relative to BASE_DIR)
+    MODELS_PATH: str = str(BASE_DIR / "models")
+    UPLOAD_DIR: str = "/tmp/uploads" if IS_VERCEL else str(BASE_DIR / "uploads")
+    PROCESSING_DIR: str = "/tmp/processing" if IS_VERCEL else str(BASE_DIR / "processing")
+    OUTPUT_DIR: str = "/tmp/outputs" if IS_VERCEL else str(BASE_DIR / "outputs")
 
     class Config:
         env_file = ".env"

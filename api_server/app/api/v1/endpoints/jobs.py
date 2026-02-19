@@ -18,6 +18,7 @@ async def list_jobs(db: Session = Depends(get_db)):
         "progress": job.progress,
         "result_url": job.result_url,
         "error_message": job.error_message,
+        "params": job.params,
         "created_at": job.created_at,
         "updated_at": job.updated_at
     } for job in jobs]
@@ -34,6 +35,7 @@ async def get_job_status(job_id: str, db: Session = Depends(get_db)):
         "progress": job.progress,
         "result_url": job.result_url,
         "error_message": job.error_message,
+        "params": job.params,
         "created_at": job.created_at,
         "updated_at": job.updated_at
     }

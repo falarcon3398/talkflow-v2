@@ -527,46 +527,101 @@ const VideoClipGenerateView = ({ initialPrompt }) => {
   )
 }
 
-const MyVideoClipsView = ({ setView, jobs }) => {
+const VideoPlayerModal = ({ isOpen, onClose, videoUrl, title }) => {
+  if (!isOpen) return null
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} title={title}>
+      <div className="space-y-4">
+        <div className="aspect-video rounded-xl bg-black overflow-hidden shadow-2xl">
+          <video controls autoPlay className="w-full h-full">
+            <source src={`http://localhost:8000${videoUrl}`} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div className="flex justify-end">
+          <a
+            href={`http://localhost:8000${videoUrl}`}
+            download
+            className="px-6 py-2.5 rounded-lg text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-200"
+          >
+            Download Video
+          </a>
+        </div>
+      </div>
+    </Modal>
+  )
+}
+
+const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
+  const [selectedVideo, setSelectedVideo] = useState(null)
+
   const displayJobs = jobs.length > 0 ? jobs : [
-    { id: 1, title: 'Demo Classroom', duration: '0:45', time: 'Sample', image: '/avatars/monk.jpg' },
+    { id: 1, title: 'Demo Classroom', params: { avatar_id: 1 }, status: 'completed', duration: '0:45', created_at: new Date().toISOString() },
   ];
 
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold text-slate-800">My Video Clips</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        {displayJobs.map(job => (
-          <VideoClipCard key={job.job_id || job.id} video={{
-            id: job.job_id || job.id,
-            title: job.status === 'completed' ? `TalkFlow Video ${job.job_id?.slice(0, 8)}` : `Job ${job.status}`,
-            duration: '0:10', // Stubbed duration
-            time: new Date(job.created_at || Date.now()).toLocaleDateString(),
-            image: '/avatars/marcus_aurelius.jpg',
-            url: job.result_url
-          }} />
-        ))}
+        {displayJobs.map(job => {
+          const jobAvatarId = job.params?.avatar_id;
+          const avatar = avatarList.find(a => String(a.id) === String(jobAvatarId));
+          const avatarImage = avatar ? (avatar.image_url || avatar.image) : '/avatars/marcus_aurelius.jpg';
+
+          return (
+            <VideoClipCard
+              key={job.job_id || job.id}
+              onClick={() => job.status === 'completed' && setSelectedVideo(job)}
+              video={{
+                id: job.job_id || job.id,
+                title: job.status === 'completed' ? `TalkFlow Video ${String(job.job_id || job.id).slice(0, 8)}` : `Job ${job.status}`,
+                duration: '0:10',
+                time: new Date(job.created_at || Date.now()).toLocaleDateString(),
+                image: jobAvatarId === 'custom' ? '/avatars/monk.jpg' : avatarImage,
+                url: job.result_url,
+                status: job.status
+              }}
+            />
+          )
+        })}
         <div onClick={() => setView('video-generate')} className="glass-card flex flex-col items-center justify-center p-6 border-2 border-dashed border-slate-200 bg-white/40 hover:bg-blue-50/50 transition-all cursor-pointer group min-h-[220px]">
           <div className="w-10 h-10 rounded-full border border-slate-300 flex items-center justify-center mb-3 group-hover:text-blue-600 group-hover:border-blue-300">+</div>
           <p className="text-xs font-bold text-slate-500 group-hover:text-blue-600">Generate Video Clip</p>
         </div>
       </div>
+
+      <VideoPlayerModal
+        isOpen={!!selectedVideo}
+        onClose={() => setSelectedVideo(null)}
+        videoUrl={selectedVideo?.result_url}
+        title={selectedVideo ? `TalkFlow Video ${selectedVideo.job_id?.slice(0, 8)}` : ''}
+      />
     </div>
   )
 }
 
-const VideoClipCard = ({ video }) => (
-  <div onClick={() => video.id && videoApi.downloadVideo(video.id)} className="glass-card overflow-hidden bg-white/70 group hover:scale-[1.02] transition-all cursor-pointer shadow-sm">
+const VideoClipCard = ({ video, onClick }) => (
+  <div onClick={onClick} className={`glass-card overflow-hidden bg-white/70 group hover:scale-[1.02] transition-all cursor-pointer shadow-sm ${video.status === 'failed' ? 'opacity-60 grayscale' : ''}`}>
     <div className="aspect-video bg-slate-100 relative overflow-hidden">
-      <img src={video.image} alt={video.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+      <img src={video.image.startsWith('http') ? video.image : `http://localhost:8000${video.image}`} alt={video.title} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
       <div className="absolute bottom-2 right-2 bg-black/60 px-1.5 py-0.5 rounded text-[10px] font-bold text-white"> {video.duration} </div>
-      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
-        <span className="bg-white/90 p-2 rounded-full text-blue-600 shadow-lg">▶️</span>
-      </div>
+      {video.status === 'completed' && (
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/20">
+          <span className="bg-white/90 p-2 rounded-full text-blue-600 shadow-lg">▶️</span>
+        </div>
+      )}
+      {video.status === 'processing' && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+          <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+        </div>
+      )}
     </div>
     <div className="p-3 space-y-1">
       <h3 className="text-[12px] font-bold text-slate-800 truncate leading-snug">{video.title}</h3>
-      <p className="text-[10px] font-medium text-slate-400 uppercase tracking-tighter">{video.time}</p>
+      <div className="flex items-center justify-between">
+        <p className="text-[10px] font-medium text-slate-400 uppercase tracking-tighter">{video.time}</p>
+        {video.status === 'failed' && <span className="text-[9px] font-bold text-red-500 uppercase">Failed</span>}
+      </div>
     </div>
   </div>
 )
@@ -608,16 +663,19 @@ const GenerateAvatarView = ({ script, setScript, selectedAvatarId, setSelectedAv
       let result;
 
       if (method === 'photo') {
+        formData.append('avatar_id', selectedAvatarId);
         formData.append('avatar_image', currentFile);
         formData.append('text', script);
         // If it's a preset avatar, we should ideally tell the backend which one,
         // but for now, the backend stubs just use the uploaded image.
         result = await videoApi.generateTextToVideo(formData);
       } else if (method === 'audio') {
+        formData.append('avatar_id', selectedAvatarId);
         formData.append('avatar_image', currentFile);
         formData.append('audio_file', file);
         result = await videoApi.generateAudioToVideo(formData);
       } else if (method === 'video') {
+        formData.append('avatar_id', selectedAvatarId);
         formData.append('reference_video', file);
         result = await videoApi.generateVideoToVideo(formData);
       }
@@ -897,7 +955,7 @@ function App() {
           )}
           {view === 'scripts' && <ScriptsView script={script} setScript={setScript} />}
           {view === 'video-generate' && <VideoClipGenerateView initialPrompt={pendingVideoPrompt} />}
-          {view === 'video-library' && <MyVideoClipsView setView={setView} jobs={jobs} />}
+          {view === 'video-library' && <MyVideoClipsView setView={setView} jobs={jobs} avatarList={avatars} />}
           {view === 'prompts' && <PromptGalleryView onUse={handleUsePrompt} />}
         </div>
       </main>

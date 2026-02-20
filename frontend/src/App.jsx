@@ -883,7 +883,8 @@ const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
                 time: jobDate.toLocaleDateString(),
                 image: jobAvatarId === 'custom' ? '/avatars/monk.jpg' : avatarImage,
                 url: job.result_url,
-                status: job.status
+                status: job.status,
+                progress: job.progress || 0
               }}
             />
           )
@@ -932,8 +933,17 @@ const VideoClipCard = ({ video, onClick }) => (
         </div>
       )}
       {video.status === 'processing' && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-          <div className="h-6 w-6 animate-spin rounded-full border-2 border-white/30 border-t-white"></div>
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[1px]">
+          <div className="mb-2 h-6 w-6 animate-spin rounded-full border-2 border-white/30 border-t-white"></div>
+          <div className="w-2/3 overflow-hidden rounded-full bg-white/20 h-1.5 shadow-inner">
+            <div
+              className="h-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)] transition-all duration-500 ease-out"
+              style={{ width: `${video.progress}%` }}
+            ></div>
+          </div>
+          <span className="mt-2 text-[10px] font-bold tracking-widest text-white uppercase drop-shadow-md">
+            {video.progress}%
+          </span>
         </div>
       )}
     </div>

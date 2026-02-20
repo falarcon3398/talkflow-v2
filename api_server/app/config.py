@@ -4,11 +4,12 @@ from pydantic_settings import BaseSettings
 from typing import Optional
 
 # Base directory
-BASE_DIR = Path(__file__).resolve().parent.parent
+_BASE_DIR = Path(__file__).resolve().parent.parent
 
 class Settings(BaseSettings):
     APP_NAME: str = "TalkFlow"
     API_V1_STR: str = "/api/v1"
+    BASE_DIR: str = str(_BASE_DIR)
     
     # Check if running on Vercel
     IS_VERCEL: bool = os.environ.get("VERCEL") == "1"
@@ -17,7 +18,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = (
         "sqlite:////tmp/talkflow.db" 
         if os.environ.get("VERCEL") == "1" 
-        else f"sqlite:///{BASE_DIR}/talkflow.db"
+        else f"sqlite:///{_BASE_DIR}/talkflow.db"
     )
     
     # Redis
@@ -31,12 +32,12 @@ class Settings(BaseSettings):
     MINIO_BUCKET: str = "talkflow"
     
     # Paths (Relative to BASE_DIR)
-    MODELS_PATH: str = str(BASE_DIR / "models")
-    STATIC_DIR: str = str(BASE_DIR / "app" / "static")
-    MUSETALK_DIR: str = str(BASE_DIR / "musetalk")
-    UPLOAD_DIR: str = "/tmp/uploads" if IS_VERCEL else str(BASE_DIR / "uploads")
-    PROCESSING_DIR: str = "/tmp/processing" if IS_VERCEL else str(BASE_DIR / "processing")
-    OUTPUT_DIR: str = "/tmp/outputs" if IS_VERCEL else str(BASE_DIR / "outputs")
+    MODELS_PATH: str = str(_BASE_DIR.parent / "models")
+    STATIC_DIR: str = str(_BASE_DIR / "app" / "static")
+    MUSETALK_DIR: str = str(_BASE_DIR / "musetalk")
+    UPLOAD_DIR: str = "/tmp/uploads" if IS_VERCEL else str(_BASE_DIR / "uploads")
+    PROCESSING_DIR: str = "/tmp/processing" if IS_VERCEL else str(_BASE_DIR / "processing")
+    OUTPUT_DIR: str = "/tmp/outputs" if IS_VERCEL else str(_BASE_DIR / "outputs")
 
     class Config:
         env_file = ".env"

@@ -12,4 +12,4 @@ pinned: false
 
 # 1001 IBL Video Avatar (Gradio + ZeroGPU)
 
-If ZeroGPU is enabled, this Space must use the Gradio SDK.
+Official deployment of TalkFlow MuseTalk for cloud-based High-Fidelity LipSync.

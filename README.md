@@ -22,11 +22,27 @@ Before running, you must download the model weights into the `models/` directory
 - **GFPGAN**: Download weights from [TencentARC/GFPGAN](https://github.com/TencentARC/GFPGAN)
 
 ### 3. Launch
+#### Option A: Docker (Recommended)
 ```bash
-# Clone the repo and enter the directory
 cp .env.example .env
-docker-compose up --build
+docker compose up --build
 ```
+
+#### Option B: Local Development (Manual)
+**Frontend:**
+```bash
+cd frontend
+npm install
+npm run dev
+```
+**Backend:**
+```bash
+cd api_server
+pip install -r requirements.txt
+python3 -m uvicorn app.main:app --reload
+```
+> [!NOTE]
+> Running locally without Docker uses SQLite by default. Lip-sync features require local GPU/CUDA setup.
 
 ### 4. Access
 - **Web UI**: http://localhost

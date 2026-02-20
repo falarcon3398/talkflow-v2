@@ -33,6 +33,7 @@ class Settings(BaseSettings):
     # Paths (Relative to BASE_DIR)
     MODELS_PATH: str = str(BASE_DIR / "models")
     STATIC_DIR: str = str(BASE_DIR / "app" / "static")
+    MUSETALK_DIR: str = str(BASE_DIR / "musetalk")
     UPLOAD_DIR: str = "/tmp/uploads" if IS_VERCEL else str(BASE_DIR / "uploads")
     PROCESSING_DIR: str = "/tmp/processing" if IS_VERCEL else str(BASE_DIR / "processing")
     OUTPUT_DIR: str = "/tmp/outputs" if IS_VERCEL else str(BASE_DIR / "outputs")

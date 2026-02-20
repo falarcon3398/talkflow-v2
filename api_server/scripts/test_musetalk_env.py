@@ -26,6 +26,19 @@ def check_env():
     # 3. Path structure
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     models_dir = os.path.join(base_dir, "models", "musetalk")
+    
+    # Check for MuseTalk source
+    try:
+        from app.config import settings
+        musetalk_dir = settings.MUSETALK_DIR
+        print(f"MUSETALK_DIR configured as: {musetalk_dir}")
+        if os.path.exists(musetalk_dir):
+            print(f"Source directory found: {musetalk_dir}")
+        else:
+            print(f"Source directory NOT found: {musetalk_dir}")
+    except ImportError:
+        print("Could not import app.config, skipping settings check.")
+
     if os.path.exists(models_dir):
         print(f"Models directory found: {models_dir}")
     else:

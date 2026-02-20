@@ -1,0 +1,560 @@
+INFO:     Will watch for changes in these directories: ['/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [86330] using StatReload
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/main.py", line 3, in <module>
+    from app.api.v1.endpoints import videos, jobs, avatars
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/api/v1/endpoints/videos.py", line 12, in <module>
+    from app.workers.tasks import (
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/workers/tasks.py", line 2, in <module>
+    from app.core.pipeline.orchestrator import run_text_to_video_pipeline, run_audio_to_video_pipeline
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/core/pipeline/orchestrator.py", line 1, in <module>
+    from app.core.pipeline import tts, lipsync, enhance
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/core/pipeline/lipsync.py", line 4, in <module>
+    from app.core.pipeline_adapters.musetalk_adapter import musetalk_adapter
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/core/pipeline_adapters/musetalk_adapter.py", line 97, in <module>
+    musetalk_adapter = MuseTalkAdapter()
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/core/pipeline_adapters/musetalk_adapter.py", line 11, in __init__
+    self.base_dir = Path(settings.BASE_DIR)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pydantic/main.py", line 855, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'Settings' object has no attribute 'BASE_DIR'
+WARNING:  StatReload detected changes in 'app/config.py'. Reloading...
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/server.py", line 69, in serve
+    await self._serve(sockets)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/server.py", line 76, in _serve
+    config.load()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/config.py", line 434, in load
+    self.loaded_app = import_from_string(self.app)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1050, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/main.py", line 3, in <module>
+    from app.api.v1.endpoints import videos, jobs, avatars
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/api/v1/endpoints/videos.py", line 7, in <module>
+    from app.database import get_db
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/database.py", line 4, in <module>
+    from app.config import settings
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/config.py", line 9, in <module>
+    class Settings(BaseSettings):
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/config.py", line 35, in Settings
+    MODELS_PATH: str = str(BASE_DIR / "models")
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+WARNING:  StatReload detected changes in 'app/config.py'. Reloading...
+INFO:     Started server process [86367]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:62994 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63000 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63003 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63006 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63026 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63031 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63033 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63040 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63044 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63050 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63053 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63056 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63059 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63062 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63066 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63069 - "POST /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63072 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63075 - "GET /api/v1/avatars/image/1bf6509d-715f-4034-94c3-3a80d690ad97.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63078 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63081 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63085 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63088 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63092 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63096 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63104 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63107 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63110 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63114 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63118 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63121 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63125 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63129 - "GET /avatars/marcus_aurelius.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63132 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63133 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63138 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63139 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63143 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63145 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63148 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63152 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63154 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63159 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63160 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63163 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63168 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63170 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63179 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63182 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63185 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63188 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63194 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63198 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63201 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63204 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63208 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63211 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63215 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63217 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63221 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63225 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63231 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63234 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63237 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63240 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63243 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+Missing MuseTalk models: musetalk/musetalk.json, musetalk/pytorch_model.bin, dwpose/dw-ll_ucoco_384.onnx, face-parse-bisent/79999_iter.pth, sd-vae-ft-mse/diffusion_pytorch_model.bin
+Inference skipped: Environment not ready.
+MuseTalk failed or skipped for a21c9935-84d9-4384-b1d7-2b6828b0a840, falling back to static image
+REAL STUB: Generated speech using 'say' for a21c9935-84d9-4384-b1d7-2b6828b0a840
+STUB: Enhancement skipped for a21c9935-84d9-4384-b1d7-2b6828b0a840, using /Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/static/avatars/marcus_aurelius.jpg
+INFO:     127.0.0.1:63246 - "POST /api/v1/videos/text-to-video HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63249 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63254 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63256 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63259 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63261 - "GET /api/v1/jobs/a21c9935-84d9-4384-b1d7-2b6828b0a840/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63264 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63271 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63274 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63277 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63286 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63289 - "GET /api/v1/avatars/image/1bf6509d-715f-4034-94c3-3a80d690ad97.png HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63287 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63294 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63296 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63299 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63303 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63305 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63310 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63311 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63314 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63317 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63320 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63323 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63326 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63329 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63332 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63335 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63338 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63346 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63349 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63357 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63360 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63364 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63367 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63370 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63373 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63377 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63380 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63394 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63399 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63425 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63428 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63431 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63434 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63439 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63442 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63445 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63449 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63455 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63458 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63461 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63464 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63480 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63483 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63486 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63489 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63502 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63505 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63515 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63518 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63521 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63524 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63533 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63536 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63542 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63545 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63550 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63553 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63559 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63562 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63568 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63571 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63574 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63582 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63585 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63591 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63594 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63597 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63600 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63605 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63608 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63611 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63614 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63617 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63623 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63626 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63632 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63635 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63638 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63641 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63646 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63649 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63652 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63655 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63660 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63663 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63666 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63669 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63676 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63679 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63682 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63685 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63690 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63693 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63696 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63700 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63707 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63710 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63715 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63718 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63724 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63727 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63730 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63733 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63738 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63741 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63745 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63748 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63752 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63755 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63758 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63761 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'app/config.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [86367]
+INFO:     Started server process [87206]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:63771 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63774 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63777 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63780 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63785 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63789 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63792 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63795 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63798 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63801 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63809 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63813 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63819 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63822 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'app/core/pipeline_adapters/musetalk_adapter.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [87206]
+INFO:     Started server process [87289]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:63829 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63832 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63839 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63842 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63845 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63848 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63852 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63855 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63859 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63862 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63868 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63871 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63874 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63877 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63883 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63886 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63889 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63892 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63895 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63898 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63902 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63905 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63911 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63914 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63917 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63920 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63925 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63928 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'app/core/pipeline_adapters/musetalk_adapter.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [87289]
+INFO:     Started server process [87469]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:63933 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63937 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63945 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63948 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'scripts/test_musetalk_env.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [87469]
+INFO:     Started server process [87480]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:63956 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63959 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63966 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63969 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'scripts/test_musetalk_env.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [87480]
+INFO:     Started server process [87505]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:63975 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63979 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+WARNING:  StatReload detected changes in 'scripts/test_musetalk_env.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [87505]
+INFO:     Started server process [87511]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:63987 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63990 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63999 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64002 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64008 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64011 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64015 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64018 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64024 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64027 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64032 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64035 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64099 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64102 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64105 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64108 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64126 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64129 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64153 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64156 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64162 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64165 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64168 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64171 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64175 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64178 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64224 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64227 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64234 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64237 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64242 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64245 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64252 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64255 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64259 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64262 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64267 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64270 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64273 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64276 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64279 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64282 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64286 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64289 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64296 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64299 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64302 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64305 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64309 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64312 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64315 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64318 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64321 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64324 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64327 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64330 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64336 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64339 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64342 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64345 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64351 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64354 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64362 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64365 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64368 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64371 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64375 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64378 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64384 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64387 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64393 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64396 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64403 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64406 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64412 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64415 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64421 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64424 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64429 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64432 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64439 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64442 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64476 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64479 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64486 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64489 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64492 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64495 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64498 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64501 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64508 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64511 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64520 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64523 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64527 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64530 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64537 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64541 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64544 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64547 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64550 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64553 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64560 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64563 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64573 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64576 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64581 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64584 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64591 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64594 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64601 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64604 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64608 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64611 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64614 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64617 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64640 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64643 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/__main__.py", line 4, in <module>
+    uvicorn.main()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/core.py", line 1130, in __call__
+    return self.main(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/click/core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/main.py", line 410, in main
+    run(
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/main.py", line 572, in run
+    ChangeReload(config, target=server.run, sockets=[sock]).run()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/supervisors/basereload.py", line 52, in run
+    for changes in self:
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/supervisors/basereload.py", line 71, in __next__
+    return self.should_restart()
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/supervisors/statreload.py", line 31, in should_restart
+    for file in self.iter_py_files():
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/uvicorn/supervisors/statreload.py", line 51, in iter_py_files
+    for path in list(reload_dir.rglob("*.py")):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1047, in rglob
+    for p in selector.select_from(self):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 492, in _select_from
+    for starting_point in self._iterate_directories(parent_path, is_dir, scandir):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 482, in _iterate_directories
+    for p in self._iterate_directories(path, is_dir, scandir):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 482, in _iterate_directories
+    for p in self._iterate_directories(path, is_dir, scandir):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 482, in _iterate_directories
+    for p in self._iterate_directories(path, is_dir, scandir):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 471, in _iterate_directories
+    with scandir(parent_path) as scandir_it:
+FileNotFoundError: [Errno 2] No such file or directory: '/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/musetalk/.git/hooks'
+INFO:     127.0.0.1:64727 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64732 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64804 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64807 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK

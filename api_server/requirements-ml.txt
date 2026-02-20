@@ -1,0 +1,14 @@
+torch>=2.0.1
+torchvision>=0.15.2
+diffusers==0.24.0
+transformers>=4.35.2
+accelerate>=0.24.1
+opencv-python>=4.8.1.78
+ffmpeg-python>=0.2.0
+numpy<2.0.0
+tqdm
+omegaconf
+einops
+insightface==0.7.3
+facexlib
+mmcv-full==1.7.1

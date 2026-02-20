@@ -1,0 +1,8 @@
+torch
+numpy
+opencv-python
+librosa
+piper-tts
+# GFPGAN and MuseTalk dependencies will depend on their specific repo requirements
+# MuseTalk
+# GFPGAN

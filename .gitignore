@@ -71,3 +71,12 @@ models/**
 
 # Temporary Outputs
 test_output*.mp4
+
+# Binary Assets (Handled outside Git for HF Spaces)
+*.jpg
+*.png
+*.wav
+*.mp4
+*.pth
+*.bin
+*.onnx

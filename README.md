@@ -10,6 +10,13 @@ license: mit
 pinned: false
 ---
 
-# 1001 IBL Video Avatar (Gradio + ZeroGPU)
+# 1001 IBL Video Avatar — MuseTalk (ZeroGPU)
 
-Official deployment of TalkFlow MuseTalk for cloud-based High-Fidelity LipSync.
+This Space runs MuseTalk **inside** Hugging Face using ZeroGPU.
+
+Inputs:
+- **Audio + Video** (recommended)
+- **Audio + Image** (creates a reference video from the image, then runs MuseTalk)
+
+Tip:
+- Keep audio short for best queue/time behavior.

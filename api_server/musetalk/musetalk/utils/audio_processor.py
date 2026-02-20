@@ -1,11 +1,26 @@
 import math
 import os
 
-import librosa
+import soundfile as sf
 import numpy as np
 import torch
 from einops import rearrange
 from transformers import AutoFeatureExtractor
+
+
+def _load_audio(wav_path, target_sr=16000):
+    """Load audio file and resample to target_sr using scipy (no librosa needed)."""
+    data, sr = sf.read(wav_path, dtype='float32')
+    # Convert stereo to mono
+    if data.ndim > 1:
+        data = data.mean(axis=1)
+    # Resample if needed
+    if sr != target_sr:
+        from scipy.signal import resample_poly
+        import math
+        gcd = math.gcd(target_sr, sr)
+        data = resample_poly(data, target_sr // gcd, sr // gcd).astype(np.float32)
+    return data, target_sr
 
 
 class AudioProcessor:
@@ -15,7 +30,7 @@ class AudioProcessor:
     def get_audio_feature(self, wav_path, start_index=0, weight_dtype=None):
         if not os.path.exists(wav_path):
             return None
-        librosa_output, sampling_rate = librosa.load(wav_path, sr=16000)
+        librosa_output, sampling_rate = _load_audio(wav_path, target_sr=16000)
         assert sampling_rate == 16000
         # Split audio into 30s segments
         segment_length = 30 * sampling_rate

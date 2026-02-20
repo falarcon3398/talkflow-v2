@@ -1,3 +1,13 @@
+---
+title: TalkFlow
+emoji: 📽️
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 8000
+pinned: false
+---
+
 # TalkFlow: Open Source AI Video Avatar Platform
 
 TalkFlow is a SaaS platform that allows businesses to create talking avatar videos from text or audio, using only open-source technologies with commercial-friendly licenses.

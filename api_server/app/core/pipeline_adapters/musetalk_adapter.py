@@ -72,8 +72,9 @@ job_{job_id}:
 
         # 3. Construct command
         # MuseTalk 1.5 expects weights via CLI and tasks via YAML
+        import sys
         cmd = [
-            "python3", "scripts/inference.py",
+            sys.executable, "scripts/inference.py",
             "--inference_config", str(temp_config_path),
             "--result_dir", str(result_dir),
             "--unet_config", str(unet_config),

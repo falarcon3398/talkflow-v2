@@ -52,17 +52,18 @@ coverage.xml
 # Database / Runtime
 *.db
 *.sqlite
-api_server/talkflow.db
 api_server/uploads/*
 api_server/processing/*
 api_server/outputs/*
 api_server/server.log
+api_server/*.db
+api_server/*.sqlite
 !api_server/uploads/.gitkeep
 !api_server/processing/.gitkeep
 !api_server/outputs/.gitkeep
 
 # Models (Too large for Git)
-models/*
+models/**
 !models/.gitkeep
 
 # Vercel

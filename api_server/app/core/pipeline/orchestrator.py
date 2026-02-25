@@ -29,39 +29,23 @@ def run_text_to_video_pipeline(job_id, avatar_image_path, text, voice_id, resolu
         update_job_status(job_id, progress=30)
         
         # 2. Lip Sync
-        raw_video = lipsync.run_musetalk(avatar_image_path, audio_path, job_id)
+        raw_video = lipsync.run_inference(avatar_image_path, audio_path, job_id)
         update_job_status(job_id, progress=70)
         
         # 3. Enhance
         final_video = enhance.enhance_video(raw_video, job_id)
         update_job_status(job_id, progress=90)
         
-        # Dest path
+        # 4. Final Finalize
+        # The AI adapter already provides the final video path or avatar fallback.
+        # We just move it to the output dir if it's not already there.
+        final_video_path = Path(raw_video)
         final_filename = f"{job_id}.mp4"
         dest_path = Path(settings.OUTPUT_DIR) / final_filename
         dest_path.parent.mkdir(parents=True, exist_ok=True)
         
-        # In MVP local mode, use FFmpeg to create a video from the image and generated audio
-        if Path(avatar_image_path).exists():
-            try:
-                # Loop image for the duration of the audio
-                process = subprocess.run([
-                    "ffmpeg", "-y", "-loop", "1", "-i", str(avatar_image_path),
-                    "-i", str(audio_path),
-                    "-c:v", "libx264", "-tune", "stillimage", "-c:a", "aac", 
-                    "-b:a", "192k", "-pix_fmt", "yuv420p", "-shortest",
-                    "-t", "60", # Safety limit
-                    "-vf", "scale=1280:720", 
-                    str(dest_path)
-                ], capture_output=True, text=True, timeout=30)
-                
-                if process.returncode != 0:
-                    print(f"ERROR: FFmpeg failed in text-to-video with return code {process.returncode}")
-                    print(f"FFmpeg stderr: {process.stderr}")
-                    shutil.copy(avatar_image_path, dest_path)
-            except Exception as e:
-                print(f"ERROR: Exception during FFmpeg execution in text-to-video: {str(e)}")
-                shutil.copy(avatar_image_path, dest_path)
+        if final_video_path.exists() and str(final_video_path) != str(dest_path):
+            shutil.copy(str(final_video_path), str(dest_path))
         
         update_job_status(job_id, status="completed", progress=100, result_url=f"/api/v1/jobs/{job_id}/download")
         
@@ -73,9 +57,8 @@ def run_audio_to_video_pipeline(job_id, avatar_image_path, audio_file_path, enab
     try:
         update_job_status(job_id, status="processing", progress=10)
         
-        # 1. Lip Sync (Stubbed)
-        # In real mode, use audio_file_path directly
-        raw_video = lipsync.run_musetalk(avatar_image_path, audio_file_path, job_id)
+        # 1. Lip Sync
+        raw_video = lipsync.run_inference(avatar_image_path, audio_file_path, job_id)
         update_job_status(job_id, progress=70)
         
         # 2. Enhance
@@ -83,33 +66,14 @@ def run_audio_to_video_pipeline(job_id, avatar_image_path, audio_file_path, enab
             final_video = enhance.enhance_video(raw_video, job_id)
         update_job_status(job_id, progress=90)
         
-        # Dest path
+        # 3. Final Finalize
+        final_video_path = Path(raw_video)
         final_filename = f"{job_id}.mp4"
         dest_path = Path(settings.OUTPUT_DIR) / final_filename
         dest_path.parent.mkdir(parents=True, exist_ok=True)
         
-        # In MVP local mode, use FFmpeg to create a video from the image and audio
-        if Path(avatar_image_path).exists():
-            try:
-                # Loop image for the duration of the audio
-                # Use -t 60 as a safeguard to avoid infinite loops if duration detection fails
-                process = subprocess.run([
-                    "ffmpeg", "-y", "-loop", "1", "-i", str(avatar_image_path),
-                    "-i", str(audio_file_path),
-                    "-c:v", "libx264", "-tune", "stillimage", "-c:a", "aac", 
-                    "-b:a", "192k", "-pix_fmt", "yuv420p", "-shortest",
-                    "-t", "60", # Safety limit
-                    "-vf", "scale=1280:720", 
-                    str(dest_path)
-                ], capture_output=True, text=True, timeout=30)
-                
-                if process.returncode != 0:
-                    print(f"ERROR: FFmpeg failed with return code {process.returncode}")
-                    print(f"FFmpeg stderr: {process.stderr}")
-                    shutil.copy(avatar_image_path, dest_path)
-            except Exception as e:
-                print(f"ERROR: Exception during FFmpeg execution: {str(e)}")
-                shutil.copy(avatar_image_path, dest_path)
+        if final_video_path.exists() and str(final_video_path) != str(dest_path):
+            shutil.copy(str(final_video_path), str(dest_path))
         
         update_job_status(job_id, status="completed", progress=100, result_url=f"/api/v1/jobs/{job_id}/download")
         

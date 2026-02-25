@@ -80,3 +80,10 @@ test_output*.mp4
 *.pth
 *.bin
 *.onnx
+
+# Local Logs & Experimental Deploys
+*.log
+deploy_v*/
+debug_init.py
+launch_sadtalker.py
+api_server/scripts/test_sadtalker_adapter.py

@@ -35,6 +35,10 @@ class Settings(BaseSettings):
     MODELS_PATH: str = str(_BASE_DIR.parent / "models")
     STATIC_DIR: str = str(_BASE_DIR / "app" / "static")
     MUSETALK_DIR: str = str(_BASE_DIR / "musetalk")
+    SADTALKER_DIR: str = "/Users/iblstudios/local_sadtalker_test/SadTalker"
+    SADTALKER_VENV_PYTHON: str = "/Users/iblstudios/local_sadtalker_test/SadTalker/.venv/bin/python"
+    LIPSYNC_ENGINE: str = "sadtalker" # options: "musetalk", "sadtalker"
+    
     UPLOAD_DIR: str = "/tmp/uploads" if IS_VERCEL else str(_BASE_DIR / "uploads")
     PROCESSING_DIR: str = "/tmp/processing" if IS_VERCEL else str(_BASE_DIR / "processing")
     OUTPUT_DIR: str = "/tmp/outputs" if IS_VERCEL else str(_BASE_DIR / "outputs")

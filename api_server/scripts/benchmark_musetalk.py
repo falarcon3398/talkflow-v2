@@ -9,8 +9,8 @@ from app.core.pipeline_adapters.musetalk_adapter import musetalk_adapter
 from app.config import settings
 
 def run_benchmark():
-    image_path = "tests/assets/test_image.jpg"
-    audio_path = "tests/assets/test_audio.wav"
+    image_path = "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-files/1001-avatar/1001-marcos-aurelio.png"
+    audio_path = "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-files/1001-avatar/1001-audio.wav"
     job_id = "benchmark_1"
     
     print(f"--- Running MuseTalk Benchmark for job {job_id} ---")

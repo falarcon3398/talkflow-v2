@@ -10,7 +10,7 @@ def download_models():
     print("--- Downloading MuseTalk Weights ---")
     # MuseTalk Weights
     snapshot_download(
-        repo_id="TencentGameMate/MuseTalk",
+        repo_id="TMElyralab/MuseTalk",
         local_dir=str(musetalk_dir),
         ignore_patterns=["*.md", "*.txt", ".git*"]
     )
@@ -33,14 +33,16 @@ def download_models():
 
     print("--- Downloading face-parsing ---")
     snapshot_download(
-        repo_id="pwwu/face-parse-bisent",
-        local_dir=str(musetalk_dir / "face-parse-bisent")
+        repo_id="ManyOtherFunctions/face-parse-bisent",
+        local_dir=str(musetalk_dir / "face-parse-bisent"),
+        allow_patterns=["*.pth"]
     )
 
     print("--- Downloading dwpose ---")
     snapshot_download(
-        repo_id="pwwu/dwpose",
-        local_dir=str(musetalk_dir / "dwpose")
+        repo_id="yzd-v/DWPose",
+        local_dir=str(musetalk_dir / "dwpose"),
+        allow_patterns=["*.onnx", "*.pth"]
     )
 
     print("--- Models Download Complete ---")

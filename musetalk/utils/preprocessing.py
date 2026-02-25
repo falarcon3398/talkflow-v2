@@ -14,8 +14,16 @@ from tqdm import tqdm
 
 # initialize the mmpose model
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-config_file = './musetalk/utils/dwpose/rtmpose-l_8xb32-270e_coco-ubody-wholebody-384x288.py'
-checkpoint_file = './models/dwpose/dw-ll_ucoco_384.pth'
+# Get the project root directory (assuming current file is musetalk/utils/preprocessing.py)
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+config_file = os.path.join(project_root, 'musetalk/utils/dwpose/rtmpose-l_8xb32-270e_coco-ubody-wholebody-384x288.py')
+# In app.py, models are downloaded to the 'checkpoints' folder
+checkpoint_file = os.path.join(project_root, 'checkpoints/dw-ll_ucoco_384.onnx')
+
+# Fallback check for .pth if .onnx not found (though app.py should handle it)
+if not os.path.exists(checkpoint_file):
+    checkpoint_file = os.path.join(project_root, 'checkpoints/dw-ll_ucoco_384.pth')
+
 model = init_model(config_file, checkpoint_file, device=device)
 
 # initialize the face detection model

@@ -1,7 +1,52 @@
 import os
 import sys
+import subprocess
+
+# --- Bootstrap Dependencies (Fix V7) ---
+def bootstrap():
+    print("Starting TalkFlow bootstrap V7...")
+    try:
+        # Pre-install build tools
+        print("Ensuring build tools...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "setuptools==69.5.1", "wheel", "cython"])
+        
+        # Install openmim
+        print("Installing openmim...")
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "openmim"])
+        
+        # Use mim for OpenMMLab
+        print("Installing MM stack...")
+        subprocess.check_call([sys.executable, "-m", "mim", "install", "mmengine", "mmcv>=2.1.0", "mmpose>=1.1.0"])
+        
+        # Install other git-based dependencies
+        print("Installing git dependencies...")
+        git_deps = [
+            "git+https://github.com/TMElyralab/MMCM.git@main",
+            "git+https://github.com/TMElyralab/controlnet_aux.git@tme",
+            "git+https://github.com/tencent-ailab/IP-Adapter.git@main",
+            "git+https://github.com/openai/CLIP.git@main"
+        ]
+        for dep in git_deps:
+            subprocess.check_call([sys.executable, "-m", "pip", "install", dep])
+        print("Bootstrap V7 complete!")
+    except Exception as e:
+        print(f"Bootstrap ERROR: {e}")
+        # We don't exit to allow seeing logs in HF Space
+
+# Run bootstrap before anything else
+# bootstrap() # Disabled for local execution
+
 import torch
-import spaces
+try:
+    import spaces
+except ImportError:
+    # Dummy decorator for local execution
+    class spaces:
+        @staticmethod
+        def GPU(duration=None):
+            def decorator(func):
+                return func
+            return decorator
 import gradio as gr
 import shutil
 from pathlib import Path

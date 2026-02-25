@@ -9,11 +9,74 @@ from pathlib import Path
 # Create tables
 Base.metadata.create_all(bind=engine)
 
+def start_stuck_jobs():
+    from app.database import SessionLocal
+    from app.models.job import Job
+    from app.models.avatar import Avatar
+    from app.workers.tasks import run_text_to_video_task, run_audio_to_video_task
+    from app.config import settings
+    from pathlib import Path
+    import threading
+    import time
+
+    def worker():
+        # Wait a bit for the server to be fully ready
+        time.sleep(5)
+        db = SessionLocal()
+        try:
+            # Re-queue jobs that are stuck in queued or processing
+            stuck_jobs = db.query(Job).filter(Job.status.in_(["queued", "processing"])).all()
+            if stuck_jobs:
+                print(f"\n[STARTUP] Found {len(stuck_jobs)} stuck jobs. Re-queuing...")
+                for job in stuck_jobs:
+                    params = job.params or {}
+                    job_id = job.id
+                    
+                    # Try to resolve avatar_path if missing
+                    avatar_path = params.get("avatar_path")
+                    if not avatar_path:
+                        avatar_id = params.get("avatar_id")
+                        if avatar_id:
+                            avatar = db.query(Avatar).filter(Avatar.id == avatar_id).first()
+                            if avatar:
+                                if avatar.image_url.startswith("/avatars/"):
+                                    avatar_path = str(Path(settings.STATIC_DIR) / avatar.image_url.lstrip("/"))
+                                else:
+                                    filename = avatar.image_url.split("/")[-1]
+                                    avatar_path = str(Path(settings.UPLOAD_DIR) / "avatars" / filename)
+                    
+                    if not avatar_path:
+                        print(f"[STARTUP] Skipping job {job_id}: Could not resolve avatar_path")
+                        continue
+
+                    if job.type == "text_to_video":
+                        print(f"[STARTUP] Re-triggering text-to-video for {job_id}")
+                        run_text_to_video_task(job_id, avatar_path, params.get("text"), params.get("voice_id"), params.get("resolution"))
+                    elif job.type == "audio_to_video":
+                        audio_path = params.get("audio_path")
+                        if not audio_path:
+                            # Try to find audio in upload dir
+                            audio_path = str(Path(settings.UPLOAD_DIR) / job_id / "audio.wav")
+                        
+                        print(f"[STARTUP] Re-triggering audio-to-video for {job_id}")
+                        run_audio_to_video_task(job_id, avatar_path, audio_path, params.get("enhance_quality"))
+        except Exception as e:
+            print(f"[STARTUP] Recovery failed: {e}")
+        finally:
+            db.close()
+
+    # Start recovery in a separate thread to not block FastAPI startup
+    threading.Thread(target=worker, daemon=True).start()
+
 app = FastAPI(
     title="TalkFlow API",
     version="1.0.0",
     description="Open Source Avatar Video Generation Platform"
 )
+
+@app.on_event("startup")
+async def on_startup():
+    start_stuck_jobs()
 
 # CORS
 app.add_middleware(

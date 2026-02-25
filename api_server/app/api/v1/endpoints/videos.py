@@ -1,4 +1,4 @@
-from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Depends
+from fastapi import APIRouter, UploadFile, File, Form, HTTPException, Depends, BackgroundTasks
 from sqlalchemy.orm import Session
 import uuid
 import os
@@ -10,8 +10,8 @@ from app.config import settings
 from app.models.avatar import Avatar
 from app.workers.celery_app import celery_app
 from app.workers.tasks import (
-    process_text_to_video_task,
-    process_audio_to_video_task,
+    run_text_to_video_task,
+    run_audio_to_video_task,
     process_video_to_video_task
 )
 
@@ -19,6 +19,7 @@ router = APIRouter()
 
 @router.post("/text-to-video")
 async def create_text_to_video(
+    background_tasks: BackgroundTasks,
     avatar_image: UploadFile = File(None),
     avatar_id: str = Form(None),
     text: str = Form(..., max_length=500),
@@ -68,24 +69,27 @@ async def create_text_to_video(
             "text": text,
             "voice_id": voice_id,
             "resolution": output_resolution,
-            "avatar_id": avatar_id
+            "avatar_id": avatar_id,
+            "avatar_path": str(avatar_path.resolve())
         }
     )
     db.add(job)
     db.commit()
     
-    # Use delay() which respects task_always_eager
-    task = process_text_to_video_task.delay(
+    # Use BackgroundTasks instead of Celery delay() to avoid blocking
+    background_tasks.add_task(
+        run_text_to_video_task,
         job_id, str(avatar_path.resolve()), text, voice_id, output_resolution
     )
     
-    job.task_id = task.id
+    job.task_id = job_id
     db.commit()
     
     return {"job_id": job_id, "status": "queued"}
 
 @router.post("/audio-to-video")
 async def create_audio_to_video(
+    background_tasks: BackgroundTasks,
     avatar_image: UploadFile = File(None),
     avatar_id: str = Form(None),
     audio_file: UploadFile = File(...),
@@ -126,23 +130,27 @@ async def create_audio_to_video(
         status="queued",
         params={
             "enhance_quality": enhance_quality,
-            "avatar_id": avatar_id
+            "avatar_id": avatar_id,
+            "avatar_path": str(avatar_path.resolve()),
+            "audio_path": str(audio_path.resolve())
         }
     )
     db.add(job)
     db.commit()
     
-    # Use delay() which respects task_always_eager
-    task = process_audio_to_video_task.delay(
+    # Use BackgroundTasks instead of Celery delay()
+    background_tasks.add_task(
+        run_audio_to_video_task,
         job_id, str(avatar_path.resolve()), str(audio_path.resolve()), enhance_quality
     )
     
-    job.task_id = task.id
+    job.task_id = job_id
     db.commit()
     
     return {"job_id": job_id, "status": "queued"}
 @router.post("/video-to-video")
 async def create_video_to_video(
+    background_tasks: BackgroundTasks,
     reference_video: UploadFile = File(...),
     enhance_quality: bool = Form(default=True),
     db: Session = Depends(get_db)
@@ -167,12 +175,13 @@ async def create_video_to_video(
     db.add(job)
     db.commit()
     
-    # Use delay()
-    task = process_video_to_video_task.delay(
-        job_id, str(video_path), enhance_quality
+    # Use BackgroundTasks
+    background_tasks.add_task(
+        process_video_to_video_task,
+        None, job_id, str(video_path), enhance_quality
     )
     
-    job.task_id = task.id
+    job.task_id = job_id
     db.commit()
     
     return {"job_id": job_id, "status": "queued"}

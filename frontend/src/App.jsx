@@ -492,11 +492,6 @@ const AvatarDropdown = ({ isOpen, onClose, onAction }) => {
     <>
       <div className="fixed inset-0 z-40" onClick={onClose}></div>
       <div className="animate-in fade-in zoom-in-95 backdrop-blur-xl absolute right-0 top-10 z-50 w-56 origin-top-right overflow-hidden rounded-2xl border border-slate-100 bg-white/90 p-1.5 shadow-2xl duration-150">
-        <div className="mb-1 px-3 py-2">
-          <p className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
-            Created by amigot
-          </p>
-        </div>
         <button
           onClick={() => {
             onAction('copy')

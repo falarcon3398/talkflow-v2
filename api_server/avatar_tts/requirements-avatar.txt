@@ -1,0 +1,6 @@
+gradio==4.19.2
+TTS==0.22.0
+imageio-ffmpeg
+requests
+numpy<1.27, >=1.21
+scipy

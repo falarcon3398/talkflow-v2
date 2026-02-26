@@ -60,6 +60,16 @@ async def create_text_to_video(
     if not avatar_path or not avatar_path.exists():
         raise HTTPException(400, "No valid avatar image found")
         
+    # Determine if we have a cloned voice
+    speaker_wav_path = None
+    if avatar_id:
+        avatar = db.query(Avatar).filter(Avatar.id == avatar_id).first()
+        if avatar and avatar.voice_url:
+            filename = avatar.voice_url.split("/")[-1]
+            speaker_wav_path = Path(settings.UPLOAD_DIR) / "voices" / filename
+            if not speaker_wav_path.exists():
+                speaker_wav_path = None
+
     # Create job entry
     job = Job(
         id=job_id,
@@ -70,7 +80,8 @@ async def create_text_to_video(
             "voice_id": voice_id,
             "resolution": output_resolution,
             "avatar_id": avatar_id,
-            "avatar_path": str(avatar_path.resolve())
+            "avatar_path": str(avatar_path.resolve()),
+            "speaker_wav_path": str(speaker_wav_path.resolve()) if speaker_wav_path else None
         }
     )
     db.add(job)
@@ -79,7 +90,8 @@ async def create_text_to_video(
     # Use BackgroundTasks instead of Celery delay() to avoid blocking
     background_tasks.add_task(
         run_text_to_video_task,
-        job_id, str(avatar_path.resolve()), text, voice_id, output_resolution
+        job_id, str(avatar_path.resolve()), text, voice_id, output_resolution,
+        str(speaker_wav_path.resolve()) if speaker_wav_path else None
     )
     
     job.task_id = job_id

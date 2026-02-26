@@ -20,12 +20,12 @@ def update_job_status(job_id: str, status: str = None, progress: int = None, res
     finally:
         db.close()
 
-def run_text_to_video_pipeline(job_id, avatar_image_path, text, voice_id, resolution):
+def run_text_to_video_pipeline(job_id, avatar_image_path, text, voice_id, resolution, speaker_wav_path=None):
     try:
         update_job_status(job_id, status="processing", progress=10)
         
         # 1. TTS
-        audio_path = tts.generate_speech(text, voice_id, job_id)
+        audio_path = tts.generate_speech(text, voice_id, job_id, speaker_wav_path)
         update_job_status(job_id, progress=30)
         
         # 2. Lip Sync

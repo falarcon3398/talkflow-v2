@@ -9,6 +9,7 @@ class Avatar(Base):
     name = Column(String, index=True)
     type = Column(String) # Historic, Modern, Custom
     image_url = Column(String)
+    voice_url = Column(String, nullable=True)
     
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now(), server_default=func.now())

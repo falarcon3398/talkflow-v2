@@ -11,6 +11,21 @@ export const avatarApi = {
       body: formData
     })
     return response.json()
+  },
+  async updateAvatar(avatarId, name) {
+    const formData = new FormData()
+    formData.append('name', name)
+    const response = await fetch(`${API_BASE}/avatars/${avatarId}`, {
+      method: 'PUT',
+      body: formData
+    })
+    return response.json()
+  },
+  async deleteAvatar(avatarId) {
+    const response = await fetch(`${API_BASE}/avatars/${avatarId}`, {
+      method: 'DELETE'
+    })
+    return response.json()
   }
 }
 

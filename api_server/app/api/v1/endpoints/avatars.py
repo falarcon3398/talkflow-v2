@@ -34,6 +34,7 @@ async def create_avatar(
     name: str = Form(...),
     type: str = Form(default="Custom"),
     image: UploadFile = File(...),
+    voice_clip: UploadFile = File(None),
     db: Session = Depends(get_db)
 ):
     avatar_id = str(uuid.uuid4())
@@ -50,11 +51,23 @@ async def create_avatar(
     # In a real environment this would be the MinIO/S3 URL
     image_url = f"/api/v1/avatars/image/{avatar_id}{Path(image.filename).suffix}"
 
+    # Save voice clip if provided
+    voice_url = None
+    if voice_clip:
+        voice_dir = Path(settings.UPLOAD_DIR) / "voices"
+        voice_dir.mkdir(parents=True, exist_ok=True)
+        voice_filename = f"{avatar_id}{Path(voice_clip.filename).suffix}"
+        voice_path = voice_dir / voice_filename
+        with voice_path.open("wb") as f:
+            f.write(await voice_clip.read())
+        voice_url = f"/api/v1/avatars/voice/{voice_filename}"
+
     avatar = Avatar(
         id=avatar_id,
         name=name,
         type=type,
-        image_url=image_url
+        image_url=image_url,
+        voice_url=voice_url
     )
     db.add(avatar)
     db.commit()
@@ -69,3 +82,59 @@ async def get_avatar_image(image_name: str):
     if not image_path.exists():
         raise HTTPException(404, "Image not found")
     return FileResponse(image_path)
+
+@router.get("/voice/{voice_name}")
+async def get_avatar_voice(voice_name: str):
+    from fastapi.responses import FileResponse
+    voice_path = Path(settings.UPLOAD_DIR) / "voices" / voice_name
+    if not voice_path.exists():
+        raise HTTPException(404, "Voice clip not found")
+    return FileResponse(voice_path)
+
+@router.put("/{avatar_id}")
+async def update_avatar(
+    avatar_id: str,
+    name: str = Form(...),
+    db: Session = Depends(get_db)
+):
+    avatar = db.query(Avatar).filter(Avatar.id == avatar_id).first()
+    if not avatar:
+        raise HTTPException(status_code=404, detail="Avatar not found")
+    
+    avatar.name = name
+    db.commit()
+    db.refresh(avatar)
+    return avatar
+
+@router.delete("/{avatar_id}")
+async def delete_avatar(
+    avatar_id: str,
+    db: Session = Depends(get_db)
+):
+    avatar = db.query(Avatar).filter(Avatar.id == avatar_id).first()
+    if not avatar:
+        raise HTTPException(status_code=404, detail="Avatar not found")
+    
+    # Delete image file if it's a custom upload
+    if "/api/v1/avatars/image/" in avatar.image_url:
+        filename = avatar.image_url.split("/")[-1]
+        image_path = Path(settings.UPLOAD_DIR) / "avatars" / filename
+        if image_path.exists():
+            try:
+                os.remove(image_path)
+            except Exception as e:
+                print(f"Error deleting image file: {e}")
+
+    # Delete voice file if it exists
+    if avatar.voice_url and "/api/v1/avatars/voice/" in avatar.voice_url:
+        filename = avatar.voice_url.split("/")[-1]
+        voice_path = Path(settings.UPLOAD_DIR) / "voices" / filename
+        if voice_path.exists():
+            try:
+                os.remove(voice_path)
+            except Exception as e:
+                print(f"Error deleting voice file: {e}")
+
+    db.delete(avatar)
+    db.commit()
+    return {"message": "Avatar deleted successfully"}

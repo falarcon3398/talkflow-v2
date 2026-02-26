@@ -87,3 +87,7 @@ deploy_v*/
 debug_init.py
 launch_sadtalker.py
 api_server/scripts/test_sadtalker_adapter.py
+
+# Avatar TTS Module
+api_server/avatar_tts/outputs/**
+api_server/avatar_tts/voices/*.wav

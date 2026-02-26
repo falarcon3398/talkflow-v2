@@ -1,0 +1,14 @@
+[
+    {
+        "id": "freddy",
+        "label": "Freddy (Spanish)",
+        "path": "voices/freddy.wav",
+        "lang": "es"
+    },
+    {
+        "id": "marcos",
+        "label": "Marcos (Spanish)",
+        "path": "voices/marcos.wav",
+        "lang": "es"
+    }
+]

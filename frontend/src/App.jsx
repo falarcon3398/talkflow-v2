@@ -277,8 +277,9 @@ const Modal = ({ children, isOpen, onClose, title }) => {
 }
 
 const AvatarCreateModal = ({ isOpen, onClose, onSave }) => {
-  const [formData, setFormData] = useState({ name: '', type: 'Custom', image: null })
+  const [formData, setFormData] = useState({ name: '', type: 'Custom', image: null, voice_clip: null })
   const [preview, setPreview] = useState(null)
+  const [audioName, setAudioName] = useState('')
 
   const handleFileChange = (e) => {
     const file = e.target.files[0]
@@ -288,12 +289,23 @@ const AvatarCreateModal = ({ isOpen, onClose, onSave }) => {
     }
   }
 
+  const handleAudioChange = (e) => {
+    const file = e.target.files[0]
+    if (file) {
+      setFormData((prev) => ({ ...prev, voice_clip: file }))
+      setAudioName(file.name)
+    }
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = new FormData()
     data.append('name', formData.name)
     data.append('type', formData.type)
     data.append('image', formData.image)
+    if (formData.voice_clip) {
+      data.append('voice_clip', formData.voice_clip)
+    }
     onSave(data)
     onClose()
   }
@@ -345,6 +357,33 @@ const AvatarCreateModal = ({ isOpen, onClose, onSave }) => {
           </select>
         </div>
 
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-slate-700">Reference Audio (Voice Cloning)</label>
+          <div className="relative flex items-center gap-3 rounded-lg border border-slate-200 bg-white p-2">
+            <div className="flex flex-1 items-center gap-2 overflow-hidden px-2">
+              <span className="text-lg">🎙️</span>
+              <span className="truncate text-xs font-medium text-slate-500">
+                {audioName || 'Click to upload specific audio'}
+              </span>
+            </div>
+            <button
+              type="button"
+              className="rounded-lg bg-slate-100 px-3 py-1.5 text-xs font-bold text-slate-600 hover:bg-slate-200"
+            >
+              Select File
+            </button>
+            <input
+              type="file"
+              accept="audio/*"
+              onChange={handleAudioChange}
+              className="absolute inset-0 cursor-pointer opacity-0"
+            />
+          </div>
+          <p className="text-[10px] text-slate-400">
+            Upload a short clear clip of the person speaking for high-quality cloning.
+          </p>
+        </div>
+
         <div className="-mx-8 -mb-4 flex justify-end gap-3 border-t border-slate-100 px-8 pt-4">
           <button
             type="button"
@@ -363,6 +402,176 @@ const AvatarCreateModal = ({ isOpen, onClose, onSave }) => {
         </div>
       </form>
     </Modal>
+  )
+}
+
+const AvatarRenameModal = ({ isOpen, onClose, onSave, avatar }) => {
+  const [name, setName] = useState('')
+
+  useEffect(() => {
+    if (isOpen && avatar) {
+      setName(avatar.name)
+    }
+  }, [isOpen, avatar])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    onSave(avatar.id, name)
+    onClose()
+  }
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} title="Rename AI Avatar">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-slate-700">New Avatar Name</label>
+          <input
+            required
+            className="w-full rounded-lg border border-slate-200 px-4 py-2.5 outline-none"
+            placeholder="e.g. Einstein"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+        </div>
+
+        <div className="-mx-8 -mb-4 flex justify-end gap-3 border-t border-slate-100 px-8 pt-4">
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-lg border border-slate-200 px-6 py-2.5 text-sm font-bold text-slate-500 hover:bg-slate-50"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-bold text-white hover:bg-blue-700"
+          >
+            Update Name
+          </button>
+        </div>
+      </form>
+    </Modal>
+  )
+}
+
+const DeleteConfirmationModal = ({ isOpen, onClose, onConfirm, avatarName }) => (
+  <Modal isOpen={isOpen} onClose={onClose} title="Delete AI Avatar">
+    <div className="space-y-6">
+      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-100 text-3xl text-red-600 mx-auto">
+        ⚠️
+      </div>
+      <div className="text-center space-y-2">
+        <p className="text-lg font-bold text-slate-800">Are you sure?</p>
+        <p className="text-slate-500">
+          You are about to delete <span className="font-bold text-slate-700">"{avatarName}"</span>. This action cannot be undone.
+        </p>
+      </div>
+
+      <div className="-mx-8 -mb-4 flex justify-center gap-3 border-t border-slate-100 px-8 pt-6">
+        <button
+          onClick={onClose}
+          className="flex-1 rounded-xl border border-slate-200 px-6 py-3 text-sm font-bold text-slate-500 hover:bg-slate-50 transition-all"
+        >
+          No, Cancel
+        </button>
+        <button
+          onClick={onConfirm}
+          className="flex-1 rounded-xl bg-red-600 px-6 py-3 text-sm font-bold text-white hover:bg-red-700 shadow-lg shadow-red-200 transition-all active:scale-95"
+        >
+          Yes, Delete
+        </button>
+      </div>
+    </div>
+  </Modal>
+)
+
+const AvatarDropdown = ({ isOpen, onClose, onAction }) => {
+  if (!isOpen) return null
+
+  return (
+    <>
+      <div className="fixed inset-0 z-40" onClick={onClose}></div>
+      <div className="animate-in fade-in zoom-in-95 backdrop-blur-xl absolute right-0 top-10 z-50 w-56 origin-top-right overflow-hidden rounded-2xl border border-slate-100 bg-white/90 p-1.5 shadow-2xl duration-150">
+        <div className="mb-1 px-3 py-2">
+          <p className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
+            Created by amigot
+          </p>
+        </div>
+        <button
+          onClick={() => {
+            onAction('copy')
+            onClose()
+          }}
+          className="group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+        >
+          <svg className="h-4 w-4 text-slate-400 group-hover:text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+          </svg>
+          <span className="font-medium">Copy ID</span>
+        </button>
+        <button
+          onClick={() => {
+            onAction('edit_new')
+            onClose()
+          }}
+          className="group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+        >
+          <svg className="h-4 w-4 text-slate-400 group-hover:text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+          <span className="font-medium">Edit as New</span>
+        </button>
+        <button
+          onClick={() => {
+            onAction('collaborate')
+            onClose()
+          }}
+          className="group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+        >
+          <svg className="h-4 w-4 text-slate-400 group-hover:text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <span className="font-medium">Collaborate</span>
+        </button>
+        <button
+          onClick={() => {
+            onAction('rename')
+            onClose()
+          }}
+          className="group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+        >
+          <svg className="h-4 w-4 text-slate-400 group-hover:text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
+          <span className="font-medium">Rename</span>
+        </button>
+        <button
+          onClick={() => {
+            onAction('move')
+            onClose()
+          }}
+          className="group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm text-slate-600 transition-colors hover:bg-slate-50 hover:text-slate-900"
+        >
+          <svg className="h-4 w-4 text-slate-400 group-hover:text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+          </svg>
+          <span className="font-medium">Move</span>
+        </button>
+        <div className="my-1 border-t border-slate-50"></div>
+        <button
+          onClick={() => {
+            onAction('trash')
+            onClose()
+          }}
+          className="group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm text-red-500 transition-colors hover:bg-red-50"
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+          </svg>
+          <span className="font-bold text-red-600">Trash</span>
+        </button>
+      </div>
+    </>
   )
 }
 
@@ -1276,59 +1485,92 @@ const GenerateAvatarView = ({
   )
 }
 
-const AvatarLibraryView = ({ setView, avatarList, setSelectedAvatarId, onAddAvatar }) => (
-  <div className="space-y-8 px-4">
-    <div className="glass-card flex flex-col items-center border-blue-200/50 bg-gradient-to-br from-blue-600/10 to-purple-600/10 p-10">
-      <h1 className="mb-2 text-3xl font-bold text-slate-800">AI Video Avatar</h1>
-      <p className="max-w-lg text-center text-slate-600">
-        Elevate your communication with talking AI avatars
-      </p>
-    </div>
-    <div className="flex items-center justify-between">
-      <h2 className="text-2xl font-bold text-slate-800">Public Avatars</h2>
-      <button onClick={onAddAvatar} className="btn-primary">
-        + Create New
-      </button>
-    </div>
-    <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-      {avatarList.map((avatar) => (
-        <div
-          key={avatar.id}
-          onClick={() => {
-            setSelectedAvatarId(avatar.id)
-            setView('generate')
-          }}
-        >
-          <AvatarCard
-            name={avatar.name}
-            type={avatar.type}
-            image={avatar.image_url || avatar.image}
-          />
-        </div>
-      ))}
-    </div>
-  </div>
-)
-
-const AvatarCard = ({ name, type, image, isActive }) => (
-  <div
-    className={`glass-card group cursor-pointer overflow-hidden border-2 transition-all hover:scale-[1.02] ${isActive ? 'border-blue-500 shadow-lg shadow-blue-200' : 'border-transparent'}`}
-  >
-    <div className="relative aspect-[3/4] overflow-hidden bg-slate-200">
-      {image && (
-        <img
-          src={image}
-          alt={name}
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
-      )}
-      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 p-4">
-        <p className="font-medium text-white">{name}</p>
-        <p className="text-sm text-white/70">{type}</p>
+const AvatarLibraryView = ({ setView, avatarList, setSelectedAvatarId, onAddAvatar, onRenameAvatar, onDeleteAvatar }) => {
+  return (
+    <div className="space-y-8 px-4">
+      <div className="glass-card flex flex-col items-center border-blue-200/50 bg-gradient-to-br from-blue-600/10 to-purple-600/10 p-10">
+        <h1 className="mb-2 text-3xl font-bold text-slate-800">AI Video Avatar</h1>
+        <p className="max-w-lg text-center text-slate-600">
+          Elevate your communication with talking AI avatars
+        </p>
+      </div>
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold text-slate-800">Public Avatars</h2>
+        <button onClick={onAddAvatar} className="btn-primary">
+          + Create New
+        </button>
+      </div>
+      <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
+        {avatarList.map((avatar) => (
+          <div
+            key={avatar.id}
+            onClick={() => {
+              setSelectedAvatarId(avatar.id)
+              setView('generate')
+            }}
+          >
+            <AvatarCard
+              name={avatar.name}
+              type={avatar.type}
+              image={avatar.image_url || avatar.image}
+              onRename={() => onRenameAvatar(avatar)}
+              onDelete={() => onDeleteAvatar(avatar)}
+            />
+          </div>
+        ))}
       </div>
     </div>
-  </div>
-)
+  )
+}
+
+const AvatarCard = ({ name, type, image, isActive, onRename, onDelete }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+
+  return (
+    <div
+      className={`glass-card group cursor-pointer overflow-hidden border-2 transition-all hover:scale-[1.02] ${isActive ? 'border-blue-500 shadow-lg shadow-blue-200' : 'border-transparent'}`}
+    >
+      <div className="relative aspect-[3/4] overflow-hidden bg-slate-200">
+        {image && (
+          <img
+            src={image}
+            alt={name}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        )}
+        <div className="absolute top-2 right-2 z-20">
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              setIsDropdownOpen(!isDropdownOpen)
+            }}
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/60 text-white backdrop-blur-md transition-all hover:bg-slate-900/80 active:scale-90"
+          >
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+            </svg>
+          </button>
+          <AvatarDropdown
+            isOpen={isDropdownOpen}
+            onClose={() => setIsDropdownOpen(false)}
+            avatarName={name}
+            onAction={(action) => {
+              if (action === 'rename') onRename()
+              if (action === 'trash') onDelete()
+              if (action === 'copy') {
+                alert(`Avatar ID copied: ${name}`) // Placeholder
+              }
+            }}
+          />
+        </div>
+        <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/80 p-4">
+          <p className="font-bold text-white shadow-sm">{name}</p>
+          <p className="text-xs font-bold text-white/70">{type}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -1339,6 +1581,9 @@ function App() {
   const [jobs, setJobs] = useState([])
   const [avatars, setAvatars] = useState([])
   const [isAvatarModalOpen, setIsAvatarModalOpen] = useState(false)
+  const [isRenameModalOpen, setIsRenameModalOpen] = useState(false)
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [editingAvatar, setEditingAvatar] = useState(null)
 
   const fetchAvatars = async () => {
     try {
@@ -1388,6 +1633,26 @@ function App() {
     setView('library')
   }
 
+  const handleRenameAvatar = async (avatarId, newName) => {
+    try {
+      await avatarApi.updateAvatar(avatarId, newName)
+      fetchAvatars()
+    } catch (error) {
+      console.error('Failed to rename avatar:', error)
+    }
+  }
+
+  const handleDeleteAvatar = async () => {
+    if (!editingAvatar) return
+    try {
+      await avatarApi.deleteAvatar(editingAvatar.id)
+      setIsDeleteModalOpen(false)
+      fetchAvatars()
+    } catch (error) {
+      console.error('Failed to delete avatar:', error)
+    }
+  }
+
   if (!isAuthenticated) return <LoginPage onLogin={() => setIsAuthenticated(true)} />
 
   return (
@@ -1401,6 +1666,14 @@ function App() {
               setSelectedAvatarId={setSelectedAvatarId}
               setView={setView}
               onAddAvatar={() => setIsAvatarModalOpen(true)}
+              onRenameAvatar={(avatar) => {
+                setEditingAvatar(avatar)
+                setIsRenameModalOpen(true)
+              }}
+              onDeleteAvatar={(avatar) => {
+                setEditingAvatar(avatar)
+                setIsDeleteModalOpen(true)
+              }}
             />
           )}
           {view === 'generate' && (
@@ -1427,6 +1700,18 @@ function App() {
         isOpen={isAvatarModalOpen}
         onClose={() => setIsAvatarModalOpen(false)}
         onSave={handleCreateAvatar}
+      />
+      <AvatarRenameModal
+        isOpen={isRenameModalOpen}
+        onClose={() => setIsRenameModalOpen(false)}
+        onSave={handleRenameAvatar}
+        avatar={editingAvatar}
+      />
+      <DeleteConfirmationModal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        onConfirm={handleDeleteAvatar}
+        avatarName={editingAvatar?.name}
       />
     </div>
   )

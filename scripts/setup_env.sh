@@ -1,0 +1,5 @@
+export HF_HOME="/Volumes/FREDDY FILES/ANTIGRAVITY/_offload/huggingface"
+export TORCH_HOME="/Volumes/FREDDY FILES/ANTIGRAVITY/_offload/torch"
+export PIP_CACHE_DIR="/Volumes/FREDDY FILES/ANTIGRAVITY/_offload/pip"
+export npm_config_cache="/Volumes/FREDDY FILES/ANTIGRAVITY/_offload/npm"
+export GRADLE_USER_HOME="/Volumes/FREDDY FILES/ANTIGRAVITY/_offload/gradle"

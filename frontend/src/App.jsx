@@ -1043,7 +1043,7 @@ const VideoPlayerModal = ({ isOpen, onClose, videoUrl, title }) => {
   )
 }
 
-const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
+const MyVideoClipsView = ({ setView, jobs, avatarList, onDeleteJob }) => {
   const [selectedVideo, setSelectedVideo] = useState(null)
 
   const displayJobs =
@@ -1062,8 +1062,16 @@ const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
 
   return (
     <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-slate-800">My Video Clips</h1>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-bold text-slate-800">My Video Clips</h1>
+        <button
+          onClick={() => setView('video-generate')}
+          className="flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-xs font-bold text-white shadow hover:bg-slate-700 transition-colors"
+        >
+          <span className="text-[14px]">+</span> New Video
+        </button>
+      </div>
+      <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {displayJobs.map((job) => {
           const jobAvatarId = job.params?.avatar_id
           const avatar = avatarList.find((a) => String(a.id) === String(jobAvatarId))
@@ -1072,19 +1080,33 @@ const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
             : '/avatars/marcus_aurelius.jpg'
 
           const jobDate = job.created_at ? new Date(job.created_at) : new Date()
+          const relativeTime = (() => {
+            const diff = Date.now() - jobDate.getTime()
+            const mins = Math.floor(diff / 60000)
+            const hrs = Math.floor(diff / 3600000)
+            const days = Math.floor(diff / 86400000)
+            const months = Math.floor(days / 30)
+            if (months > 0) return `${months} month${months > 1 ? 's' : ''} ago`
+            if (days > 0) return `${days} day${days > 1 ? 's' : ''} ago`
+            if (hrs > 0) return `${hrs}h ago`
+            if (mins > 0) return `${mins}m ago`
+            return 'Just now'
+          })()
+
+          const videoTitle = job.params?.text
+            ? job.params.text.slice(0, 42) + (job.params.text.length > 42 ? '…' : '')
+            : `TalkFlow Video ${String(job.job_id || job.id).slice(0, 8)}`
 
           return (
             <VideoClipCard
               key={job.job_id || job.id}
               onClick={() => job.status === 'completed' && setSelectedVideo(job)}
+              onDeleteJob={onDeleteJob}
               video={{
                 id: job.job_id || job.id,
-                title:
-                  job.status === 'completed'
-                    ? `TalkFlow Video ${String(job.job_id || job.id).slice(0, 8)}`
-                    : `Job ${job.status}`,
-                duration: '0:10',
-                time: jobDate.toLocaleDateString(),
+                title: videoTitle,
+                duration: '0:11',
+                time: relativeTime,
                 image: jobAvatarId === 'custom' ? '/avatars/monk.jpg' : avatarImage,
                 url: job.result_url,
                 status: job.status,
@@ -1093,17 +1115,6 @@ const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
             />
           )
         })}
-        <div
-          onClick={() => setView('video-generate')}
-          className="glass-card group flex min-h-[220px] cursor-pointer flex-col items-center justify-center border-2 border-dashed border-slate-200 bg-white/40 p-6 transition-all hover:bg-blue-50/50"
-        >
-          <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 group-hover:border-blue-300 group-hover:text-blue-600">
-            +
-          </div>
-          <p className="text-xs font-bold text-slate-500 group-hover:text-blue-600">
-            Generate Video Clip
-          </p>
-        </div>
       </div>
 
       <VideoPlayerModal
@@ -1116,54 +1127,141 @@ const MyVideoClipsView = ({ setView, jobs, avatarList }) => {
   )
 }
 
-const VideoClipCard = ({ video, onClick }) => (
-  <div
-    onClick={onClick}
-    className={`glass-card group cursor-pointer overflow-hidden bg-white/70 shadow-sm transition-all hover:scale-[1.02] ${video.status === 'failed' ? 'opacity-60 grayscale' : ''}`}
-  >
-    <div className="relative aspect-video overflow-hidden bg-slate-100">
-      <img
-        src={video.image.startsWith('http') ? video.image : `http://localhost:8000${video.image}`}
-        alt={video.title}
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-      />
-      <div className="absolute right-2 bottom-2 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-bold text-white">
-        {' '}
-        {video.duration}{' '}
-      </div>
-      {video.status === 'completed' && (
-        <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition-opacity group-hover:opacity-100">
-          <span className="rounded-full bg-white/90 p-2 text-blue-600 shadow-lg">▶️</span>
-        </div>
-      )}
-      {video.status === 'processing' && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-[1px]">
-          <div className="mb-2 h-6 w-6 animate-spin rounded-full border-2 border-white/30 border-t-white"></div>
-          <div className="w-2/3 overflow-hidden rounded-full bg-white/20 h-1.5 shadow-inner">
-            <div
-              className="h-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.8)] transition-all duration-500 ease-out"
-              style={{ width: `${video.progress}%` }}
-            ></div>
+
+const VideoClipCard = ({ video, onClick, onDeleteJob }) => {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const menuItems = [
+    { icon: '🖊️', label: 'Rename', action: () => { setMenuOpen(false) } },
+    { icon: '📁', label: 'Move', action: () => { setMenuOpen(false) } },
+    { divider: true },
+    {
+      icon: '🗑️', label: 'Trash', danger: true,
+      action: () => {
+        setMenuOpen(false)
+        if (onDeleteJob) onDeleteJob(video.id)
+      }
+    },
+  ]
+
+  return (
+    <div className={`group relative cursor-pointer transition-all duration-200 ${video.status === 'failed' ? 'opacity-50' : 'hover:-translate-y-0.5'}`}>
+      {/* Thumbnail */}
+      <div
+        onClick={onClick}
+        className="relative w-full overflow-hidden rounded-2xl bg-slate-900"
+        style={{ aspectRatio: '16/9' }}
+      >
+        <img
+          src={video.image && video.image.startsWith('http') ? video.image : `http://localhost:8000${video.image}`}
+          alt={video.title}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          onError={(e) => { e.target.style.display = 'none' }}
+        />
+        {/* Dark gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10 pointer-events-none" />
+
+        {/* Status badge – top left */}
+        {video.status !== 'completed' && (
+          <div className={`absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide
+            ${video.status === 'failed' ? 'bg-red-600 text-white'
+              : video.status === 'processing' || video.status === 'queued' ? 'bg-amber-500 text-white'
+                : 'bg-white/20 text-white backdrop-blur-sm'}`}>
+            {video.status === 'processing' ? 'Processing' : video.status === 'queued' ? 'Queued' : 'Draft'}
           </div>
-          <span className="mt-2 text-[10px] font-bold tracking-widest text-white uppercase drop-shadow-md">
-            {video.progress}%
-          </span>
-        </div>
-      )}
-    </div>
-    <div className="space-y-1 p-3">
-      <h3 className="truncate text-[12px] leading-snug font-bold text-slate-800">{video.title}</h3>
-      <div className="flex items-center justify-between">
-        <p className="text-[10px] font-medium tracking-tighter text-slate-400 uppercase">
-          {video.time}
-        </p>
-        {video.status === 'failed' && (
-          <span className="text-[9px] font-bold text-red-500 uppercase">Failed</span>
+        )}
+        {video.status === 'completed' && (
+          <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-white/15 text-white backdrop-blur-sm">
+            Draft
+          </div>
+        )}
+
+        {/* 3-dot menu button – top right */}
+        <button
+          onClick={(e) => { e.stopPropagation(); setMenuOpen((p) => !p) }}
+          className="absolute top-2 right-2 w-7 h-7 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60 z-20"
+        >
+          <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 text-white">
+            <circle cx="12" cy="5" r="1.5" /><circle cx="12" cy="12" r="1.5" /><circle cx="12" cy="19" r="1.5" />
+          </svg>
+        </button>
+
+        {/* Play overlay on hover */}
+        {video.status === 'completed' && (
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+            <div className="w-11 h-11 rounded-full bg-white/90 flex items-center justify-center shadow-xl">
+              <svg className="w-5 h-5 text-slate-900 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+            </div>
+          </div>
+        )}
+
+        {/* Processing spinner */}
+        {(video.status === 'processing' || video.status === 'queued') && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/50 backdrop-blur-[2px]">
+            <div className="mb-3 h-7 w-7 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+            {video.status === 'processing' && (
+              <div className="w-2/3">
+                <div className="h-1 w-full overflow-hidden rounded-full bg-white/20">
+                  <div className="h-full bg-white transition-all duration-500" style={{ width: `${video.progress}%` }} />
+                </div>
+                <p className="mt-1.5 text-center text-[10px] font-bold text-white/80">{video.progress}%</p>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Duration – bottom right */}
+        {video.duration && video.status === 'completed' && (
+          <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded-md bg-black/60 px-1.5 py-0.5 text-[10px] font-bold text-white">
+            <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" /><path d="M8 21h8M12 17v4" /></svg>
+            {video.duration}
+          </div>
         )}
       </div>
+
+      {/* Dropdown context menu */}
+      {menuOpen && (
+        <>
+          {/* Backdrop to close */}
+          <div
+            className="fixed inset-0 z-30"
+            onClick={() => setMenuOpen(false)}
+          />
+          <div className="absolute top-10 right-2 z-40 w-52 rounded-2xl bg-white shadow-2xl border border-slate-100/80 py-1">
+            {menuItems.map((item, i) =>
+              item.divider
+                ? <div key={i} className="my-1 border-t border-slate-100" />
+                : (
+                  <button
+                    key={i}
+                    onClick={(e) => { e.stopPropagation(); item.action() }}
+                    className={`w-full flex items-center gap-3 px-4 py-2 text-[13px] font-medium transition-colors text-left
+                      ${item.danger ? 'text-red-500 hover:bg-red-50' : 'text-slate-700 hover:bg-slate-50/80'}`}
+                  >
+                    <span className="text-[14px] w-5 text-center">{item.icon}</span>
+                    {item.label}
+                  </button>
+                )
+            )}
+          </div>
+        </>
+      )}
+
+      {/* Meta below thumbnail */}
+      <div className="mt-2.5 px-0.5" onClick={onClick}>
+        <h3 className="text-[12.5px] font-semibold leading-snug text-slate-800 line-clamp-2 mb-1">{video.title}</h3>
+        <div className="flex items-center gap-1.5 text-[11px] text-slate-400 font-medium">
+          <span>{video.time}</span>
+          <span className="text-slate-300">·</span>
+          <span>Avatar Video</span>
+        </div>
+      </div>
     </div>
-  </div>
-)
+  )
+}
+
 
 const GenerateAvatarView = ({
   script,
@@ -1178,6 +1276,21 @@ const GenerateAvatarView = ({
   const [file, setFile] = useState(null)
   const [isGenerating, setIsGenerating] = useState(false)
   const [status, setStatus] = useState(null) // 'queued', 'error', 'success'
+  const [aspectRatio, setAspectRatio] = useState('16:9') // '16:9' or '9:16'
+
+  const clonedVoices = avatarList.filter((a) => a.voice_url)
+  const defaultOptionId = 'voice_en_male_01'
+  const [selectedVoiceId, setSelectedVoiceId] = useState(defaultOptionId)
+
+  // Determine initial selection
+  useEffect(() => {
+    const selected = avatarList.find((a) => String(a.id) === String(selectedAvatarId))
+    if (selected && selected.voice_url) {
+      setSelectedVoiceId(selected.id)
+    } else {
+      setSelectedVoiceId(defaultOptionId)
+    }
+  }, [selectedAvatarId, avatarList])
 
   const selectedAvatar =
     avatarList.find((a) => String(a.id) === String(selectedAvatarId)) || avatarList[0]
@@ -1214,8 +1327,8 @@ const GenerateAvatarView = ({
         formData.append('avatar_id', selectedAvatarId)
         formData.append('avatar_image', currentFile)
         formData.append('text', script)
-        // If it's a preset avatar, we should ideally tell the backend which one,
-        // but for now, the backend stubs just use the uploaded image.
+        formData.append('voice_id', selectedVoiceId)
+        formData.append('aspect_ratio', aspectRatio)
         result = await videoApi.generateTextToVideo(formData)
       } else if (method === 'audio') {
         formData.append('avatar_id', selectedAvatarId)
@@ -1420,59 +1533,185 @@ const GenerateAvatarView = ({
           </div>
         </div>
 
-        <div className="glass-card sticky top-8 bg-white/60 p-8">
-          <div className="group relative aspect-video overflow-hidden rounded-3xl bg-black shadow-2xl">
-            <img
-              src={
-                selectedAvatar?.image_url || selectedAvatar?.image || '/avatars/marcus_aurelius.jpg'
-              }
-              alt="Preview"
-              className="h-full w-full object-cover opacity-80"
-            />
-            {(isGenerating || status === 'queued') && (
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 text-white backdrop-blur-sm">
-                <div className="mb-4 h-12 w-12 animate-spin rounded-full border-4 border-blue-400 border-t-white"></div>
-                <p className="animate-pulse text-lg font-bold">Initializing IA Model...</p>
-                <p className="mt-2 text-xs text-white/70">Uploading file and queuing task</p>
+        <div className="glass-card sticky top-8 bg-white/60 p-6 flex flex-col gap-6">
+          <div className="flex items-center justify-between border-b border-slate-200/60 pb-4">
+            <h2 className="text-lg font-bold text-slate-800">Avatar & Voice <span className="text-slate-400 font-medium">(Scene 1)</span></h2>
+            <button className="text-slate-400 hover:text-slate-600 transition-colors">
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+          </div>
+
+          <div className="space-y-6 flex-1">
+            {/* Avatar Section */}
+            <div>
+              <h4 className="text-[11px] font-bold text-slate-500 mb-2 uppercase tracking-wider">Avatar</h4>
+              <div className="flex items-center justify-between bg-white/80 rounded-2xl p-2.5 border border-slate-200/60 shadow-sm transition-all hover:shadow-md">
+                <div className="flex items-center gap-4">
+                  <div className="relative w-12 h-12 rounded-xl overflow-hidden shadow-sm">
+                    <img src={selectedAvatar?.image_url || selectedAvatar?.image || '/avatars/marcus_aurelius.jpg'} className="w-full h-full object-cover" alt="Avatar" />
+                    {(isGenerating || status === 'queued') && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/40 backdrop-blur-[1px]">
+                        <div className="h-4 w-4 animate-spin rounded-full border-2 border-white/80 border-t-transparent"></div>
+                      </div>
+                    )}
+                  </div>
+                  <div>
+                    <p className="text-sm font-bold text-slate-800 uppercase tracking-tight">{selectedAvatar?.name || 'Awaiting Input'}</p>
+                    <p className="text-[10px] font-bold text-slate-400 tracking-wider uppercase">{selectedAvatar?.type || 'Standard'}</p>
+                  </div>
+                </div>
+                <button className="p-2 mr-1 text-slate-400 hover:text-blue-500 hover:bg-blue-50 rounded-xl transition-all">
+                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+                </button>
               </div>
-            )}
-          </div>
-          <div className="mt-6 space-y-4">
-            <div className="flex items-center justify-between">
-              <h3 className="font-bold text-slate-800">Script Content</h3>
-              <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
-                {script.length} characters
-              </span>
             </div>
-            <textarea
-              value={script}
-              onChange={(e) => setScript(e.target.value)}
-              placeholder="Enter the text you want the avatar to speak..."
-              className="h-32 w-full resize-none rounded-2xl border border-slate-200 bg-white/40 p-4 text-sm transition-all outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100"
-            />
-          </div>
-          <div className="mt-8 flex items-center justify-between">
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-bold tracking-widest text-white/70 uppercase">
-                  {selectedAvatar?.name || 'Awaiting Input'}
+
+            {/* Voice Section */}
+            <div>
+              <h4 className="text-[11px] font-bold text-slate-500 mb-2 uppercase tracking-wider">Voice</h4>
+              <div className="relative group">
+                <select
+                  value={selectedVoiceId}
+                  onChange={(e) => setSelectedVoiceId(e.target.value)}
+                  className="w-full appearance-none bg-blue-50/40 border border-blue-100/50 rounded-2xl p-3.5 pl-14 pr-10 text-sm font-bold text-slate-700 outline-none transition-all hover:bg-blue-50 focus:border-blue-300 focus:bg-white focus:ring-4 focus:ring-blue-100/50 cursor-pointer shadow-sm"
+                >
+                  <option value="voice_en_male_01">Default Voice</option>
+                  {clonedVoices.map((voice) => (
+                    <option key={voice.id} value={voice.id}>
+                      {voice.name}
+                    </option>
+                  ))}
+                </select>
+                <div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-500 shadow-sm group-hover:scale-105 group-hover:bg-blue-500 group-hover:text-white transition-all">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-0.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                  </svg>
+                </div>
+                <div className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 group-hover:text-blue-500 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-[18px] w-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            {/* Motion Engine */}
+            <div>
+              <h4 className="text-[11px] font-bold text-slate-500 mb-2 uppercase tracking-wider">Motion Engine</h4>
+              <div className="flex gap-2">
+                <div className="flex-1 bg-slate-50/80 rounded-2xl border border-slate-200/60 p-3 flex items-center gap-3">
+                  <span className="w-7 h-7 rounded-full bg-slate-200/80 flex items-center justify-center text-[10px] font-extrabold text-slate-600 shadow-inner">IV</span>
+                  <span className="text-sm font-bold text-slate-700">Avatar IV</span>
+                  <svg className="w-4 h-4 text-slate-400 ml-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7 7" /></svg>
+                </div>
+                <button className="w-[52px] border border-slate-200/60 rounded-2xl flex items-center justify-center bg-white hover:bg-slate-50 transition-colors shadow-sm">
+                  <svg className="w-[22px] h-[22px] text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" /></svg>
+                </button>
+              </div>
+            </div>
+
+            {/* Avatar Background */}
+            <div>
+              <h4 className="text-[11px] font-bold text-slate-500 mb-2 uppercase tracking-wider">Avatar Background</h4>
+              <div className="grid grid-cols-3 gap-3">
+                <button className="flex flex-col items-center justify-center bg-white border border-transparent shadow-[0_0_0_1.5px_#3b82f6] rounded-2xl p-3 text-blue-500 transition-all hover:shadow-[0_0_0_2px_#2563eb]">
+                  <div className="w-8 h-8 rounded-full border-2 border-dashed border-blue-400 flex items-center justify-center mb-1 bg-blue-50">
+                    <svg className="w-4 h-4 skew-x-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  </div>
+                  <span className="text-[10px] font-bold text-slate-700">Customize</span>
+                </button>
+                <button className="flex flex-col items-center justify-center bg-white border border-slate-200/80 rounded-2xl p-3 text-slate-400 transition-all hover:bg-slate-50">
+                  <div className="w-8 h-8 rounded-[10px] bg-slate-100 flex items-center justify-center mb-1 text-slate-500">
+                    <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11H7v-2h10v2z" /></svg>
+                  </div>
+                  <span className="text-[10px] font-bold text-slate-600">Remove</span>
+                </button>
+                <button className="flex flex-col items-center justify-center bg-blue-50/50 border border-slate-200/60 rounded-2xl p-3 text-blue-400 transition-all hover:bg-blue-50">
+                  <div className="w-8 h-8 rounded-[10px] bg-blue-100 flex items-center justify-center mb-1">
+                    <svg className="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" /></svg>
+                  </div>
+                  <span className="text-[10px] font-bold text-slate-600">Color</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Layout */}
+            <div>
+              <h4 className="text-[11px] font-bold text-slate-500 mb-2 uppercase tracking-wider">Layout</h4>
+              <div className="flex gap-2">
+                <button className="flex-1 bg-cyan-50/70 text-cyan-600 border border-cyan-200/80 font-bold rounded-xl py-2.5 text-xs transition-colors hover:bg-cyan-100">Original</button>
+                <button className="flex-1 bg-white border border-slate-200/80 text-slate-600 font-bold rounded-xl py-2.5 text-xs transition-colors hover:bg-slate-50">Circle</button>
+              </div>
+            </div>
+
+            {/* Aspect Ratio */}
+            <div>
+              <h4 className="text-[11px] font-bold text-slate-500 mb-2 uppercase tracking-wider flex items-center justify-between">
+                <span>Aspect Ratio</span>
+                <span className={`text-[9px] font-extrabold px-2 py-0.5 rounded-full ${aspectRatio === '9:16' ? 'bg-violet-100 text-violet-600' : 'bg-blue-100 text-blue-600'}`}>
+                  {aspectRatio}
                 </span>
-                <span className="h-2 w-2 rounded-full bg-blue-400"></span>
+              </h4>
+              <div className="grid grid-cols-2 gap-2">
+                {/* 16:9 Landscape */}
+                <button
+                  onClick={() => setAspectRatio('16:9')}
+                  className={`relative flex flex-col items-center justify-center gap-2 rounded-2xl p-3.5 border-2 transition-all ${aspectRatio === '16:9' ? 'border-blue-500 bg-blue-50 shadow-md shadow-blue-100' : 'border-slate-200/80 bg-white hover:bg-slate-50'}`}
+                >
+                  <div className={`w-11 h-[26px] rounded-[5px] border-2 flex items-center justify-center transition-colors ${aspectRatio === '16:9' ? 'border-blue-500 bg-blue-100' : 'border-slate-300 bg-slate-100'}`}>
+                    <div className={`w-3 h-1.5 rounded-sm transition-colors ${aspectRatio === '16:9' ? 'bg-blue-500' : 'bg-slate-400'}`}></div>
+                  </div>
+                  <span className={`text-[10px] font-extrabold uppercase tracking-wide ${aspectRatio === '16:9' ? 'text-blue-600' : 'text-slate-500'}`}>16:9</span>
+                  <span className={`text-[9px] font-medium ${aspectRatio === '16:9' ? 'text-blue-400' : 'text-slate-400'}`}>Landscape</span>
+                  {aspectRatio === '16:9' && (
+                    <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-blue-500 shadow-sm shadow-blue-300"></span>
+                  )}
+                </button>
+
+                {/* 9:16 Portrait */}
+                <button
+                  onClick={() => setAspectRatio('9:16')}
+                  className={`relative flex flex-col items-center justify-center gap-2 rounded-2xl p-3.5 border-2 transition-all ${aspectRatio === '9:16' ? 'border-violet-500 bg-violet-50 shadow-md shadow-violet-100' : 'border-slate-200/80 bg-white hover:bg-slate-50'}`}
+                >
+                  <div className={`w-[26px] h-11 rounded-[5px] border-2 flex items-center justify-center transition-colors ${aspectRatio === '9:16' ? 'border-violet-500 bg-violet-100' : 'border-slate-300 bg-slate-100'}`}>
+                    <div className={`w-1.5 h-3 rounded-sm transition-colors ${aspectRatio === '9:16' ? 'bg-violet-500' : 'bg-slate-400'}`}></div>
+                  </div>
+                  <span className={`text-[10px] font-extrabold uppercase tracking-wide ${aspectRatio === '9:16' ? 'text-violet-600' : 'text-slate-500'}`}>9:16</span>
+                  <span className={`text-[9px] font-medium ${aspectRatio === '9:16' ? 'text-violet-400' : 'text-slate-400'}`}>Portrait</span>
+                  {aspectRatio === '9:16' && (
+                    <span className="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-violet-500 shadow-sm shadow-violet-300"></span>
+                  )}
+                </button>
               </div>
             </div>
+
+            {/* Script Textarea integration */}
+            <div>
+              <h4 className="text-[11px] font-bold text-slate-500 mb-2 uppercase tracking-wider flex justify-between items-center">
+                <span>Script Content</span>
+                <span className="text-[9px] text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full">{script.length} char</span>
+              </h4>
+              <textarea
+                value={script}
+                onChange={(e) => setScript(e.target.value)}
+                placeholder="Enter the text you want the avatar to speak..."
+                className="min-h-[100px] w-full resize-y rounded-2xl border border-slate-200/80 bg-white p-4 text-sm font-medium text-slate-700 transition-all outline-none focus:border-blue-400 focus:ring-4 focus:ring-blue-100/50 shadow-inner"
+              />
+            </div>
+
           </div>
-          <div className="space-y-1">
-            <h3 className="font-bold text-slate-800">Live Preview</h3>
-            <p className="text-xs font-bold tracking-widest text-slate-400 uppercase">
-              Selected: {selectedAvatar?.name || method.toUpperCase()}
-            </p>
-          </div>
+
           <button
             disabled={isGenerating || (!file && !selectedAvatarId) || !script.trim()}
             onClick={handleGenerate}
-            className={`btn-primary flex items-center gap-3 rounded-2xl px-8 py-3 shadow-lg transition-all ${isGenerating || (!file && !selectedAvatarId) || !script.trim() ? 'cursor-not-allowed opacity-50 shadow-none grayscale' : 'shadow-blue-500/20 active:scale-95'}`}
+            className={`w-full font-bold flex items-center justify-center gap-2 rounded-2xl px-8 py-3.5 shadow-lg transition-all ${isGenerating || (!file && !selectedAvatarId) || !script.trim() ? 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none' : 'bg-slate-900 text-white hover:bg-slate-800 hover:shadow-xl active:scale-95'}`}
           >
-            {isGenerating ? 'Deploying Model...' : 'Generate Avatar'}
+            {isGenerating ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                Deploying Model...
+              </>
+            ) : 'Generate'}
           </button>
         </div>
       </div>
@@ -1589,6 +1828,19 @@ function App() {
     }
   }
 
+  const handleDeleteJob = async (jobId) => {
+    // Optimistically remove from state immediately
+    setJobs((prev) => prev.filter((j) => (j.job_id || j.id) !== jobId))
+    try {
+      await videoApi.deleteJob(jobId)
+    } catch (error) {
+      console.error('Failed to delete job:', error)
+      // Revert by re-fetching
+      const data = await videoApi.listJobs()
+      setJobs(data)
+    }
+  }
+
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -1686,7 +1938,7 @@ function App() {
             <VideoClipGenerateView initialPrompt={pendingVideoPrompt} />
           )}
           {view === 'video-library' && (
-            <MyVideoClipsView setView={setView} jobs={jobs} avatarList={avatars} />
+            <MyVideoClipsView setView={setView} jobs={jobs} avatarList={avatars} onDeleteJob={handleDeleteJob} />
           )}
           {view === 'prompts' && <PromptGalleryView onUse={handleUsePrompt} />}
         </div>

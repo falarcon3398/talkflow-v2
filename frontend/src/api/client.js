@@ -64,5 +64,12 @@ export const videoApi = {
       body: formData
     })
     return response.json()
+  },
+
+  async deleteJob(jobId) {
+    const response = await fetch(`${API_BASE}/jobs/${jobId}`, {
+      method: 'DELETE'
+    })
+    return response.json()
   }
 }

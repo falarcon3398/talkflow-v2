@@ -4,15 +4,16 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-def run_text_to_video_task(job_id, avatar_image_path, text, voice_id, resolution, speaker_wav_path=None):
+def run_text_to_video_task(job_id, avatar_image_path, text, voice_id, resolution, speaker_wav_path=None, aspect_ratio="16:9"):
     print(f"\n[BACKGROUND] Starting text-to-video for job {job_id}")
     logger.info(f"Starting text-to-video task for job {job_id}")
     try:
-        run_text_to_video_pipeline(job_id, avatar_image_path, text, voice_id, resolution, speaker_wav_path)
+        run_text_to_video_pipeline(job_id, avatar_image_path, text, voice_id, resolution, speaker_wav_path, aspect_ratio)
         print(f"[BACKGROUND] Completed job {job_id}")
     except Exception as e:
         print(f"[BACKGROUND] FAILED job {job_id}: {str(e)}")
         logger.error(f"Task failed: {str(e)}")
+
 
 def run_audio_to_video_task(job_id, avatar_image_path, audio_file_path, enable_enhance):
     print(f"\n[BACKGROUND] Starting audio-to-video for job {job_id}")

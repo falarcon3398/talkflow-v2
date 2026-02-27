@@ -25,6 +25,7 @@ async def create_text_to_video(
     text: str = Form(..., max_length=500),
     voice_id: str = Form(default="voice_en_male_01"),
     output_resolution: str = Form(default="720p"),
+    aspect_ratio: str = Form(default="16:9"),
     db: Session = Depends(get_db)
 ):
     # Determine the avatar image path
@@ -62,13 +63,28 @@ async def create_text_to_video(
         
     # Determine if we have a cloned voice
     speaker_wav_path = None
-    if avatar_id:
+    
+    # Check if a custom voice_id was passed (which would be an Avatar ID)
+    if voice_id and voice_id != "voice_en_male_01":
+        voice_avatar = db.query(Avatar).filter(Avatar.id == voice_id).first()
+        if voice_avatar and voice_avatar.voice_url:
+            filename = voice_avatar.voice_url.split("/")[-1]
+            speaker_wav_path = Path(settings.UPLOAD_DIR) / "voices" / filename
+            if not speaker_wav_path.exists():
+                speaker_wav_path = None
+
+    # Fallback to the avatar's own voice
+    if not speaker_wav_path and avatar_id:
         avatar = db.query(Avatar).filter(Avatar.id == avatar_id).first()
         if avatar and avatar.voice_url:
             filename = avatar.voice_url.split("/")[-1]
             speaker_wav_path = Path(settings.UPLOAD_DIR) / "voices" / filename
             if not speaker_wav_path.exists():
                 speaker_wav_path = None
+
+    # Validate aspect_ratio
+    if aspect_ratio not in ("16:9", "9:16"):
+        aspect_ratio = "16:9"
 
     # Create job entry
     job = Job(
@@ -79,6 +95,7 @@ async def create_text_to_video(
             "text": text,
             "voice_id": voice_id,
             "resolution": output_resolution,
+            "aspect_ratio": aspect_ratio,
             "avatar_id": avatar_id,
             "avatar_path": str(avatar_path.resolve()),
             "speaker_wav_path": str(speaker_wav_path.resolve()) if speaker_wav_path else None
@@ -91,7 +108,8 @@ async def create_text_to_video(
     background_tasks.add_task(
         run_text_to_video_task,
         job_id, str(avatar_path.resolve()), text, voice_id, output_resolution,
-        str(speaker_wav_path.resolve()) if speaker_wav_path else None
+        str(speaker_wav_path.resolve()) if speaker_wav_path else None,
+        aspect_ratio
     )
     
     job.task_id = job_id

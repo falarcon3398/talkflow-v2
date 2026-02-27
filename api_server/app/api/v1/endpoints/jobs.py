@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, Depends
 from sqlalchemy.orm import Session
 from fastapi.responses import FileResponse
 from pathlib import Path
+import os
 
 from app.database import get_db
 from app.models.job import Job
@@ -23,12 +24,22 @@ async def list_jobs(db: Session = Depends(get_db)):
         "updated_at": job.updated_at
     } for job in jobs]
 
+@router.get("/{job_id}/download")
+async def download_video(job_id: str):
+    video_path = Path(settings.OUTPUT_DIR) / f"{job_id}.mp4"
+    if not video_path.exists():
+        raise HTTPException(404, "Video not found or still processing")
+    return FileResponse(
+        video_path,
+        media_type="video/mp4",
+        filename=f"talkflow_{job_id}.mp4"
+    )
+
 @router.get("/{job_id}")
 async def get_job_status(job_id: str, db: Session = Depends(get_db)):
     job = db.query(Job).filter(Job.id == job_id).first()
     if not job:
         raise HTTPException(404, "Job not found")
-    
     return {
         "job_id": job.id,
         "status": job.status,
@@ -40,16 +51,20 @@ async def get_job_status(job_id: str, db: Session = Depends(get_db)):
         "updated_at": job.updated_at
     }
 
-@router.get("/{video_id}/download")
-async def download_video(video_id: str):
-    # For MVP, we look in the local output directory
-    video_path = Path(settings.OUTPUT_DIR) / f"{video_id}.mp4"
-    
-    if not video_path.exists():
-        raise HTTPException(404, "Video not found or still processing")
-    
-    return FileResponse(
-        video_path,
-        media_type="video/mp4",
-        filename=f"talkflow_{video_id}.mp4"
-    )
+@router.delete("/{job_id}")
+async def delete_job(job_id: str, db: Session = Depends(get_db)):
+    job = db.query(Job).filter(Job.id == job_id).first()
+    if not job:
+        raise HTTPException(404, "Job not found")
+
+    # Delete output video file if it exists
+    video_path = Path(settings.OUTPUT_DIR) / f"{job_id}.mp4"
+    if video_path.exists():
+        try:
+            os.remove(video_path)
+        except Exception:
+            pass  # best-effort
+
+    db.delete(job)
+    db.commit()
+    return {"deleted": True, "job_id": job_id}

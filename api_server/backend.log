@@ -1202,3 +1202,2898 @@ INFO:     127.0.0.1:63739 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
 INFO:     127.0.0.1:63743 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
 INFO:     127.0.0.1:63747 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
 INFO:     127.0.0.1:63756 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63764 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63772 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63782 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63790 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63794 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63798 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63802 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63814 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63828 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63844 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63854 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63866 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63870 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63882 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63883 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63890 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63895 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63899 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63903 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63907 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63914 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63921 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63926 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63931 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63935 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63942 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63952 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63954 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63961 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63965 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63969 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63974 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63981 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63994 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64001 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64007 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64012 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64017 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64022 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64029 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64036 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64041 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64047 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64049 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64285 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64286 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64292 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64294 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64298 - "DELETE /api/v1/avatars/fbd1f39c-794b-4326-8092-71bd15531efc HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64302 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64308 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64310 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64315 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64319 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64329 - "POST /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64333 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64337 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64341 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64347 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64349 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64356 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64360 - "POST /api/v1/videos/audio-to-video HTTP/1.1" 200 OK
+
+[BACKGROUND] Starting audio-to-video for job ced7404f-4203-44c1-822f-c28a540300a5
+INFO:     127.0.0.1:64366 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64368 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64370 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64378 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64380 - "GET /api/v1/jobs/abdf98e8-ea54-4895-8e67-d6a1dd0529d1/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:64384 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64390 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64401 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64403 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64407 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64409 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64415 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64417 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64424 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64435 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64443 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64451 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64455 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64462 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64470 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64479 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64485 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+STUB: Enhancement skipped for ced7404f-4203-44c1-822f-c28a540300a5, using outputs/ced7404f-4203-44c1-822f-c28a540300a5_sadtalker.mp4
+[BACKGROUND] Completed job ced7404f-4203-44c1-822f-c28a540300a5
+INFO:     127.0.0.1:49896 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49897 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49902 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49906 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49912 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49914 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49918 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49929 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49928 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49930 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49936 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49943 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49947 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49951 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49955 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49961 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49969 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49975 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49980 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49986 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49991 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49997 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50003 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50008 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50013 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50017 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50021 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50027 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50033 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50039 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50051 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50053 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50058 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50059 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50062 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50063 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50067 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50071 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50079 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50085 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50090 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50098 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50104 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50114 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50119 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     192.168.1.1:35506 - "GET / HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52582 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52583 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52589 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52591 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52597 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52599 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52606 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52609 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52611 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52613 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52607 - "GET /avatars/marcus_aurelius.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52607 - "GET /api/v1/jobs/ced7404f-4203-44c1-822f-c28a540300a5/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:52617 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52619 - "GET /api/v1/jobs/2c8924b5-e809-47d2-840c-055523bda3c6/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:52621 - "GET /api/v1/jobs/2c8924b5-e809-47d2-840c-055523bda3c6/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:52621 - "GET /api/v1/jobs/2c8924b5-e809-47d2-840c-055523bda3c6/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:52624 - "GET /api/v1/jobs/63aee067-12d4-4257-b640-f8c013a8d6e7/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:52628 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52630 - "GET /api/v1/jobs/63aee067-12d4-4257-b640-f8c013a8d6e7/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:52630 - "GET /api/v1/jobs/63aee067-12d4-4257-b640-f8c013a8d6e7/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:52637 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52638 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52644 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52646 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52652 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52654 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52670 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52671 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52677 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52682 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52688 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52690 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52696 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52698 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52703 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52707 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52798 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52808 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52812 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52816 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52896 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52908 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52933 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52946 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52965 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52984 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53004 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53017 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53028 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53039 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53047 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53058 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53071 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53095 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53107 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53118 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53221 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53237 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53253 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53263 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53272 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53282 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53300 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53319 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53328 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53337 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53349 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53361 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53373 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53382 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53390 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53401 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53417 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53428 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53438 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53450 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53460 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53473 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53488 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53496 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53505 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53515 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53527 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53544 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53553 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53562 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53578 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53582 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     Will watch for changes in these directories: ['/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [13816] using StatReload
+INFO:     Started server process [13819]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:55283 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55286 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55288 - "POST /api/v1/videos/text-to-video HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/Volumes/FREDDY\\ FILES/ANTIGRAVITY/1001-VIDEO\\ AVATAR/data/uploads/5674d397-a2af-423c-8f0f-cb994b6f2216'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/Volumes/FREDDY\\ FILES/ANTIGRAVITY/1001-VIDEO\\ AVATAR/data/uploads'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/Volumes/FREDDY\\ FILES/ANTIGRAVITY/1001-VIDEO\\ AVATAR/data'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/Volumes/FREDDY\\ FILES/ANTIGRAVITY/1001-VIDEO\\ AVATAR'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/Volumes/FREDDY\\ FILES/ANTIGRAVITY'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/fastapi/applications.py", line 1134, in __call__
+    await super().__call__(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/applications.py", line 107, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+    raise exc
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 87, in __call__
+    await self.app(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 119, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 105, in app
+    response = await f(request)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 425, in app
+    raw_response = await run_endpoint_function(
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 313, in run_endpoint_function
+    return await dependant.call(**values)
+  File "/Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/app/api/v1/endpoints/videos.py", line 33, in create_text_to_video
+    upload_dir.mkdir(parents=True, exist_ok=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1179, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1179, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1179, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  [Previous line repeated 2 more times]
+  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/pathlib.py", line 1175, in mkdir
+    self._accessor.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/Volumes/FREDDY\\ FILES'
+INFO:     127.0.0.1:55291 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55295 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55298 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55305 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55309 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55319 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55325 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55334 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     Started server process [16203]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:55364 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55368 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55370 - "POST /api/v1/videos/text-to-video HTTP/1.1" 200 OK
+
+[BACKGROUND] Starting text-to-video for job c4607294-5f0d-4c70-8764-73a3eaa91ace
+CLONING: Using speaker_wav_path: /Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/uploads/voices/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.MP3
+ > tts_models/multilingual/multi-dataset/xtts_v2 is already downloaded.
+INFO:     127.0.0.1:55376 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55379 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+ > Using model: xtts
+INFO:     127.0.0.1:55385 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55388 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55396 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55397 - "GET /api/v1/jobs/c4607294-5f0d-4c70-8764-73a3eaa91ace HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55400 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+[W NNPACK.cpp:64] Could not initialize NNPACK! Reason: Unsupported hardware.
+ > Text splitted to sentences.
+['Hello this is a test']
+INFO:     127.0.0.1:55403 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+ > Processing time: 11.493782997131348
+ > Real-time factor: 5.855774378159571
+INFO:     127.0.0.1:55411 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55415 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55420 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55422 - "GET /api/v1/jobs/c4607294-5f0d-4c70-8764-73a3eaa91ace HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55425 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55429 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55432 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55439 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55442 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55447 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55452 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55459 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55463 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55476 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55478 - "GET /api/v1/jobs/c4607294-5f0d-4c70-8764-73a3eaa91ace HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55481 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55491 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55494 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55497 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55500 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55513 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55515 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55518 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55519 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55525 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55526 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55529 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55534 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55538 - "POST /api/v1/videos/text-to-video HTTP/1.1" 200 OK
+
+[BACKGROUND] Starting text-to-video for job 9fe86e50-154f-4753-9bb1-3a9419c245e5
+CLONING: Using speaker_wav_path: /Volumes/FREDDY FILES/ANTIGRAVITY/1001-VIDEO AVATAR/api_server/uploads/voices/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.MP3
+ > Text splitted to sentences.
+['test']
+INFO:     127.0.0.1:55540 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55542 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55548 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55550 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55546 - "GET /avatars/marcus_aurelius.jpg HTTP/1.1" 304 Not Modified
+ > Processing time: 8.499949932098389
+ > Real-time factor: 6.775010699926601
+INFO:     127.0.0.1:55553 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55558 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55563 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55569 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55574 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55579 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55583 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55588 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55592 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55597 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55602 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     Started server process [18028]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+MinioClient initialized in STUB mode (local development)
+INFO:     127.0.0.1:55641 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55648 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55652 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55661 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55668 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55670 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55674 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55676 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55678 - "GET /api/v1/jobs/9fe86e50-154f-4753-9bb1-3a9419c245e5/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55682 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55685 - "GET /api/v1/jobs/c4607294-5f0d-4c70-8764-73a3eaa91ace/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55687 - "GET /api/v1/jobs/ced7404f-4203-44c1-822f-c28a540300a5/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55694 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55697 - "GET /api/v1/jobs/2c8924b5-e809-47d2-840c-055523bda3c6/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55699 - "GET /api/v1/jobs/15961b99-bfbb-4bb6-8acf-a04cd9dd4dca/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55702 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55704 - "GET /api/v1/jobs/abdf98e8-ea54-4895-8e67-d6a1dd0529d1/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55708 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55716 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55718 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55720 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55722 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55724 - "GET /api/v1/jobs/9fe86e50-154f-4753-9bb1-3a9419c245e5/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55727 - "GET /api/v1/jobs/a4eeda1a-8718-41ba-8bca-02c0bc58a976/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55734 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55736 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55739 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55744 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55750 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55751 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55755 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55757 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55761 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55763 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55768 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55770 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55774 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55776 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55781 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55783 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55786 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55793 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55794 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55799 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55804 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55806 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55810 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55814 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55818 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55822 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55827 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55829 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55831 - "GET /api/v1/jobs/9fe86e50-154f-4753-9bb1-3a9419c245e5/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55835 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55841 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55846 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55851 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55855 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55859 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55864 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55870 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55875 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55877 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55882 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55883 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55889 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55888 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55895 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55896 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55900 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55902 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55906 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55908 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55913 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55914 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55922 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55927 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55929 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55937 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55946 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55948 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55952 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55957 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55961 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55970 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55974 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55981 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55985 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55992 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55997 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56001 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56005 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56012 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56020 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56028 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56032 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56037 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56041 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56053 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56057 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56081 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56086 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56090 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56094 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56101 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56106 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56113 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56118 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56125 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56129 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56136 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56140 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56148 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56152 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56160 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56164 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56171 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56176 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56185 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56191 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56199 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56203 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56211 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56215 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56220 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56226 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56230 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56234 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56241 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56245 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56250 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56254 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56258 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56262 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56272 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56276 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56283 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56288 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56296 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56301 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56308 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56313 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56320 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56325 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56329 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56337 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56344 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56348 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56355 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56360 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56368 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56372 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56377 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56383 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56403 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56407 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56411 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56415 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56420 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56432 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56439 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56443 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56448 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56452 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56457 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56464 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56471 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56475 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56488 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56496 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56501 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56507 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56514 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56518 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56522 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56526 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56536 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56542 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56551 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56556 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56593 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56598 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56603 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56609 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56616 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56620 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56624 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56628 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56633 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56640 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56647 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56651 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56655 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56659 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56666 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56672 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56679 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56683 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56693 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56697 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56702 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56710 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56717 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56722 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56730 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56737 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56742 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56753 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56761 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56765 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56769 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56773 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56778 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56784 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56791 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56795 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56801 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56805 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56810 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56816 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56823 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56827 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56831 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56836 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56841 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56847 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56855 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56859 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56867 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56871 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56876 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56882 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56889 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56893 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56900 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56913 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56919 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56926 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56938 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56943 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56947 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56951 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56956 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56962 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56969 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56988 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56992 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56996 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57000 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57006 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57019 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57026 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57030 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57035 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57040 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57046 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57063 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57067 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57079 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57088 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57093 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57101 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57105 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57116 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57120 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57124 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57129 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57136 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57140 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57144 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57150 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57155 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57161 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57168 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57172 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57176 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57180 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57184 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57189 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57196 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57200 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57204 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57208 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57213 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57219 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57226 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57230 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57238 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57243 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57248 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57259 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57266 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57270 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57277 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57281 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57286 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57292 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57299 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57303 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57307 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57311 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57316 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57322 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57329 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57334 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57338 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57343 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57348 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57354 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57361 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57365 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57369 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57373 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57378 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57384 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57391 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57395 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57404 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57410 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57415 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57423 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57436 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57440 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57451 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57456 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57461 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57467 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57474 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57478 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57482 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57486 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57491 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57497 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57504 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57508 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57512 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57516 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57521 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57527 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57534 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57538 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57542 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57547 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57552 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57558 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57565 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57569 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57577 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57581 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57586 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57592 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57602 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57608 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57616 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57620 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57625 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57631 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57638 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57642 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57646 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57651 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57656 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57662 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57669 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57673 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57677 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57681 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57686 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57692 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57699 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57703 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57707 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57711 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57716 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57722 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57729 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57733 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57741 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57745 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57751 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57757 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57766 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57774 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57783 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57787 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57792 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57798 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57805 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57809 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57814 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57818 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57823 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57830 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57837 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57841 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57846 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57850 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57868 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57878 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57885 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57889 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57893 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57897 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57902 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57908 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57915 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57919 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57927 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57931 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57936 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57943 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57950 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57954 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57964 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57970 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57976 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57989 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57993 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57997 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58001 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58006 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58012 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58019 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58023 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58027 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58034 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58039 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58052 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58056 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58060 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58064 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58070 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58076 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58087 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58095 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58099 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58104 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58110 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58117 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58122 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58130 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58139 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58144 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58150 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58157 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58161 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58165 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58169 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58175 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58181 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58188 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58192 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58202 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58208 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58213 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58219 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58226 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58230 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58234 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58238 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58244 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58252 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58259 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58263 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58270 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58274 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58280 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58286 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58293 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58299 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58306 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58310 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58320 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58326 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58333 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58337 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58341 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58352 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58366 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58372 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58379 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58386 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58392 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58396 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58403 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58409 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58416 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58420 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58424 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58428 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58433 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58441 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58448 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58452 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58460 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58465 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58470 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58476 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58483 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58488 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58495 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58499 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58505 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58516 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58523 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58527 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58531 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58535 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58541 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58560 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58567 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58571 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58575 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58579 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58586 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58593 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58601 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58605 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58609 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58615 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58621 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58628 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58635 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58639 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58650 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58655 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58660 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58666 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58674 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58678 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58686 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58690 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58695 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58702 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58715 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58719 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58727 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58732 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58737 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58745 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58752 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58756 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58760 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58764 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58769 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58775 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58783 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58791 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58795 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58799 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58804 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58810 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58817 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58821 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58828 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58832 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58838 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58845 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58853 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58857 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58866 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58870 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58875 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58881 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58889 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58898 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58903 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58907 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58912 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58918 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58925 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58930 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58934 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58939 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58944 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58951 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58959 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58963 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58968 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58972 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58995 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59027 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59038 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59042 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59066 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59075 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59090 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59097 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59101 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59111 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59116 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59121 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59128 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59137 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59141 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59145 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59149 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59154 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59160 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59168 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59181 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59185 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59189 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59194 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59200 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59207 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59266 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59295 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59310 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59337 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59355 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59373 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59395 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59403 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59407 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59417 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59423 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59431 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59437 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59446 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59457 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59617 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59671 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59697 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59736 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59749 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59753 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59759 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59773 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59787 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59791 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59796 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59804 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59808 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59815 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59823 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59827 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59831 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59839 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59844 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59849 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59855 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59860 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59867 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59871 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59875 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59882 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59895 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59899 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59903 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59907 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59911 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59918 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59925 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59929 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59933 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60000 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60005 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60021 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60033 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60037 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60041 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60045 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60049 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60073 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60090 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60104 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60125 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60130 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60139 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60192 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60199 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60208 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60215 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60227 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60236 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60244 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60254 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60259 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60263 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60269 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60304 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60317 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60322 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60330 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60351 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60356 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60364 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60373 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60389 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60398 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60406 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60425 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60434 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60444 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60449 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60454 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60463 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60467 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60473 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60484 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60502 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60566 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60571 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60604 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60609 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60621 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60627 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60639 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60643 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60647 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60656 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60667 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60675 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60754 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60764 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60768 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60773 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60782 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60786 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60790 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60794 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60798 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60803 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60812 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60816 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60820 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60828 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60832 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60837 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60846 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60850 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60857 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60861 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60866 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60871 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60884 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60888 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60892 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60902 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60906 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60910 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60918 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60923 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60927 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60931 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60936 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60943 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60952 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60956 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60964 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60968 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61027 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61034 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61057 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61071 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61075 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61115 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61121 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61131 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61135 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61142 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61146 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61151 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61156 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61169 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61174 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61178 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61182 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61191 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61196 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61206 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61210 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61214 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61218 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61222 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61227 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61236 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61240 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61244 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61248 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61252 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61257 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61266 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61270 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61274 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61282 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61286 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61291 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61302 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61306 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61314 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61318 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61322 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61327 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61336 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61340 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61344 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61349 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61353 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61363 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61372 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61376 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61380 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61384 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61388 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61393 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61403 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61487 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61496 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61502 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61507 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61513 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61524 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61528 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61536 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61544 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61548 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61553 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61562 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61566 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61574 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61578 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61582 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61587 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61597 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61601 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61605 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61609 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61614 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61619 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61634 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61638 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61670 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61678 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61684 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61690 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61699 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61739 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61754 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61758 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61762 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61768 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61798 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61806 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61810 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61818 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61822 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61827 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61836 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61840 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61850 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61855 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61863 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61868 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61877 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61881 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61885 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61889 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61895 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61900 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61910 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61919 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61923 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61928 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61932 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61937 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61946 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61950 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61955 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61959 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61965 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61970 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61979 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61983 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61987 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61996 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62000 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62005 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62015 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62019 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62028 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62032 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62036 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62041 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62050 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62054 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62058 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62062 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62066 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62071 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62080 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62084 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62093 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62097 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62101 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62106 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62116 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62120 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62125 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62130 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62138 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62148 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62295 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62351 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62357 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62383 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62428 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62460 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62466 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62480 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62556 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62585 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62592 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62621 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62628 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62635 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62671 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62715 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62738 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62758 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62762 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62787 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62794 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62816 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62841 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62852 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62856 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62862 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62866 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62874 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62879 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62890 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62895 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62899 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62932 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62958 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62975 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62987 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62992 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62999 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63004 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63014 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63020 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63029 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63034 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63038 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63043 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63062 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63120 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63201 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63239 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63259 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63266 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63273 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63281 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63295 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63299 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63303 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63309 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63318 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63350 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63397 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63402 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63410 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63437 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63441 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63465 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63476 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63483 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63520 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63529 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63559 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63595 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63603 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63608 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63616 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63621 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63627 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63643 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63689 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63757 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63774 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63783 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63797 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63807 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63827 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63848 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63856 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63861 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63873 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63880 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63888 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63901 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63917 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63924 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63943 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63958 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63966 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63970 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63977 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63983 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63987 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63997 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64011 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64016 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64024 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64030 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64043 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64117 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64121 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64125 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64130 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64135 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64141 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64149 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64153 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64162 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64171 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64180 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64194 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64217 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64227 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64244 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64260 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64273 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64289 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64301 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64333 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64347 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64361 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64377 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64395 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64409 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64427 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64445 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64453 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64495 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64512 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64561 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64600 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64604 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64609 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64619 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64625 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64635 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64639 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64643 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64648 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64654 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64667 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64676 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64680 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64684 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64689 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64693 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64701 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64710 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64715 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64724 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64730 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64735 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64742 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64757 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64761 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64779 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64785 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64789 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64794 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64804 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64808 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64813 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64818 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64823 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64828 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64837 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64841 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64846 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64851 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64855 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64860 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64869 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64878 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64882 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64887 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64891 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64896 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64905 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64915 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64922 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64927 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64931 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64947 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64964 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64968 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64973 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64983 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64988 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64994 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65002 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65006 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65010 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65021 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65025 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65030 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65038 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65042 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65046 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65051 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65055 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65061 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65069 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65073 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65078 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65087 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65092 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65101 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65107 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65115 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65120 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65125 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65130 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65142 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65146 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65150 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65155 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65164 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65169 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65177 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65181 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65186 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65191 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65195 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65200 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65212 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65216 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65220 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65226 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65236 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65243 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65251 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65255 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65259 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65264 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65268 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65273 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65282 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65286 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65295 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65300 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65304 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65309 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65318 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65322 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65326 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65331 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65335 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65345 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65355 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65359 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65363 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65368 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65372 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65378 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65393 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65401 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65416 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65533 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49163 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49169 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49198 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49219 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49225 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49249 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49264 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49270 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49286 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49299 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49313 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49327 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49337 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49354 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49371 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49385 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49393 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49416 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49444 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49449 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49463 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49470 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49484 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49497 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49505 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49526 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49541 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49554 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49565 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49576 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49581 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49597 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49613 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49621 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49632 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49644 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49648 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49656 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49670 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49674 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49706 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49713 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49717 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49749 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49758 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49762 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49784 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49790 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49795 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49804 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49828 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49839 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49843 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49849 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49853 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49859 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49869 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49877 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49881 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49911 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49946 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49974 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49983 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49987 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49991 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49996 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50000 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50005 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50014 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50018 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50028 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50034 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50039 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50044 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50052 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50056 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50069 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50074 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50087 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50091 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50096 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50100 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50105 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50113 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50122 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50126 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50132 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50136 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50142 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50150 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50155 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50159 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50165 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50169 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50174 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50182 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50187 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50194 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50199 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50203 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50214 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50225 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50230 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50234 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50241 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50245 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50250 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50257 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50263 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50268 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50273 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50277 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50282 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50291 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50300 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50304 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50309 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50313 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50318 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50327 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50332 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50336 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50342 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50347 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50351 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50360 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50365 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50373 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50378 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50383 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50387 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50401 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50406 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50410 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50415 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50421 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50505 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50541 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50557 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50561 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50568 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50577 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50596 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50616 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50639 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50651 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50656 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50662 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50669 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50678 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50686 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50695 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50703 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50708 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50713 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50722 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50728 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50737 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50743 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50748 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50755 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50788 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50802 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50823 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50832 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50836 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50841 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50851 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50857 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50862 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50867 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50871 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50876 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50885 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50894 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50898 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50903 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50908 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50914 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50923 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50928 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50932 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50937 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50942 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50948 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50959 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50964 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50972 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50977 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50981 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50985 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50995 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51001 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51012 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51017 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51023 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51027 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51037 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51043 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51048 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51053 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51058 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51070 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51081 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51093 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51098 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51103 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51107 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51112 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51121 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51127 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51131 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51136 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51142 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51146 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51155 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51161 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51169 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51178 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51227 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51241 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51253 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51259 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51272 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51299 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51309 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51313 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51321 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51327 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51332 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51338 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51344 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51348 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51356 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51367 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51371 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51377 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51382 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51396 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51409 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51414 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51418 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51423 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51428 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51436 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51462 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51471 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51480 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51485 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51490 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51494 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51503 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51508 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51512 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51517 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51526 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51530 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51538 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51543 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51547 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51552 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51556 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51560 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51568 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51581 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51585 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51592 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51609 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51612 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51613 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51616 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51618 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51631 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51632 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51634 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51636 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51640 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51647 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51644 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51646 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51656 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51659 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51672 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51673 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51668 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51669 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51678 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51680 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51685 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51687 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51690 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51700 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51701 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51695 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51698 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51704 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51708 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51718 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51716 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51717 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51721 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51725 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51728 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51732 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51738 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51742 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51740 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51744 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51737 - "GET /avatars/marcus_aurelius.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51746 - "GET /api/v1/jobs/5a0922c5-befb-491c-9868-fd43ec131d1b/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51749 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51765 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51767 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51769 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51772 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51773 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51784 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51790 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51791 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51797 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51798 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51810 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51807 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51809 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51813 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51817 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51842 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51883 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51886 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51889 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51892 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51896 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51903 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51907 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51910 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51913 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51916 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51920 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51923 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51927 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51936 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51941 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51947 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51951 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51956 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51961 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51965 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51969 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51974 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51980 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51988 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51992 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51997 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52001 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52005 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52010 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52017 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52021 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52025 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52030 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52036 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52041 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52053 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52054 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52050 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52051 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52057 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52064 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52067 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52072 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52075 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52085 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52088 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52082 - "POST /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52091 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52094 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52101 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52102 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52105 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52109 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52112 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52115 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52118 - "POST /api/v1/videos/text-to-video HTTP/1.1" 200 OK
+
+[BACKGROUND] Starting text-to-video for job c6570de6-b299-4aab-96f3-163915cc846c
+CLONING: Using speaker_wav_path: /Volumes/FREDDY FILES/ANTIGRAVITY/_offload/uploads/voices/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.mp3
+ > tts_models/multilingual/multi-dataset/xtts_v2 is already downloaded.
+INFO:     127.0.0.1:52121 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52127 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52128 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52132 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52134 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52136 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52143 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52146 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+ > Using model: xtts
+INFO:     127.0.0.1:52151 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52154 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52160 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52161 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52166 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52167 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52169 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52171 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52174 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52181 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52179 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52185 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52189 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52191 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52194 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52195 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52198 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52201 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52204 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52213 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+[W NNPACK.cpp:64] Could not initialize NNPACK! Reason: Unsupported hardware.
+ > Text splitted to sentences.
+['Welcome to my course']
+INFO:     127.0.0.1:52219 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52223 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+ > Processing time: 7.174370050430298
+ > Real-time factor: 3.234275016600999
+INFO:     127.0.0.1:52226 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52229 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52232 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52236 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52240 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52243 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52247 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52250 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52253 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52263 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52271 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52274 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52277 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52280 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52284 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52287 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52291 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52294 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52297 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52300 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52304 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52310 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52318 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52321 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52324 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52327 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52331 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52334 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52337 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52340 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52343 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52346 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52350 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52356 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52360 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52363 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52370 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52373 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52377 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52380 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52383 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52386 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52390 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52393 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52400 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52405 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52409 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52412 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52415 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52419 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52423 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52427 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52430 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52434 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52437 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52445 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52450 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52455 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52460 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52464 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52473 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52474 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52485 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52486 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52484 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52483 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52491 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52492 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52494 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52496 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52499 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52518 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52521 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52529 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52532 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52540 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52543 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52552 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52555 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52560 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52563 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52570 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52572 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52575 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52578 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52582 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52595 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52610 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52652 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52657 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52668 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52675 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52679 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52682 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52688 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52692 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52696 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52700 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52705 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52711 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52717 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52721 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52736 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52742 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52748 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52752 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52757 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52763 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52781 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52787 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52792 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52797 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52813 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52819 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52825 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52832 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52838 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52842 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52846 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52845 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52848 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52850 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52853 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52858 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52862 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52866 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52868 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52873 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52877 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52880 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52883 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52892 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52896 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52904 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52908 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52913 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52917 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52921 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52925 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52928 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52937 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52942 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52945 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52949 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52954 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52958 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52970 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53002 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53026 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53040 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53062 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53084 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53092 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53097 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53100 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53104 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53114 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53119 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53124 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53131 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53133 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53134 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53137 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53138 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53142 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53147 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53150 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53156 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53159 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53162 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53165 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53171 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53177 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53183 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53211 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53269 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53310 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53315 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53318 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53327 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53335 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53338 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53342 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53346 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53360 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53364 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53369 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53375 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53379 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53383 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53389 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53396 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53400 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53404 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53417 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53423 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53426 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53432 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53436 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53439 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53444 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53448 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53456 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53459 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53466 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53470 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53480 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53483 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53486 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53489 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53492 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53497 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53514 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53517 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53522 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53526 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53528 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53531 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53534 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53537 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53541 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53543 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53546 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53549 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53554 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53557 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53561 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53564 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53567 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53570 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53573 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53576 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53580 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53585 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53588 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53592 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53594 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53596 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53598 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53601 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53606 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53610 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53608 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53614 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53620 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53622 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53625 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53628 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53629 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53636 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53634 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53638 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53643 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53644 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53647 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53650 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53653 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53656 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53661 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53664 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53669 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53671 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53673 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53676 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53680 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53682 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53685 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53688 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53691 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53694 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53697 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53700 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53705 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53709 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53712 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53716 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53719 - "POST /api/v1/videos/text-to-video HTTP/1.1" 200 OK
+
+[BACKGROUND] Starting text-to-video for job 5e280e82-8f6d-4654-8d6d-ae38878447e0
+CLONING: Using speaker_wav_path: /Volumes/FREDDY FILES/ANTIGRAVITY/_offload/uploads/voices/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.mp3
+ > Text splitted to sentences.
+['Hi avery one']
+STUB: Enhancement skipped for c6570de6-b299-4aab-96f3-163915cc846c, using /Volumes/FREDDY FILES/ANTIGRAVITY/_offload/outputs/c6570de6-b299-4aab-96f3-163915cc846c_sadtalker.mp4
+[BACKGROUND] Completed job c6570de6-b299-4aab-96f3-163915cc846c
+INFO:     127.0.0.1:53721 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53725 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53727 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53730 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53732 - "GET /api/v1/jobs/c6570de6-b299-4aab-96f3-163915cc846c/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:53736 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53739 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53742 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53745 - "GET /api/v1/jobs/c6570de6-b299-4aab-96f3-163915cc846c/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:53750 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53753 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53756 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+ > Processing time: 23.02094531059265
+ > Real-time factor: 11.45747210406663
+INFO:     127.0.0.1:53747 - "GET /api/v1/jobs/c6570de6-b299-4aab-96f3-163915cc846c/download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53761 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53764 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53767 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53770 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53781 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53783 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53785 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53787 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53789 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53795 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53798 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53807 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53804 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53805 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53810 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53814 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53817 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53820 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53823 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53829 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53832 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53835 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53838 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53841 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53844 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53849 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53853 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53863 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53865 - "GET /api/v1/jobs/c6570de6-b299-4aab-96f3-163915cc846c/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:53870 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53879 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53882 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53886 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53893 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53896 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53900 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53904 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53908 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53915 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53918 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53926 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53929 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53932 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53973 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53994 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54003 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54007 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54011 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54014 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54018 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54023 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54027 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54033 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54036 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54040 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54044 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54049 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54068 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54073 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54081 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54086 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54090 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54096 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54100 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54103 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54106 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54109 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54114 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54117 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54120 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54123 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54127 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54130 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54134 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54139 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54144 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54156 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54179 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54186 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54192 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54196 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54200 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54203 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54208 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54212 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54217 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54222 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54227 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54235 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54242 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54247 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54252 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54262 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54268 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54274 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54280 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54283 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54287 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54291 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54294 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54297 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54300 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54305 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54308 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54312 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54315 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54318 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54323 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54326 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54329 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54333 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54337 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54341 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54344 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54351 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54354 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54359 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54367 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54371 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54376 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54379 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54383 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54419 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54431 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54434 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54444 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54446 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54451 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54455 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54463 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54466 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54469 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54474 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54487 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54490 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54517 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54521 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54526 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54537 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54552 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54564 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54567 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54576 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54583 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54592 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54600 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54613 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54620 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54627 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54631 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54637 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54641 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54646 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54656 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54664 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54669 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54674 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54678 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54685 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54691 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54694 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54706 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54709 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54716 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54721 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54724 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54731 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54733 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54737 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54739 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54741 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54743 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54745 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54753 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54756 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54761 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54763 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54768 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54772 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54775 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54778 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54787 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54793 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54797 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54800 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54806 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54809 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54813 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54820 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54829 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54835 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54836 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54838 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54840 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54847 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54849 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54852 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54855 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54858 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+STUB: Enhancement skipped for 5e280e82-8f6d-4654-8d6d-ae38878447e0, using /Volumes/FREDDY FILES/ANTIGRAVITY/_offload/outputs/5e280e82-8f6d-4654-8d6d-ae38878447e0_sadtalker.mp4
+[BACKGROUND] Completed job 5e280e82-8f6d-4654-8d6d-ae38878447e0
+INFO:     127.0.0.1:54864 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54865 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54868 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54869 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54875 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54879 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54881 - "GET /api/v1/jobs/5e280e82-8f6d-4654-8d6d-ae38878447e0/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:54887 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54890 - "GET /api/v1/jobs/c6570de6-b299-4aab-96f3-163915cc846c/download HTTP/1.1" 206 Partial Content
+INFO:     127.0.0.1:54896 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54902 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54907 - "GET /api/v1/jobs/d0e05ae4-3732-46c3-8f9d-7ae85bfdb0da/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54911 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54914 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54921 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54926 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54935 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54946 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54947 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54944 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54945 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54953 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54957 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54961 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54965 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54967 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54969 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54971 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54984 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54986 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54988 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54990 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54993 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54994 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54996 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54996 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54999 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55001 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55003 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55006 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55009 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55012 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55023 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55024 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55020 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55021 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55029 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55032 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55036 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55039 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55042 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55047 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55050 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55053 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55056 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55059 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55065 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55068 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55073 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55076 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55083 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55089 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55092 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55097 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55101 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55104 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55107 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55110 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55115 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55125 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55132 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55136 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55142 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55145 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55149 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55158 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55161 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55165 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55173 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55175 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55179 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55182 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55185 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55188 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55193 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55196 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55201 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55204 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55207 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55212 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55216 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55219 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55225 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55228 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55231 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55234 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55241 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55249 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55254 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55257 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55260 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55264 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55275 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55283 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55284 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55288 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55290 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55293 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55296 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55300 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55302 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55305 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55306 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55308 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55312 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55315 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55319 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55322 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55327 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55330 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55335 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55338 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55341 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55344 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55347 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55350 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55353 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55357 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55363 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55367 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55382 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55383 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55387 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55389 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55385 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55399 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55400 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55402 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55403 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55405 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55408 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55412 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55416 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55419 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55423 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55435 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55436 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55439 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55440 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55442 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55444 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55446 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55448 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55451 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55455 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55459 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55465 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55469 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55474 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55478 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55485 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55489 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55495 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55499 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55503 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55506 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55509 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55513 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55519 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55522 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55527 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55530 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55532 - "GET /api/v1/jobs/15961b99-bfbb-4bb6-8acf-a04cd9dd4dca/download HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55536 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55539 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55542 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55546 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55554 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55558 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55561 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55564 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55573 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55576 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55584 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55592 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55593 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55598 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55599 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55604 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55608 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55610 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55612 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55614 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55617 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55620 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55623 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55626 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55632 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55635 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55643 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55646 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55656 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55658 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55661 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55662 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55671 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55672 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55674 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55676 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55679 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55682 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55687 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55690 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55693 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55701 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55706 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55709 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55712 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55716 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55719 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55724 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55738 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55740 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55742 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55746 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55747 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55748 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55750 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55750 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55754 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55756 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55758 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55763 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55767 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55770 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55774 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55777 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55781 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55785 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55789 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55798 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55802 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55807 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55811 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55815 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55821 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55824 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55828 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55834 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55837 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55840 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55843 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55848 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55851 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55856 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55859 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55863 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55866 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55870 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55873 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55877 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55881 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55886 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55889 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55901 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55904 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55909 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55912 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55916 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55921 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55925 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55928 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55933 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55936 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55940 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55944 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55948 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55951 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55961 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55963 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55968 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55971 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55974 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55983 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55987 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55990 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55994 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55997 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56003 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56007 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56024 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56029 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56034 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56038 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56040 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56045 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56046 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56052 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56053 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56055 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56057 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56060 - "DELETE /api/v1/jobs/ced7404f-4203-44c1-822f-c28a540300a5 HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:56063 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56066 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56068 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56071 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56075 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56081 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56085 - "DELETE /api/v1/jobs/ced7404f-4203-44c1-822f-c28a540300a5 HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:56088 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56090 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56095 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56098 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56102 - "DELETE /api/v1/jobs/c4607294-5f0d-4c70-8764-73a3eaa91ace HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:56105 - "DELETE /api/v1/jobs/ced7404f-4203-44c1-822f-c28a540300a5 HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:56109 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56113 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56116 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56121 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56125 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56128 - "DELETE /api/v1/jobs/c4607294-5f0d-4c70-8764-73a3eaa91ace HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:56131 - "DELETE /api/v1/jobs/ced7404f-4203-44c1-822f-c28a540300a5 HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:56134 - "DELETE /api/v1/jobs/abdf98e8-ea54-4895-8e67-d6a1dd0529d1 HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:56137 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56140 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56143 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56144 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56152 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56154 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56159 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56161 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56162 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56165 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56168 - "GET /api/v1/avatars/image/57d8ccd6-a004-4c10-b7cd-25b46e578b4b.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56168 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56172 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56174 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56176 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56184 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56187 - "DELETE /api/v1/jobs/ced7404f-4203-44c1-822f-c28a540300a5 HTTP/1.1" 405 Method Not Allowed
+INFO:     127.0.0.1:56191 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56193 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56206 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56208 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56210 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56212 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56214 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56217 - "GET /api/v1/avatars/image/2d1a34e0-8288-4af2-b378-a2edbdbf1b3c.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56219 - "GET /api/v1/avatars/image/0e2ef9d8-e670-4686-b7f1-28a0a9d468d5.jpg HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56221 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56223 - "GET /api/v1/avatars/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56227 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56231 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56234 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56238 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56241 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56245 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56248 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56252 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56260 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56264 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56271 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56274 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56278 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56281 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56285 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56288 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56291 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56296 - "GET /api/v1/jobs/ HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [18028]

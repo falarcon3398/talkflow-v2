@@ -20,9 +20,29 @@ async def list_jobs(db: Session = Depends(get_db)):
         "result_url": job.result_url,
         "error_message": job.error_message,
         "params": job.params,
+        "title": job.title,
+        "project_id": job.project_id,
         "created_at": job.created_at,
         "updated_at": job.updated_at
     } for job in jobs]
+
+@router.patch("/{job_id}")
+async def update_job(job_id: str, data: dict, db: Session = Depends(get_db)):
+    job = db.query(Job).filter(Job.id == job_id).first()
+    if not job:
+        raise HTTPException(404, "Job not found")
+    
+    if "title" in data:
+        job.title = data["title"]
+    if "project_id" in data:
+        job.project_id = data["project_id"]
+        
+    db.commit()
+    return {
+        "job_id": job.id,
+        "title": job.title,
+        "project_id": job.project_id
+    }
 
 @router.get("/{job_id}/download")
 async def download_video(job_id: str):

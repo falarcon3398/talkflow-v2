@@ -107,5 +107,29 @@ app.include_router(videos.router, prefix="/api/v1/videos", tags=["videos"])
 app.include_router(jobs.router, prefix="/api/v1/jobs", tags=["jobs"])
 app.include_router(avatars.router, prefix="/api/v1/avatars", tags=["avatars"])
 
+# ------------------- LIVE CALL integration -------------------
+try:
+    from app.live_call import router as live_router
+    from app.live_call.settings import ensure_external_dirs
+    
+    # Ensure directories on external storage exist
+    ensure_external_dirs()
+    
+    # Include the live call router (WebRTC signaling + avatar management)
+    app.include_router(live_router)
+    
+    # Mount /live static UI (served by backend)
+    live_static_dir = Path(__file__).resolve().parent / "static" / "live"
+    if live_static_dir.exists():
+        app.mount("/live", StaticFiles(directory=str(live_static_dir), html=True), name="live")
+        print(f"[LIVE CALL] Static UI mounted at /live from {live_static_dir}")
+    else:
+        print(f"[LIVE CALL] Warning: Static UI directory not found at {live_static_dir}")
+        
+except Exception as e:
+    print(f"[LIVE CALL] Initialization failed: {e}")
+# ----------------- END LIVE CALL integration -----------------
+
 # Required for Vercel
 handler = app
+

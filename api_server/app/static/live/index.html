@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Call - Talking Head</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>LIVE CALL (D-ID style MVP)</h1>
+
+    <section class="card">
+      <h2>1) Avatars (ver fotos)</h2>
+      <div class="row">
+        <input id="file" type="file" accept="image/*" />
+        <button id="upload">Upload</button>
+        <button id="refresh">Refresh</button>
+      </div>
+      <div id="avatars" class="grid"></div>
+    </section>
+
+    <section class="card">
+      <h2>2) Call</h2>
+      <div class="row">
+        <button id="start">Start Call</button>
+        <button id="end" disabled>End</button>
+        <span id="status" class="status">Idle</span>
+      </div>
+
+      <div class="videoWrap">
+        <video id="remoteVideo" autoplay playsinline></video>
+      </div>
+
+      <p class="hint">
+        Tip: Para producción agrega TURN (coturn). Para pruebas, local o misma red suele funcionar con STUN.
+      </p>
+    </section>
+  </div>
+
+  <script src="./livecall.js"></script>
+</body>
+</html>

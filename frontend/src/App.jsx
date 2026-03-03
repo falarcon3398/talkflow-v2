@@ -276,10 +276,33 @@ const Modal = ({ children, isOpen, onClose, title }) => {
   )
 }
 
-const AvatarCreateModal = ({ isOpen, onClose, onSave }) => {
+const AvatarCreateModal = ({ isOpen, onClose, onSave, demoMode = false }) => {
   const [formData, setFormData] = useState({ name: '', type: 'Custom', image: null, voice_clip: null })
   const [preview, setPreview] = useState(null)
   const [audioName, setAudioName] = useState('')
+
+  // Demo-mode: auto-load assets from /demo-assets/ when modal opens
+  useEffect(() => {
+    if (!isOpen || !demoMode) return
+    const load = async () => {
+      try {
+        const [imgRes, audRes] = await Promise.all([
+          fetch('/demo-assets/avatar.jpg'),
+          fetch('/demo-assets/audio.mp3'),
+        ])
+        const imgBlob = await imgRes.blob()
+        const audBlob = await audRes.blob()
+        const imgFile = new File([imgBlob], '1001-marcos-aurelio.jpg', { type: 'image/jpeg' })
+        const audFile = new File([audBlob], '1001-audio.MP3', { type: 'audio/mpeg' })
+        setFormData((prev) => ({ ...prev, name: 'Marcus Aurelio', image: imgFile, voice_clip: audFile }))
+        setPreview(URL.createObjectURL(imgBlob))
+        setAudioName('1001-audio.MP3')
+      } catch (e) {
+        console.warn('Demo-mode prefill failed:', e)
+      }
+    }
+    load()
+  }, [isOpen, demoMode])
 
   const handleFileChange = (e) => {
     const file = e.target.files[0]
@@ -327,7 +350,6 @@ const AvatarCreateModal = ({ isOpen, onClose, onSave }) => {
               type="file"
               accept="image/*"
               onChange={handleFileChange}
-              required
               className="absolute inset-0 cursor-pointer opacity-0"
             />
           </div>
@@ -393,6 +415,7 @@ const AvatarCreateModal = ({ isOpen, onClose, onSave }) => {
             Cancel
           </button>
           <button
+            data-testid="create-avatar-submit"
             type="submit"
             disabled={!formData.image}
             className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-bold text-white hover:bg-blue-700 disabled:opacity-50"
@@ -1778,6 +1801,7 @@ const AvatarCard = ({ name, type, image, isActive, onRename, onDelete }) => {
               e.stopPropagation()
               setIsDropdownOpen(!isDropdownOpen)
             }}
+            data-testid="avatar-menu-btn"
             className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/60 text-white backdrop-blur-md transition-all hover:bg-slate-900/80 active:scale-90"
           >
             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
@@ -1809,15 +1833,24 @@ const AvatarCard = ({ name, type, image, isActive, onRename, onDelete }) => {
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [view, setView] = useState('library')
+
+  // Initialize demo mode in sessionStorage if present in URL
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get('demo') === '1') {
+      sessionStorage.setItem('webreel_demo', '1');
+    }
+  }, []);
+
   const [pendingVideoPrompt, setPendingVideoPrompt] = useState('')
   const [script, setScript] = useState('')
   const [selectedAvatarId, setSelectedAvatarId] = useState(1)
-  const [jobs, setJobs] = useState([])
-  const [avatars, setAvatars] = useState([])
   const [isAvatarModalOpen, setIsAvatarModalOpen] = useState(false)
   const [isRenameModalOpen, setIsRenameModalOpen] = useState(false)
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
+  const [isJobRenameModalOpen, setIsJobRenameModalOpen] = useState(false)
+  const [isJobMoveModalOpen, setIsJobMoveModalOpen] = useState(false)
   const [editingAvatar, setEditingAvatar] = useState(null)
+  const [editingJob, setEditingJob] = useState(null)
 
   const fetchAvatars = async () => {
     try {
@@ -1855,10 +1888,13 @@ function App() {
         await Promise.all([fetchJobs(), fetchAvatars()]);
       };
       initDashboard();
-      const interval = setInterval(fetchJobs, 10000); // Poll every 10s
+
+      // Faster polling (3s) if there are processing jobs, otherwise 10s
+      const hasProcessing = jobs.some(j => j.status === 'processing' || j.status === 'queued')
+      const interval = setInterval(fetchJobs, hasProcessing ? 3000 : 10000);
       return () => clearInterval(interval)
     }
-  }, [isAuthenticated, view])
+  }, [isAuthenticated, view, jobs])
 
   const handleCreateAvatar = async (formData) => {
     try {
@@ -1886,6 +1922,26 @@ function App() {
       fetchAvatars()
     } catch (error) {
       console.error('Failed to rename avatar:', error)
+    }
+  }
+
+  const handleRenameJob = async (jobId, newTitle) => {
+    try {
+      await videoApi.updateJob(jobId, { title: newTitle })
+      const data = await videoApi.listJobs()
+      setJobs(data)
+    } catch (error) {
+      console.error('Failed to rename job:', error)
+    }
+  }
+
+  const handleMoveJob = async (jobId, projectId) => {
+    try {
+      await videoApi.updateJob(jobId, { project_id: projectId })
+      const data = await videoApi.listJobs()
+      setJobs(data)
+    } catch (error) {
+      console.error('Failed to move job:', error)
     }
   }
 
@@ -1938,7 +1994,20 @@ function App() {
             <VideoClipGenerateView initialPrompt={pendingVideoPrompt} />
           )}
           {view === 'video-library' && (
-            <MyVideoClipsView setView={setView} jobs={jobs} avatarList={avatars} onDeleteJob={handleDeleteJob} />
+            <MyVideoClipsView
+              setView={setView}
+              jobs={jobs}
+              avatarList={avatars}
+              onDeleteJob={handleDeleteJob}
+              onRenameJob={(job) => {
+                setEditingJob(job)
+                setIsJobRenameModalOpen(true)
+              }}
+              onMoveJob={(job) => {
+                setEditingJob(job)
+                setIsJobMoveModalOpen(true)
+              }}
+            />
           )}
           {view === 'prompts' && <PromptGalleryView onUse={handleUsePrompt} />}
         </div>
@@ -1947,12 +2016,25 @@ function App() {
         isOpen={isAvatarModalOpen}
         onClose={() => setIsAvatarModalOpen(false)}
         onSave={handleCreateAvatar}
+        demoMode={new URLSearchParams(window.location.search).get('demo') === '1' || sessionStorage.getItem('webreel_demo') === '1'}
       />
       <AvatarRenameModal
         isOpen={isRenameModalOpen}
         onClose={() => setIsRenameModalOpen(false)}
         onSave={handleRenameAvatar}
         avatar={editingAvatar}
+      />
+      <JobRenameModal
+        isOpen={isJobRenameModalOpen}
+        onClose={() => setIsJobRenameModalOpen(false)}
+        onSave={handleRenameJob}
+        job={editingJob}
+      />
+      <MoveJobModal
+        isOpen={isJobMoveModalOpen}
+        onClose={() => setIsJobMoveModalOpen(false)}
+        onSave={handleMoveJob}
+        job={editingJob}
       />
       <DeleteConfirmationModal
         isOpen={isDeleteModalOpen}

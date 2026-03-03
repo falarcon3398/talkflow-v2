@@ -12,6 +12,8 @@ class Job(Base):
     progress = Column(Integer, default=0)
     result_url = Column(String, nullable=True)
     error_message = Column(String, nullable=True)
+    title = Column(String, nullable=True)
+    project_id = Column(String, nullable=True, index=True)
     params = Column(JSON, nullable=True)
     
     created_at = Column(DateTime(timezone=True), server_default=func.now())

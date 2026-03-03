@@ -71,5 +71,15 @@ export const videoApi = {
       method: 'DELETE'
     })
     return response.json()
+  },
+  async updateJob(jobId, data) {
+    const response = await fetch(`${API_BASE}/jobs/${jobId}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    return response.json()
   }
 }

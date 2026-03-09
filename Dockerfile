@@ -15,7 +15,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ffmpeg \
     libsm6 \
     libxext6 \
-    redis-server \
     curl \
     git \
     && apt-get clean \

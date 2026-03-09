@@ -101,6 +101,30 @@ const Sidebar = ({ view, setView, onLogout }) => {
           </div>
         </div>
 
+        <div>
+          <div
+            onClick={() => toggleSection('interactive')}
+            className="mb-3 flex cursor-pointer items-center justify-between px-2 text-xs font-semibold tracking-widest text-slate-400 uppercase transition-colors hover:text-slate-600"
+          >
+            <span className="flex items-center gap-2">🎙️ Interactive</span>
+            <span
+              className={`text-[10px] transition-transform duration-300 ${openSections.interactive ? 'rotate-0' : '-rotate-90'}`}
+            >
+              ▼
+            </span>
+          </div>
+          <div
+            className={`space-y-1 overflow-hidden transition-all duration-300 ${openSections.interactive ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
+          >
+            <button
+              onClick={() => setView('live-call')}
+              className={`nav-item ${view === 'live-call' ? 'nav-item-active' : 'nav-item-inactive'}`}
+            >
+              <span className="text-sm">Live Call</span>
+            </button>
+          </div>
+        </div>
+
         <div className="mt-4 border-t border-slate-100 pt-4">
           <button
             onClick={onLogout}
@@ -428,6 +452,310 @@ const AvatarCreateModal = ({ isOpen, onClose, onSave, demoMode = false }) => {
   )
 }
 
+const JobRenameModal = ({ isOpen, onClose, onSave, job }) => {
+  const [title, setTitle] = useState('')
+
+  useEffect(() => {
+    if (isOpen && job) {
+      setTitle(job.title || job.params?.text?.slice(0, 42) || '')
+    }
+  }, [isOpen, job])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    onSave(job.id || job.job_id, title)
+    onClose()
+  }
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} title="Rename Video Clip">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-slate-700">New Clip Title</label>
+          <input
+            required
+            className="w-full rounded-lg border border-slate-200 px-4 py-2.5 outline-none"
+            placeholder="e.g. My Awesome Video"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
+
+        <div className="-mx-8 -mb-4 flex justify-end gap-3 border-t border-slate-100 px-8 pt-4">
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-lg border border-slate-200 px-6 py-2.5 text-sm font-bold text-slate-500 hover:bg-slate-50"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="rounded-lg bg-slate-900 px-6 py-2.5 text-sm font-bold text-white hover:bg-slate-700"
+          >
+            Update Title
+          </button>
+        </div>
+      </form>
+    </Modal>
+  )
+}
+
+const MoveJobModal = ({ isOpen, onClose, onSave, job }) => {
+  const [projectId, setProjectId] = useState('')
+
+  useEffect(() => {
+    if (isOpen && job) {
+      setProjectId(job.project_id || '')
+    }
+  }, [isOpen, job])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    onSave(job.id || job.job_id, projectId)
+    onClose()
+  }
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} title="Move to Project">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-2">
+          <label className="text-sm font-bold text-slate-700">Select Project</label>
+          <select
+            className="w-full rounded-lg border border-slate-200 px-4 py-2.5 outline-none"
+            value={projectId}
+            onChange={(e) => setProjectId(e.target.value)}
+          >
+            <option value="">Main Library</option>
+            <option value="marketing">Marketing Campaign</option>
+            <option value="training">Training Videos</option>
+          </select>
+        </div>
+
+        <div className="-mx-8 -mb-4 flex justify-end gap-3 border-t border-slate-100 px-8 pt-4">
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-lg border border-slate-200 px-6 py-2.5 text-sm font-bold text-slate-500 hover:bg-slate-50"
+          >
+            Cancel
+          </button>
+          <button
+            type="submit"
+            className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-bold text-white hover:bg-blue-700"
+          >
+            Move Clip
+          </button>
+        </div>
+      </form>
+    </Modal>
+  )
+}
+
+const LiveCallView = ({ avatarList }) => {
+  const [selectedAvatarId, setSelectedAvatarId] = useState('')
+  const [status, setStatus] = useState('Idle')
+  const [pc, setPc] = useState(null)
+  const [ws, setWs] = useState(null)
+  const [stream, setStream] = useState(null)
+  const remoteVideoRef = React.useRef(null)
+
+  const selectedAvatar = avatarList.find(a => String(a.id) === String(selectedAvatarId))
+
+  const startCall = async () => {
+    if (!selectedAvatarId) return alert('Select an avatar first.')
+    setStatus('Connecting...')
+
+    const websocket = new WebSocket(`${window.location.protocol === 'https:' ? 'wss' : 'ws'}://${window.location.hostname}:8000/ws/realtime?avatar_id=${selectedAvatarId}`)
+    const peerConnection = new RTCPeerConnection({
+      iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+    })
+
+    // Marcus's video transceiver
+    peerConnection.addTransceiver('video', { direction: 'recvonly' })
+
+    peerConnection.ontrack = (event) => {
+      console.log('[WebRTC] Track received:', event.track.kind)
+      if (remoteVideoRef.current) {
+        if (!remoteVideoRef.current.srcObject) {
+          remoteVideoRef.current.srcObject = new MediaStream()
+        }
+        remoteVideoRef.current.srcObject.addTrack(event.track)
+        remoteVideoRef.current.muted = false
+        remoteVideoRef.current.volume = 1.0
+        remoteVideoRef.current.play().catch(e => console.warn('[WebRTC] Play stalled:', e))
+      }
+    }
+
+    peerConnection.onicecandidate = (ev) => {
+      if (ev.candidate && websocket.readyState === 1) {
+        websocket.send(JSON.stringify({ type: 'candidate', candidate: ev.candidate }))
+      }
+    }
+
+    try {
+      const localStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+
+      // Use an explicit sendrecv transceiver for audio so the SDP offer
+      // declares both sending (mic) AND receiving (bot TTS) directions.
+      // Simply calling addTrack() yields a sendonly transceiver which silences
+      // the incoming audio from the server.
+      const audioTrack = localStream.getAudioTracks()[0]
+      const audioTransceiver = peerConnection.addTransceiver(audioTrack, {
+        direction: 'sendrecv',
+        streams: [localStream],
+      })
+      console.log('[WebRTC] Audio transceiver direction:', audioTransceiver.direction)
+      setStream(localStream)
+
+      websocket.onopen = async () => {
+        const offer = await peerConnection.createOffer()
+        await peerConnection.setLocalDescription(offer)
+        websocket.send(JSON.stringify({ type: 'offer', sdp: offer.sdp, sdpType: offer.type }))
+      }
+
+      websocket.onmessage = async (ev) => {
+        const msg = JSON.parse(ev.data)
+        if (msg.type === 'answer') {
+          await peerConnection.setRemoteDescription({ type: msg.sdpType, sdp: msg.sdp })
+          setStatus('Live (Speak normally)')
+          if (remoteVideoRef.current) {
+            remoteVideoRef.current.play().catch(e => console.warn('Manual play failed:', e))
+          }
+        }
+        if (msg.type === 'candidate') {
+          try { await peerConnection.addIceCandidate(msg.candidate) } catch (e) { }
+        }
+        if (msg.type === 'error') {
+          alert(msg.message || 'Error')
+          setStatus('Error')
+        }
+      }
+
+      websocket.onclose = () => setStatus('Closed')
+
+      setWs(websocket)
+      setPc(peerConnection)
+    } catch (err) {
+      console.error('Call failed:', err)
+      setStatus('Failed: ' + err.message)
+    }
+  }
+
+  const endCall = () => {
+    setStatus('Closing...')
+    stream?.getTracks()?.forEach(t => t.stop())
+    pc?.close()
+    ws?.close()
+    setPc(null)
+    setWs(null)
+    setStream(null)
+    if (remoteVideoRef.current) remoteVideoRef.current.srcObject = null
+    setStatus('Idle')
+  }
+
+  useEffect(() => {
+    return () => {
+      stream?.getTracks()?.forEach(t => t.stop())
+      pc?.close()
+      ws?.close()
+    }
+  }, [pc, ws, stream])
+
+  const currentAvatar = avatarList?.find(a => String(a.id) === String(selectedAvatarId))
+
+  return (
+    <div className="space-y-8">
+      <div className="glass-card flex flex-col items-center p-10 text-center">
+        <h1 className="text-3xl font-bold text-slate-800">Live Interaction</h1>
+        <p className="mt-2 text-slate-500">
+          Speak directly with {currentAvatar?.name || 'your avatar'} in real-time
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+        <div className="lg:col-span-2 space-y-6 mx-auto w-full max-w-xs">
+          <div className="relative overflow-hidden rounded-3xl bg-slate-900 shadow-2xl border border-slate-800" style={{ aspectRatio: '9/16' }}>
+            <video
+              ref={remoteVideoRef}
+              autoPlay
+              playsInline
+              className={`h-full w-full object-cover ${!pc && (currentAvatar?.image_url || currentAvatar?.image) ? 'opacity-0' : 'opacity-100'}`}
+            />
+            {!pc && (currentAvatar?.image_url || currentAvatar?.image) && (
+              <img
+                src={currentAvatar.image_url || currentAvatar.image}
+                alt={currentAvatar.name}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+            <div className="absolute top-4 left-4 z-10">
+              <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${status.includes('Live') ? 'bg-emerald-500 text-white animate-pulse' : 'bg-slate-800 text-slate-400'}`}>
+                {status}
+              </span>
+            </div>
+            {!pc && (
+              <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+                <div className="text-center">
+                  <div className="mb-4 mx-auto flex h-16 w-16 items-center justify-center rounded-full border border-blue-500/30 bg-blue-600/20 text-blue-400">
+                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 00-2 2z" /></svg>
+                  </div>
+                  <p className="font-bold text-white">Awaiting Connection</p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+
+        <div className="lg:col-span-3 space-y-6">
+          <div className="glass-card bg-white p-6 space-y-4">
+            <h3 className="font-bold text-slate-800 uppercase tracking-wider text-xs">Settings</h3>
+            <div>
+              <label className="text-[11px] font-bold text-slate-400 uppercase mb-2 block">Choose Avatar</label>
+              <select
+                value={selectedAvatarId}
+                onChange={(e) => setSelectedAvatarId(e.target.value)}
+                className="w-full rounded-xl border border-slate-200 p-3 text-sm font-bold outline-none focus:border-blue-400"
+              >
+                <option value="">Select Avatar...</option>
+                {avatarList.map(a => (
+                  <option key={a.id} value={a.id}>{a.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="pt-4 h-full flex flex-col justify-end">
+              {!pc ? (
+                <button
+                  onClick={startCall}
+                  disabled={!selectedAvatarId}
+                  className="w-full btn-primary py-4 shadow-xl shadow-blue-200"
+                >
+                  Start Live Call
+                </button>
+              ) : (
+                <button
+                  onClick={endCall}
+                  className="w-full rounded-2xl bg-red-600 py-4 font-bold text-white hover:bg-red-700 transition-all shadow-xl shadow-red-200"
+                >
+                  End Session
+                </button>
+              )}
+            </div>
+          </div>
+
+          <div className="glass-card bg-blue-50/50 border-blue-100 p-6">
+            <h4 className="font-bold text-blue-800 text-sm mb-2">How it works</h4>
+            <p className="text-xs text-blue-600 leading-relaxed font-medium">
+              We use low-latency WebRTC to stream audio and video. Your microphone input is processed by our STT model, then sent to {currentAvatar?.name || 'the avatar'} for a real-time response.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const AvatarRenameModal = ({ isOpen, onClose, onSave, avatar }) => {
   const [name, setName] = useState('')
 
@@ -516,7 +844,21 @@ const AvatarDropdown = ({ isOpen, onClose, onAction }) => {
       <div className="fixed inset-0 z-40" onClick={onClose}></div>
       <div className="animate-in fade-in zoom-in-95 backdrop-blur-xl absolute right-0 top-10 z-50 w-56 origin-top-right overflow-hidden rounded-2xl border border-slate-100 bg-white/90 p-1.5 shadow-2xl duration-150">
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation()
+            onAction('talk_live')
+            onClose()
+          }}
+          className="group flex w-full items-center gap-3 rounded-xl px-3 py-2 text-sm text-red-600 transition-colors hover:bg-red-50 hover:text-red-700"
+        >
+          <svg className="h-4 w-4 text-red-500 group-hover:text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+          </svg>
+          <span className="font-bold">🔴 Talk Live</span>
+        </button>
+        <button
+          onClick={(e) => {
+            e.stopPropagation()
             onAction('copy')
             onClose()
           }}
@@ -528,7 +870,8 @@ const AvatarDropdown = ({ isOpen, onClose, onAction }) => {
           <span className="font-medium">Copy ID</span>
         </button>
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation()
             onAction('edit_new')
             onClose()
           }}
@@ -552,7 +895,8 @@ const AvatarDropdown = ({ isOpen, onClose, onAction }) => {
           <span className="font-medium">Collaborate</span>
         </button>
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation()
             onAction('rename')
             onClose()
           }}
@@ -577,7 +921,8 @@ const AvatarDropdown = ({ isOpen, onClose, onAction }) => {
         </button>
         <div className="my-1 border-t border-slate-50"></div>
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.stopPropagation()
             onAction('trash')
             onClose()
           }}
@@ -1066,7 +1411,7 @@ const VideoPlayerModal = ({ isOpen, onClose, videoUrl, title }) => {
   )
 }
 
-const MyVideoClipsView = ({ setView, jobs, avatarList, onDeleteJob }) => {
+const MyVideoClipsView = ({ setView, jobs, avatarList, onDeleteJob, onRenameJob, onMoveJob }) => {
   const [selectedVideo, setSelectedVideo] = useState(null)
 
   const displayJobs =
@@ -1116,18 +1461,16 @@ const MyVideoClipsView = ({ setView, jobs, avatarList, onDeleteJob }) => {
             return 'Just now'
           })()
 
-          const videoTitle = job.params?.text
-            ? job.params.text.slice(0, 42) + (job.params.text.length > 42 ? '…' : '')
-            : `TalkFlow Video ${String(job.job_id || job.id).slice(0, 8)}`
-
           return (
             <VideoClipCard
               key={job.job_id || job.id}
               onClick={() => job.status === 'completed' && setSelectedVideo(job)}
               onDeleteJob={onDeleteJob}
+              onRename={() => onRenameJob(job)}
+              onMove={() => onMoveJob(job)}
               video={{
                 id: job.job_id || job.id,
-                title: videoTitle,
+                title: job.title || (job.params?.text ? job.params.text.slice(0, 42) + (job.params.text.length > 42 ? '…' : '') : `TalkFlow Video ${String(job.job_id || job.id).slice(0, 8)}`),
                 duration: '0:11',
                 time: relativeTime,
                 image: jobAvatarId === 'custom' ? '/avatars/monk.jpg' : avatarImage,
@@ -1144,19 +1487,19 @@ const MyVideoClipsView = ({ setView, jobs, avatarList, onDeleteJob }) => {
         isOpen={!!selectedVideo}
         onClose={() => setSelectedVideo(null)}
         videoUrl={selectedVideo?.result_url}
-        title={selectedVideo ? `TalkFlow Video ${selectedVideo.job_id?.slice(0, 8)}` : ''}
+        title={selectedVideo ? (selectedVideo.title || `TalkFlow Video ${selectedVideo.job_id?.slice(0, 8)}`) : ''}
       />
     </div>
   )
 }
 
 
-const VideoClipCard = ({ video, onClick, onDeleteJob }) => {
+const VideoClipCard = ({ video, onClick, onDeleteJob, onRename, onMove }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const menuItems = [
-    { icon: '🖊️', label: 'Rename', action: () => { setMenuOpen(false) } },
-    { icon: '📁', label: 'Move', action: () => { setMenuOpen(false) } },
+    { icon: '🖊️', label: 'Rename', action: () => { setMenuOpen(false); onRename(); } },
+    { icon: '📁', label: 'Move', action: () => { setMenuOpen(false); onMove(); } },
     { divider: true },
     {
       icon: '🗑️', label: 'Trash', danger: true,
@@ -1770,6 +2113,11 @@ const AvatarLibraryView = ({ setView, avatarList, setSelectedAvatarId, onAddAvat
               name={avatar.name}
               type={avatar.type}
               image={avatar.image_url || avatar.image}
+              onLiveCall={(e) => {
+                e.stopPropagation()
+                setSelectedAvatarId(avatar.id)
+                setView('live-call')
+              }}
               onRename={() => onRenameAvatar(avatar)}
               onDelete={() => onDeleteAvatar(avatar)}
             />
@@ -1780,7 +2128,7 @@ const AvatarLibraryView = ({ setView, avatarList, setSelectedAvatarId, onAddAvat
   )
 }
 
-const AvatarCard = ({ name, type, image, isActive, onRename, onDelete }) => {
+const AvatarCard = ({ name, type, image, isActive, onLiveCall, onRename, onDelete }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
   return (
@@ -1813,6 +2161,7 @@ const AvatarCard = ({ name, type, image, isActive, onRename, onDelete }) => {
             onClose={() => setIsDropdownOpen(false)}
             avatarName={name}
             onAction={(action) => {
+              if (action === 'talk_live') onLiveCall()
               if (action === 'rename') onRename()
               if (action === 'trash') onDelete()
               if (action === 'copy') {
@@ -1851,6 +2200,8 @@ function App() {
   const [isJobMoveModalOpen, setIsJobMoveModalOpen] = useState(false)
   const [editingAvatar, setEditingAvatar] = useState(null)
   const [editingJob, setEditingJob] = useState(null)
+  const [avatars, setAvatars] = useState([])
+  const [jobs, setJobs] = useState([])
 
   const fetchAvatars = async () => {
     try {
@@ -1883,18 +2234,16 @@ function App() {
         console.error('Failed to fetch jobs:', error)
       }
     }
-    if (isAuthenticated) {
-      const initDashboard = async () => {
-        await Promise.all([fetchJobs(), fetchAvatars()]);
-      };
-      initDashboard();
 
-      // Faster polling (3s) if there are processing jobs, otherwise 10s
+    if (isAuthenticated) {
+      if (jobs.length === 0) fetchJobs()
+      fetchAvatars()
+
       const hasProcessing = jobs.some(j => j.status === 'processing' || j.status === 'queued')
       const interval = setInterval(fetchJobs, hasProcessing ? 3000 : 10000);
       return () => clearInterval(interval)
     }
-  }, [isAuthenticated, view, jobs])
+  }, [isAuthenticated, jobs.length, jobs.some(j => j.status === 'processing' || j.status === 'queued')])
 
   const handleCreateAvatar = async (formData) => {
     try {
@@ -2010,6 +2359,7 @@ function App() {
             />
           )}
           {view === 'prompts' && <PromptGalleryView onUse={handleUsePrompt} />}
+          {view === 'live-call' && <LiveCallView avatarList={avatars} />}
         </div>
       </main>
       <AvatarCreateModal

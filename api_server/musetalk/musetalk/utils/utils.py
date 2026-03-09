@@ -18,8 +18,16 @@ def load_all_model(
     unet_config=os.path.join("models", "musetalkV15", "musetalk.json"),
     device=None,
 ):
+    # If vae_type is an absolute path or already a valid path, use it.
+    if os.path.isabs(vae_type) or os.path.exists(vae_type):
+        vae_model_path = vae_type
+    else:
+        # Fallback to relative path from CWD or use environment variable
+        models_root = os.environ.get("MUSETALK_MODELS_DIR", "models")
+        vae_model_path = os.path.join(models_root, vae_type)
+        
     vae = VAE(
-        model_path = os.path.join("models", vae_type),
+        model_path = vae_model_path,
     )
     print(f"load unet model from {unet_model_path}")
     unet = UNet(

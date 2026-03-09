@@ -88,3 +88,40 @@ async def delete_job(job_id: str, db: Session = Depends(get_db)):
     db.delete(job)
     db.commit()
     return {"deleted": True, "job_id": job_id}
+
+@router.post("/batch-delete")
+async def batch_delete_jobs(job_ids: list[str], db: Session = Depends(get_db)):
+    deleted_ids = []
+    for job_id in job_ids:
+        job = db.query(Job).filter(Job.id == job_id).first()
+        if job:
+            # Delete output video file if it exists
+            video_path = Path(settings.OUTPUT_DIR) / f"{job_id}.mp4"
+            if video_path.exists():
+                try:
+                    os.remove(video_path)
+                except Exception:
+                    pass
+            db.delete(job)
+            deleted_ids.append(job_id)
+    
+    db.commit()
+    return {"deleted_count": len(deleted_ids), "deleted_ids": deleted_ids}
+
+@router.patch("/batch-update")
+async def batch_update_jobs(update_data: dict, db: Session = Depends(get_db)):
+    job_ids = update_data.get("job_ids", [])
+    data = update_data.get("data", {})
+    
+    updated_ids = []
+    for job_id in job_ids:
+        job = db.query(Job).filter(Job.id == job_id).first()
+        if job:
+            if "title" in data:
+                job.title = data["title"]
+            if "project_id" in data:
+                job.project_id = data["project_id"]
+            updated_ids.append(job_id)
+            
+    db.commit()
+    return {"updated_count": len(updated_ids), "updated_ids": updated_ids}

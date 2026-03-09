@@ -1,0 +1,173 @@
+{
+  "$schema": "https://webreel.dev/schema/v1.json",
+  "outDir": "./out",
+  "defaultDelay": 700,
+  "videos": {
+    "talkflow-full-flow": {
+      "url": "http://localhost:5173/?demo=1",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "steps": [
+        {
+          "action": "pause",
+          "ms": 1500,
+          "description": "Login screen"
+        },
+        {
+          "action": "click",
+          "selector": "input[type=\"email\"]",
+          "delay": 300
+        },
+        {
+          "action": "type",
+          "text": "demo@talkflow.ai",
+          "charDelay": 60,
+          "delay": 500
+        },
+        {
+          "action": "click",
+          "text": "Continue",
+          "delay": 2000,
+          "description": "Log in"
+        },
+        {
+          "action": "pause",
+          "ms": 2000,
+          "description": "Dashboard loads"
+        },
+        {
+          "action": "click",
+          "text": "My AI Avatars",
+          "delay": 1000,
+          "description": "Go to avatar library"
+        },
+        {
+          "action": "pause",
+          "ms": 1500
+        },
+        {
+          "action": "click",
+          "text": "Create New",
+          "delay": 800,
+          "description": "Open Create New Avatar modal"
+        },
+        {
+          "action": "wait",
+          "text": "Create New AI Avatar",
+          "timeout": 8000,
+          "description": "Modal opens"
+        },
+        {
+          "action": "pause",
+          "ms": 3500,
+          "description": "Wait for demo-mode auto-fill to complete"
+        },
+        {
+          "action": "screenshot",
+          "output": "debug-modal-prefilled.png",
+          "description": "Check if modal is correctly prefilled"
+        },
+        {
+          "action": "click",
+          "selector": "[data-testid=\"create-avatar-submit\"]",
+          "delay": 2500,
+          "description": "Submit Create Avatar"
+        },
+        {
+          "action": "pause",
+          "ms": 5000,
+          "description": "Wait for avatar API upload (image+audio) to complete"
+        },
+        {
+          "action": "screenshot",
+          "output": "debug-after-submit.png",
+          "description": "Check if modal closed and we are back on grid"
+        },
+        {
+          "action": "wait",
+          "text": "Marcus Aurelio",
+          "timeout": 30000,
+          "delay": 1500,
+          "description": "Marcus Aurelio appears in avatar grid"
+        },
+        {
+          "action": "pause",
+          "ms": 2000
+        },
+        {
+          "action": "click",
+          "text": "Marcus Aurelio",
+          "delay": 1200,
+          "description": "Select avatar → opens Generate"
+        },
+        {
+          "action": "pause",
+          "ms": 2000,
+          "description": "Generate view with Marcus Aurelio selected"
+        },
+        {
+          "action": "click",
+          "selector": "textarea[placeholder=\"Enter the text you want the avatar to speak...\"]",
+          "delay": 400,
+          "description": "Focus script textarea"
+        },
+        {
+          "action": "type",
+          "text": "This is my word",
+          "charDelay": 80,
+          "delay": 1000
+        },
+        {
+          "action": "click",
+          "text": "Generate",
+          "delay": 2500,
+          "description": "Submit generation job"
+        },
+        {
+          "action": "pause",
+          "ms": 2000,
+          "description": "Job queued — success banner"
+        },
+        {
+          "action": "click",
+          "text": "My AI Avatars",
+          "delay": 1200,
+          "description": "Back to avatar library"
+        },
+        {
+          "action": "pause",
+          "ms": 2000
+        },
+        {
+          "action": "hover",
+          "text": "Marcus Aurelio",
+          "delay": 600,
+          "description": "Hover to reveal 3-dot"
+        },
+        {
+          "action": "click",
+          "selector": "[data-testid=\"avatar-menu-btn\"]",
+          "delay": 800,
+          "description": "Open context menu"
+        },
+        {
+          "action": "pause",
+          "ms": 600
+        },
+        {
+          "action": "click",
+          "text": "Trash",
+          "delay": 1000,
+          "description": "Delete Marcus Aurelio"
+        },
+        {
+          "action": "pause",
+          "ms": 2000,
+          "description": "Avatar deleted — library clean"
+        }
+      ]
+    }
+  }
+}

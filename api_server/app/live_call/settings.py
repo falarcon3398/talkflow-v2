@@ -2,6 +2,19 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
+# Auto-load api_server/.env — must run BEFORE class body evaluates
+try:
+    from dotenv import load_dotenv as _load_dotenv
+    _here = Path(__file__).resolve()
+    # Walk up from live_call/ → app/ → api_server/ and find .env
+    for _parent in _here.parents:
+        _candidate = _parent / ".env"
+        if _candidate.exists() and (_parent.name == "api_server" or (not (_parent / "api_server").exists())):
+            _load_dotenv(dotenv_path=_candidate, override=True)
+            break
+except ImportError:
+    pass  # rely on shell env vars
+
 def _env(key: str, default: str | None = None) -> str | None:
     v = os.getenv(key)
     return v if v not in (None, "") else default
@@ -22,6 +35,13 @@ class LiveCallSettings:
     OPENAI_CHAT_MODEL = _env("OPENAI_CHAT_MODEL", "gpt-4o-mini")
     OPENAI_STT_MODEL = _env("OPENAI_STT_MODEL", "whisper-1")
     OPENAI_TTS_MODEL = _env("OPENAI_TTS_MODEL", "gpt-4o-mini-tts")
+    
+    # ElevenLabs
+    ELEVENLABS_API_KEY = _env("ELEVENLABS_API_KEY", "")
+    ELEVENLABS_VOICE_ID = _env("ELEVENLABS_VOICE_ID", "pNInz6obpg8ndclKtelt") # Rachel
+    ELEVENLABS_MODEL_ID = _env("ELEVENLABS_MODEL_ID", "eleven_multilingual_v2")
+    
+    TTS_PROVIDER = _env("TTS_PROVIDER", "openai") # openai | elevenlabs
 
     AGENT_SYSTEM_PROMPT = _env(
         "AGENT_SYSTEM_PROMPT",
@@ -34,8 +54,9 @@ class LiveCallSettings:
     IDLE_SECONDS = int(_env("IDLE_SECONDS", "4"))
 
     # Lipsync live (optional)
-    LIPSYNC_MODE = _env("LIPSYNC_MODE", "wav2lip")  # wav2lip | none
+    LIPSYNC_MODE = _env("LIPSYNC_MODE", "musetalk")  # wav2lip | musetalk | none
     WAV2LIP_REPO = _env("WAV2LIP_REPO", str((Path.cwd() / "wav2lip").resolve()))
+    MUSETALK_DIR = _env("MUSETALK_DIR", str((Path.cwd() / "musetalk").resolve()))
     # Note: WAV2LIP_CHECKPOINT is resolved lazily to avoid self-referencing during class body definition
     _wav2lip_default = str(
         Path(_env("EXTERNAL_ROOT", "/mnt/external/1001-video-avatar")).resolve()

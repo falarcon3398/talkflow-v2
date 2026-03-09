@@ -109,6 +109,8 @@ async def ws_realtime(ws: WebSocket):
     except WebSocketDisconnect:
         pass
     except Exception as e:
-        print("[ws_realtime] error:", e)
+        import traceback
+        print(f"[ws_realtime] error: {e}")
+        traceback.print_exc()
     finally:
         await peer.close()

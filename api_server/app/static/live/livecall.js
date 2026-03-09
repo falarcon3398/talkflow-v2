@@ -77,10 +77,33 @@ async function startCall() {
     iceServers: [{ urls: "stun:stun.l.google.com:19302" }]
   });
 
-  pc.ontrack = (ev) => {
-    const [stream] = ev.streams;
-    remoteVideo.srcObject = stream;
+  // Always offer a video channel so we can receive Marcus, 
+  // even if the user has no camera.
+  pc.addTransceiver('video', { direction: 'recvonly' });
+
+  pc.oniceconnectionstatechange = () => console.log(`[WebRTC] ICE: ${pc.iceConnectionState}`);
+
+  pc.ontrack = (event) => {
+    console.log(`[WebRTC] Track: kind=${event.track.kind}`);
+    if (!remoteVideo.srcObject) {
+      remoteVideo.srcObject = new MediaStream();
+    }
+    remoteVideo.srcObject.addTrack(event.track);
+    remoteVideo.muted = false;
+    remoteVideo.volume = 1.0;
+
+    remoteVideo.play().catch(e => {
+      console.warn(`[WebRTC] Play stalled: ${e}`);
+    });
   };
+  // Attempt play if needed
+  if (remoteVideo.paused) {
+    remoteVideo.muted = false;
+    remoteVideo.volume = 1.0;
+    remoteVideo.play()
+      .then(() => console.log("[WebRTC] Play started"))
+      .catch(e => console.warn("[WebRTC] Play stalled:", e));
+  }
 
   pc.onicecandidate = (ev) => {
     if (ev.candidate && ws?.readyState === 1) {
@@ -89,18 +112,31 @@ async function startCall() {
   };
 
   localStream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false });
-  for (const t of localStream.getTracks()) pc.addTrack(t, localStream);
+
+  // Use an explicit sendrecv transceiver so the SDP offer tells the server
+  // we want to RECEIVE audio back (bot TTS), not just send the mic.
+  // addTrack() alone creates a sendonly transceiver which silences bot audio.
+  const audioTrack = localStream.getAudioTracks()[0];
+  const audioTransceiver = pc.addTransceiver(audioTrack, {
+    direction: 'sendrecv',
+    streams: [localStream],
+  });
+  console.log('[WebRTC] Audio transceiver direction:', audioTransceiver.direction);
+
+  pc.onconnectionstatechange = () => console.log(`[WebRTC] Connection: ${pc.connectionState}`);
 
   ws.onmessage = async (ev) => {
     const msg = JSON.parse(ev.data);
     if (msg.type === "answer") {
+      console.log("[WebRTC] Received answer");
       await pc.setRemoteDescription({ type: msg.sdpType, sdp: msg.sdp });
       setStatus("Live (Speak normally)");
       $("start").disabled = true;
       $("end").disabled = false;
+      remoteVideo.play().catch(e => console.warn("Manual play failed:", e));
     }
     if (msg.type === "candidate") {
-      try { await pc.addIceCandidate(msg.candidate); } catch (e) {}
+      try { await pc.addIceCandidate(msg.candidate); } catch (e) { }
     }
     if (msg.type === "error") {
       alert(msg.message || "Error");
@@ -118,9 +154,9 @@ async function startCall() {
 
 async function endCall() {
   setStatus("Closing...");
-  try { localStream?.getTracks()?.forEach(t => t.stop()); } catch {}
-  try { pc?.close(); } catch {}
-  try { ws?.close(); } catch {}
+  try { localStream?.getTracks()?.forEach(t => t.stop()); } catch { }
+  try { pc?.close(); } catch { }
+  try { ws?.close(); } catch { }
   pc = null; ws = null; localStream = null;
   remoteVideo.srcObject = null;
   $("start").disabled = false;

@@ -65,6 +65,8 @@ api_server/*.sqlite
 # Models (Too large for Git)
 models/**
 !models/.gitkeep
+api_server/models/**
+api_server/musetalk/models/**
 
 # Vercel
 .vercel/

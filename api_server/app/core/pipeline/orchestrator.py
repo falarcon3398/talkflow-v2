@@ -4,8 +4,11 @@ from app.models.job import Job
 from app.database import SessionLocal
 import subprocess
 import shutil
+import logging
 from pathlib import Path
 from app.config import settings
+
+logger = logging.getLogger(__name__)
 
 def update_job_status(job_id: str, status: str = None, progress: int = None, result_url: str = None, error_message: str = None):
     db = SessionLocal()

@@ -1,0 +1,21 @@
+{
+    "steps": [
+        {
+            "action": "open",
+            "url": "http://localhost:5173"
+        },
+        {
+            "action": "wait",
+            "ms": 1500
+        },
+        {
+            "action": "wait",
+            "ms": 1500
+        },
+        {
+            "action": "export",
+            "format": "mp4",
+            "output": "demos/out/demo-smoke.mp4"
+        }
+    ]
+}

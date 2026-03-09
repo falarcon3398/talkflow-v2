@@ -5,18 +5,11 @@ import subprocess
 import numpy as np
 import cv2
 import pickle
-import os
-import json
-from mmpose.apis import inference_topdown, init_model
-from mmpose.structures import merge_data_samples
+# initialize the mmpose model - moved to lazy loading in functions
+model = None 
+
 import torch
 from tqdm import tqdm
-
-# initialize the mmpose model
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-config_file = './musetalk/utils/dwpose/rtmpose-l_8xb32-270e_coco-ubody-wholebody-384x288.py'
-checkpoint_file = './models/dwpose/dw-ll_ucoco_384.pth'
-model = init_model(config_file, checkpoint_file, device=device)
 
 # initialize the face detection model
 device = "cuda" if torch.cuda.is_available() else "cpu"

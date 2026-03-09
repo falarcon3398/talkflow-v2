@@ -72,6 +72,16 @@ export const videoApi = {
     })
     return response.json()
   },
+  async batchDeleteJobs(jobIds) {
+    const response = await fetch(`${API_BASE}/jobs/batch-delete`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(jobIds)
+    })
+    return response.json()
+  },
   async updateJob(jobId, data) {
     const response = await fetch(`${API_BASE}/jobs/${jobId}`, {
       method: 'PATCH',
@@ -79,6 +89,16 @@ export const videoApi = {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(data)
+    })
+    return response.json()
+  },
+  async batchUpdateJobs(jobIds, data) {
+    const response = await fetch(`${API_BASE}/jobs/batch-update`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ job_ids: jobIds, data })
     })
     return response.json()
   }

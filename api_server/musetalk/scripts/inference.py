@@ -106,7 +106,8 @@ def main(args):
             
             # Set result save paths
             result_img_save_path = os.path.join(temp_dir, output_basename)
-            crop_coord_save_path = os.path.join(args.result_dir, "../", input_basename+".pkl")
+            crop_coord_save_path = os.path.normpath(os.path.join(args.result_dir, "../", input_basename+".pkl"))
+            print(f"Checking for saved coordinates at: {crop_coord_save_path}")
             os.makedirs(result_img_save_path, exist_ok=True)
             
             # Set output video paths
@@ -166,9 +167,9 @@ def main(args):
             for bbox, frame in zip(coord_list, frame_list):
                 if bbox == coord_placeholder:
                     continue
-                x1, y1, x2, y2 = bbox
+                x1, y1, x2, y2 = map(int, bbox)
                 if args.version == "v15":
-                    y2 = y2 + args.extra_margin
+                    y2 = y2 + int(args.extra_margin)
                     y2 = min(y2, frame.shape[0])
                 crop_frame = frame[y1:y2, x1:x2]
                 crop_frame = cv2.resize(crop_frame, (256,256), interpolation=cv2.INTER_LANCZOS4)
@@ -210,13 +211,14 @@ def main(args):
             for i, res_frame in enumerate(tqdm(res_frame_list)):
                 bbox = coord_list_cycle[i%(len(coord_list_cycle))]
                 ori_frame = copy.deepcopy(frame_list_cycle[i%(len(frame_list_cycle))])
-                x1, y1, x2, y2 = bbox
+                x1, y1, x2, y2 = map(int, bbox)
                 if args.version == "v15":
-                    y2 = y2 + args.extra_margin
-                    y2 = min(y2, frame.shape[0])
+                    y2 = y2 + int(args.extra_margin)
+                    y2 = min(y2, ori_frame.shape[0])
                 try:
                     res_frame = cv2.resize(res_frame.astype(np.uint8), (x2-x1, y2-y1))
-                except:
+                except Exception as e:
+                    print(f"Resize error: {e}")
                     continue
                 
                 # Merge results with version-specific parameters
@@ -224,9 +226,10 @@ def main(args):
                     combine_frame = get_image(ori_frame, res_frame, [x1, y1, x2, y2], mode=args.parsing_mode, fp=fp)
                 else:
                     combine_frame = get_image(ori_frame, res_frame, [x1, y1, x2, y2], fp=fp)
-                cv2.imwrite(f"{result_img_save_path}/{str(i).zfill(8)}.png", combine_frame)
+                combine_frame_path = f"{result_img_save_path}/{str(i).zfill(8)}.png"
+                cv2.imwrite(combine_frame_path, combine_frame)
 
-            # Save prediction results
+            print(f"Total frames written to {result_img_save_path}: {len(os.listdir(result_img_save_path))}")
             temp_vid_path = f"{temp_dir}/temp_{input_basename}_{audio_basename}.mp4"
             cmd_img2video = f"ffmpeg -y -v warning -r {fps} -f image2 -i {result_img_save_path}/%08d.png -vcodec libx264 -vf format=yuv420p -crf 18 {temp_vid_path}"
             print("Video generation command:", cmd_img2video)
@@ -240,9 +243,11 @@ def main(args):
             shutil.rmtree(result_img_save_path)
             os.remove(temp_vid_path)
             
-            shutil.rmtree(save_dir_full)
+            if 'save_dir_full' in locals():
+                shutil.rmtree(save_dir_full)
             if not args.saved_coord:
-                os.remove(crop_coord_save_path)
+                # os.remove(crop_coord_save_path)
+                pass
                     
             print(f"Results saved to {output_vid_name}")
         except Exception as e:

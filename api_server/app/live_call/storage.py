@@ -29,6 +29,13 @@ def create_avatar_from_upload(filename: str, file_path: Path) -> dict[str, Any]:
     ext = Path(filename).suffix.lower() or ".jpg"
     photo_path = adir / f"photo{ext}"
     shutil.copyfile(file_path, photo_path)
+    
+    # Auto-generate precomputed landmarks for Mac
+    try:
+        import subprocess
+        subprocess.run([sys.executable, "gen_pkl.py", str(photo_path), str(adir / "photo.pkl")], check=False)
+    except Exception as e:
+        print(f"Failed to generate photo.pkl: {e}")
 
     meta = {"id": avatar_id, "photo": photo_path.name, "idle": "idle.mp4"}
     _meta_path(avatar_id).write_text(json.dumps(meta, indent=2), encoding="utf-8")

@@ -1411,8 +1411,50 @@ const VideoPlayerModal = ({ isOpen, onClose, videoUrl, title }) => {
   )
 }
 
-const MyVideoClipsView = ({ setView, jobs, avatarList, onDeleteJob, onRenameJob, onMoveJob }) => {
+const MyVideoClipsView = ({
+  setView,
+  jobs,
+  avatarList,
+  onDeleteJob,
+  onRenameJob,
+  onMoveJob,
+  selectedJobIds,
+  setSelectedJobIds,
+  isSelectionMode,
+  setIsSelectionMode,
+  onBulkDelete,
+  onBulkMove
+}) => {
   const [selectedVideo, setSelectedVideo] = useState(null)
+
+  const isAllSelected = jobs.length > 0 && selectedJobIds.length === jobs.length
+  const hasSelection = selectedJobIds.length > 0
+
+  const toggleSelectAll = () => {
+    if (isAllSelected) {
+      setSelectedJobIds([])
+    } else {
+      setSelectedJobIds(jobs.map(j => j.job_id || j.id))
+    }
+  }
+
+  const toggleJobSelection = (jobId) => {
+    setSelectedJobIds(prev =>
+      prev.includes(jobId)
+        ? prev.filter(id => id !== jobId)
+        : [...prev, jobId]
+    )
+  }
+
+  const enterSelectionMode = () => {
+    setIsSelectionMode(true)
+    setSelectedJobIds([])
+  }
+
+  const exitSelectionMode = () => {
+    setIsSelectionMode(false)
+    setSelectedJobIds([])
+  }
 
   const displayJobs =
     jobs.length > 0
@@ -1431,13 +1473,60 @@ const MyVideoClipsView = ({ setView, jobs, avatarList, onDeleteJob, onRenameJob,
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h1 className="text-2xl font-bold text-slate-800">My Video Clips</h1>
-        <button
-          onClick={() => setView('video-generate')}
-          className="flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-xs font-bold text-white shadow hover:bg-slate-700 transition-colors"
-        >
-          <span className="text-[14px]">+</span> New Video
-        </button>
+        <div className="flex items-center gap-4">
+          <h1 className="text-2xl font-bold text-slate-800">My Video Clips</h1>
+          {isSelectionMode ? (
+            <div className="flex items-center gap-2 animate-in fade-in slide-in-from-left-2 duration-300">
+              <button
+                onClick={exitSelectionMode}
+                className="rounded-lg px-3 py-1.5 text-xs font-bold text-slate-500 hover:bg-slate-100"
+              >
+                Cancel
+              </button>
+              <div className="h-4 w-[1px] bg-slate-200 mx-1" />
+              <button
+                onClick={toggleSelectAll}
+                className="text-xs font-bold text-blue-600 hover:underline"
+              >
+                {isAllSelected ? 'Deselect All' : 'Select All'}
+              </button>
+              <span className="text-[10px] font-black text-slate-300 mx-1">•</span>
+              <span className="text-xs font-bold text-slate-500">{selectedJobIds.length} Selected</span>
+
+              <div className="flex items-center gap-2 ml-4">
+                <button
+                  onClick={() => onBulkMove(selectedJobIds, '')}
+                  disabled={!hasSelection}
+                  className="rounded-lg bg-white border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-700 shadow-sm hover:bg-slate-50 disabled:opacity-50"
+                >
+                  📁 Move
+                </button>
+                <button
+                  onClick={() => onBulkDelete(selectedJobIds)}
+                  disabled={!hasSelection}
+                  className="rounded-lg bg-red-50 text-red-600 px-3 py-1.5 text-xs font-bold hover:bg-red-100 disabled:opacity-50"
+                >
+                  🗑️ Trash
+                </button>
+              </div>
+            </div>
+          ) : (
+            <button
+              onClick={enterSelectionMode}
+              className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-600 hover:bg-white hover:shadow-sm"
+            >
+              Select
+            </button>
+          )}
+        </div>
+        {!isSelectionMode && (
+          <button
+            onClick={() => setView('video-generate')}
+            className="flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-xs font-bold text-white shadow hover:bg-slate-700 transition-colors"
+          >
+            <span className="text-[14px]">+</span> New Video
+          </button>
+        )}
       </div>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {displayJobs.map((job) => {
@@ -1461,13 +1550,17 @@ const MyVideoClipsView = ({ setView, jobs, avatarList, onDeleteJob, onRenameJob,
             return 'Just now'
           })()
 
+          const jobId = job.job_id || job.id
           return (
             <VideoClipCard
-              key={job.job_id || job.id}
+              key={jobId}
               onClick={() => job.status === 'completed' && setSelectedVideo(job)}
               onDeleteJob={onDeleteJob}
               onRename={() => onRenameJob(job)}
               onMove={() => onMoveJob(job)}
+              isSelectionMode={isSelectionMode}
+              isSelected={selectedJobIds.includes(jobId)}
+              onToggleSelection={toggleJobSelection}
               video={{
                 id: job.job_id || job.id,
                 title: job.title || (job.params?.text ? job.params.text.slice(0, 42) + (job.params.text.length > 42 ? '…' : '') : `TalkFlow Video ${String(job.job_id || job.id).slice(0, 8)}`),
@@ -1494,7 +1587,7 @@ const MyVideoClipsView = ({ setView, jobs, avatarList, onDeleteJob, onRenameJob,
 }
 
 
-const VideoClipCard = ({ video, onClick, onDeleteJob, onRename, onMove }) => {
+const VideoClipCard = ({ video, onClick, onDeleteJob, onRename, onMove, isSelectionMode, isSelected, onToggleSelection }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const menuItems = [
@@ -1510,11 +1603,32 @@ const VideoClipCard = ({ video, onClick, onDeleteJob, onRename, onMove }) => {
     },
   ]
 
+  const handleCardClick = (e) => {
+    if (isSelectionMode) {
+      onToggleSelection(video.id)
+    } else {
+      onClick()
+    }
+  }
+
   return (
-    <div className={`group relative cursor-pointer transition-all duration-200 ${video.status === 'failed' ? 'opacity-50' : 'hover:-translate-y-0.5'}`}>
+    <div className={`group relative cursor-pointer transition-all duration-200 ${video.status === 'failed' ? 'opacity-50' : 'hover:-translate-y-0.5'} ${isSelected ? 'ring-2 ring-blue-500 rounded-2xl' : ''}`}>
+      {/* Selection Checkbox Overlay */}
+      {isSelectionMode && (
+        <div className="absolute top-2.5 left-2.5 z-30">
+          <div className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-colors ${isSelected ? 'bg-blue-600 border-blue-600' : 'bg-white/10 border-white/40 backdrop-blur-sm'}`}>
+            {isSelected && (
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="4" className="w-3 h-3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Thumbnail */}
       <div
-        onClick={onClick}
+        onClick={handleCardClick}
         className="relative w-full overflow-hidden rounded-2xl bg-slate-900"
         style={{ aspectRatio: '16/9' }}
       >
@@ -2200,6 +2314,8 @@ function App() {
   const [isJobMoveModalOpen, setIsJobMoveModalOpen] = useState(false)
   const [editingAvatar, setEditingAvatar] = useState(null)
   const [editingJob, setEditingJob] = useState(null)
+  const [selectedJobIds, setSelectedJobIds] = useState([])
+  const [isSelectionMode, setIsSelectionMode] = useState(false)
   const [avatars, setAvatars] = useState([])
   const [jobs, setJobs] = useState([])
 
@@ -2294,6 +2410,37 @@ function App() {
     }
   }
 
+  const handleBulkDelete = async (jobIds) => {
+    if (!jobIds.length) return
+    if (!window.confirm(`Are you sure you want to delete ${jobIds.length} items?`)) return
+
+    // Optimistically remove from state immediately
+    setJobs((prev) => prev.filter((j) => !jobIds.includes(j.job_id || j.id)))
+    setSelectedJobIds([])
+    setIsSelectionMode(false)
+
+    try {
+      await Promise.all(jobIds.map((id) => videoApi.deleteJob(id)))
+    } catch (error) {
+      console.error('Bulk delete failed:', error)
+      const data = await videoApi.listJobs()
+      setJobs(data)
+    }
+  }
+
+  const handleBulkMove = async (jobIds, projectId) => {
+    if (!jobIds.length) return
+    try {
+      await Promise.all(jobIds.map((id) => videoApi.updateJob(id, { project_id: projectId })))
+      setSelectedJobIds([])
+      setIsSelectionMode(false)
+      const data = await videoApi.listJobs()
+      setJobs(data)
+    } catch (error) {
+      console.error('Bulk move failed:', error)
+    }
+  }
+
   const handleDeleteAvatar = async () => {
     if (!editingAvatar) return
     try {
@@ -2356,6 +2503,12 @@ function App() {
                 setEditingJob(job)
                 setIsJobMoveModalOpen(true)
               }}
+              selectedJobIds={selectedJobIds}
+              setSelectedJobIds={setSelectedJobIds}
+              isSelectionMode={isSelectionMode}
+              setIsSelectionMode={setIsSelectionMode}
+              onBulkDelete={handleBulkDelete}
+              onBulkMove={handleBulkMove}
             />
           )}
           {view === 'prompts' && <PromptGalleryView onUse={handleUsePrompt} />}

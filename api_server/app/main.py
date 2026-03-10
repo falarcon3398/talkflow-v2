@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.api.v1.endpoints import videos, jobs, avatars
+from app.api.v1.endpoints import videos, jobs, avatars, voices
 from app.database import Base, engine
 from fastapi.staticfiles import StaticFiles
 from app.config import settings
@@ -106,6 +106,7 @@ async def health_check():
 app.include_router(videos.router, prefix="/api/v1/videos", tags=["videos"])
 app.include_router(jobs.router, prefix="/api/v1/jobs", tags=["jobs"])
 app.include_router(avatars.router, prefix="/api/v1/avatars", tags=["avatars"])
+app.include_router(voices.router, prefix="/api/v1/voices", tags=["voices"])
 
 # ------------------- LIVE CALL integration -------------------
 try:

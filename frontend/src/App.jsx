@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { videoApi, avatarApi } from './api/client'
+import { videoApi, avatarApi, voiceApi } from './api/client'
 
 const Sidebar = ({ view, setView, onLogout }) => {
   const [openSections, setOpenSections] = useState({
@@ -61,6 +61,12 @@ const Sidebar = ({ view, setView, onLogout }) => {
               className={`nav-item ${view === 'scripts' ? 'nav-item-active' : 'nav-item-inactive'}`}
             >
               <span className="text-sm">Scripts</span>
+            </button>
+            <button
+              onClick={() => setView('voice-library')}
+              className={`nav-item ${view === 'voice-library' ? 'nav-item-active' : 'nav-item-inactive'}`}
+            >
+              <span className="text-sm">Voice Library</span>
             </button>
           </div>
         </div>
@@ -1324,6 +1330,239 @@ const ScriptsView = ({ script, setScript }) => {
   )
 }
 
+const VoiceLibraryView = ({ voices, onUpdateName, onDelete }) => {
+  const [isCloneModalOpen, setIsCloneModalOpen] = useState(false)
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-2xl font-black text-slate-800">Voice Library</h1>
+          <p className="text-sm text-slate-500">Manage your cloned voices and AI speakers</p>
+        </div>
+        <button
+          onClick={() => setIsCloneModalOpen(true)}
+          className="flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-200 transition-all hover:bg-blue-700 active:scale-95"
+        >
+          <span>🎙️</span> Clone New Voice
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {voices.map((voice) => (
+          <VoiceCard
+            key={voice.id}
+            voice={voice}
+            onUpdateName={(name) => onUpdateName(voice.id, name)}
+            onDelete={() => onDelete(voice.id)}
+          />
+        ))}
+        {voices.length === 0 && (
+          <div className="col-span-full flex flex-col items-center justify-center space-y-4 rounded-3xl border-2 border-dashed border-slate-100 bg-slate-50/50 p-20 text-center">
+            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-3xl shadow-sm">
+              🗣️
+            </div>
+            <div className="space-y-1">
+              <p className="text-lg font-bold text-slate-800">No voices found</p>
+              <p className="text-sm text-slate-400">Upload a 30-second clip to clone your first voice</p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <VoiceCloneModal
+        isOpen={isCloneModalOpen}
+        onClose={() => setIsCloneModalOpen(false)}
+        onSuccess={() => {
+          setIsCloneModalOpen(false)
+          // Parent should trigger a re-fetch
+        }}
+      />
+    </div>
+  )
+}
+
+const VoiceCard = ({ voice, onUpdateName, onDelete }) => {
+  const [isEditing, setIsEditing] = useState(false)
+  const [newName, setNewName] = useState(voice.name)
+  const audioRef = React.useRef(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      audioRef.current.pause()
+    } else {
+      audioRef.current.play()
+    }
+    setIsPlaying(!isPlaying)
+  }
+
+  return (
+    <div className="glass-card group relative flex flex-col items-center justify-center overflow-hidden border-white/50 bg-white/60 p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/10">
+      <div className="absolute top-4 right-4 flex items-center gap-2 opacity-0 transition-opacity group-hover:opacity-100">
+        <button
+          onClick={() => setIsEditing(true)}
+          className="text-xs text-slate-400 hover:text-blue-600"
+        >
+          ✏️
+        </button>
+        <button
+          onClick={() => {
+            if (window.confirm('Delete this voice?')) onDelete()
+          }}
+          className="text-xs text-slate-400 hover:text-red-500"
+        >
+          🗑️
+        </button>
+      </div>
+
+      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-50 text-2xl text-blue-600 shadow-inner group-hover:bg-blue-600 group-hover:text-white group-hover:shadow-blue-200 transition-all duration-300">
+        🎙️
+      </div>
+
+      {isEditing ? (
+        <div className="mb-4 flex w-full flex-col gap-2">
+          <input
+            className="w-full rounded-lg border border-blue-200 bg-white px-3 py-1.5 text-center text-sm outline-none focus:ring-2 focus:ring-blue-100"
+            value={newName}
+            onChange={(e) => setNewName(e.target.value)}
+            autoFocus
+          />
+          <div className="flex gap-2">
+            <button
+              onClick={() => {
+                onUpdateName(newName)
+                setIsEditing(false)
+              }}
+              className="flex-1 rounded-lg bg-blue-600 py-1 text-[10px] font-bold text-white"
+            >
+              SAVE
+            </button>
+            <button
+              onClick={() => setIsEditing(false)}
+              className="flex-1 rounded-lg bg-slate-100 py-1 text-[10px] font-bold text-slate-400"
+            >
+              CANCEL
+            </button>
+          </div>
+        </div>
+      ) : (
+        <h3 className="mb-1 text-base font-bold text-slate-800">{voice.name}</h3>
+      )}
+
+      <p className="mb-6 text-[10px] font-black tracking-widest text-slate-300 uppercase">
+        {voice.type || 'Cloned Voice'}
+      </p>
+
+      <audio
+        ref={audioRef}
+        src={voice.voice_url}
+        onEnded={() => setIsPlaying(false)}
+        className="hidden"
+      />
+
+      <button
+        onClick={togglePlay}
+        className="flex h-10 w-full items-center justify-center gap-2 rounded-xl border border-slate-100 bg-slate-50/50 px-4 text-xs font-bold text-slate-500 transition-all hover:bg-blue-50 hover:text-blue-600 group-hover:border-blue-100"
+      >
+        <span>{isPlaying ? '⏸️' : '▶️'}</span> {isPlaying ? 'Stop' : 'Preview'}
+      </button>
+    </div>
+  )
+}
+
+const VoiceCloneModal = ({ isOpen, onClose, onSuccess }) => {
+  const [name, setName] = useState('')
+  const [file, setFile] = useState(null)
+  const [loading, setLoading] = useState(false)
+  const [dragActive, setDragActive] = useState(false)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (!name || !file) return
+
+    setLoading(true)
+    const formData = new FormData()
+    formData.append('name', name)
+    formData.append('file', file)
+
+    try {
+      const { voiceApi } = await import('./api/client')
+      await voiceApi.createVoice(formData)
+      onSuccess()
+    } catch (err) {
+      alert('Error cloning voice')
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  if (!isOpen) return null
+
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} title="Clone New Voice">
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="space-y-2">
+          <label className="text-xs font-black tracking-widest text-slate-400 uppercase">Voice Name</label>
+          <input
+            className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm outline-none transition-all focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10"
+            placeholder="e.g. My Professional Voice"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label className="text-xs font-black tracking-widest text-slate-400 uppercase">Voice Sample (WAV/MP3)</label>
+          <div
+            className={`upload-zone min-h-[160px] cursor-pointer border-2 border-dashed transition-all ${dragActive ? 'border-blue-500 bg-blue-50/50' : 'border-slate-200 bg-slate-50'}`}
+            onDragOver={(e) => { e.preventDefault(); setDragActive(true) }}
+            onDragLeave={() => setDragActive(false)}
+            onDrop={(e) => {
+              e.preventDefault()
+              setDragActive(false)
+              if (e.dataTransfer.files?.[0]) setFile(e.dataTransfer.files[0])
+            }}
+            onClick={() => document.getElementById('voice-upload').click()}
+          >
+            {file ? (
+              <div className="flex flex-col items-center gap-2">
+                <span className="text-2xl">🎵</span>
+                <span className="text-sm font-bold text-slate-800">{file.name}</span>
+                <span className="text-[10px] text-slate-400">Click to change</span>
+              </div>
+            ) : (
+              <div className="flex flex-col items-center gap-3 text-center p-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm">🎙️</div>
+                <div>
+                  <p className="text-sm font-bold text-slate-800">Drop audio sample here</p>
+                  <p className="text-[11px] text-slate-400 mt-1">Preferably 30-60 seconds of clean speech</p>
+                </div>
+              </div>
+            )}
+          </div>
+          <input
+            id="voice-upload"
+            type="file"
+            className="hidden"
+            accept="audio/*"
+            onChange={(e) => setFile(e.target.files[0])}
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={loading || !name || !file}
+          className="w-full rounded-xl bg-blue-600 py-4 font-black tracking-widest text-white uppercase shadow-lg shadow-blue-200 transition-all hover:bg-blue-700 disabled:opacity-50"
+        >
+          {loading ? 'Cloning...' : 'Start Cloning'}
+        </button>
+      </form>
+    </Modal>
+  )
+}
+
 const VideoClipGenerateView = ({ initialPrompt }) => {
   const [prompt, setPrompt] = useState(initialPrompt || '')
   useEffect(() => {
@@ -1750,6 +1989,7 @@ const GenerateAvatarView = ({
   // eslint-disable-next-line no-unused-vars
   setSelectedAvatarId,
   avatarList,
+  voiceList,
   setView
 }) => {
   const [method, setMethod] = useState('photo')
@@ -1758,7 +1998,10 @@ const GenerateAvatarView = ({
   const [status, setStatus] = useState(null) // 'queued', 'error', 'success'
   const [aspectRatio, setAspectRatio] = useState('16:9') // '16:9' or '9:16'
 
-  const clonedVoices = avatarList.filter((a) => a.voice_url)
+  const clonedVoices = [
+    ...avatarList.filter((a) => a.voice_url).map(a => ({ id: a.id, name: `${a.name}'s Voice` })),
+    ...(voiceList || [])
+  ]
   const defaultOptionId = 'voice_en_male_01'
   const [selectedVoiceId, setSelectedVoiceId] = useState(defaultOptionId)
 
@@ -2318,6 +2561,7 @@ function App() {
   const [isSelectionMode, setIsSelectionMode] = useState(false)
   const [avatars, setAvatars] = useState([])
   const [jobs, setJobs] = useState([])
+  const [voices, setVoices] = useState([])
 
   const fetchAvatars = async () => {
     try {
@@ -2325,6 +2569,15 @@ function App() {
       setAvatars(data)
     } catch (error) {
       console.error('Failed to fetch avatars:', error)
+    }
+  }
+
+  const fetchVoices = async () => {
+    try {
+      const data = await voiceApi.listVoices()
+      setVoices(data)
+    } catch (error) {
+      console.error('Failed to fetch voices:', error)
     }
   }
 
@@ -2354,6 +2607,7 @@ function App() {
     if (isAuthenticated) {
       if (jobs.length === 0) fetchJobs()
       fetchAvatars()
+      fetchVoices()
 
       const hasProcessing = jobs.some(j => j.status === 'processing' || j.status === 'queued')
       const interval = setInterval(fetchJobs, hasProcessing ? 3000 : 10000);
@@ -2452,6 +2706,24 @@ function App() {
     }
   }
 
+  const handleRenameVoice = async (voiceId, newName) => {
+    try {
+      await voiceApi.updateVoice(voiceId, newName)
+      fetchVoices()
+    } catch (error) {
+      console.error('Failed to rename voice:', error)
+    }
+  }
+
+  const handleDeleteVoice = async (voiceId) => {
+    try {
+      await voiceApi.deleteVoice(voiceId)
+      fetchVoices()
+    } catch (error) {
+      console.error('Failed to delete voice:', error)
+    }
+  }
+
   if (!isAuthenticated) return <LoginPage onLogin={() => setIsAuthenticated(true)} />
 
   return (
@@ -2482,6 +2754,7 @@ function App() {
               selectedAvatarId={selectedAvatarId}
               setSelectedAvatarId={setSelectedAvatarId}
               avatarList={avatars}
+              voiceList={voices}
               setView={setView}
             />
           )}
@@ -2513,6 +2786,13 @@ function App() {
           )}
           {view === 'prompts' && <PromptGalleryView onUse={handleUsePrompt} />}
           {view === 'live-call' && <LiveCallView avatarList={avatars} />}
+          {view === 'voice-library' && (
+            <VoiceLibraryView
+              voices={voices}
+              onUpdateName={handleRenameVoice}
+              onDelete={handleDeleteVoice}
+            />
+          )}
         </div>
       </main>
       <AvatarCreateModal

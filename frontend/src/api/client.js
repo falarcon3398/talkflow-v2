@@ -103,3 +103,32 @@ export const videoApi = {
     return response.json()
   }
 }
+
+export const voiceApi = {
+  async listVoices() {
+    const response = await fetch(`${API_BASE}/voices/`)
+    return response.json()
+  },
+  async createVoice(formData) {
+    const response = await fetch(`${API_BASE}/voices/`, {
+      method: 'POST',
+      body: formData
+    })
+    return response.json()
+  },
+  async updateVoice(voiceId, name) {
+    const formData = new FormData()
+    formData.append('name', name)
+    const response = await fetch(`${API_BASE}/voices/${voiceId}`, {
+      method: 'PATCH',
+      body: formData
+    })
+    return response.json()
+  },
+  async deleteVoice(voiceId) {
+    const response = await fetch(`${API_BASE}/voices/${voiceId}`, {
+      method: 'DELETE'
+    })
+    return response.json()
+  }
+}

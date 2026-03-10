@@ -8,6 +8,7 @@ from app.database import get_db
 from app.models.job import Job
 from app.config import settings
 from app.models.avatar import Avatar
+from app.models.voice import Voice
 from app.workers.celery_app import celery_app
 from app.workers.tasks import (
     run_text_to_video_task,
@@ -64,14 +65,22 @@ async def create_text_to_video(
     # Determine if we have a cloned voice
     speaker_wav_path = None
     
-    # Check if a custom voice_id was passed (which would be an Avatar ID)
+    # Check if a custom voice_id was passed
     if voice_id and voice_id != "voice_en_male_01":
-        voice_avatar = db.query(Avatar).filter(Avatar.id == voice_id).first()
-        if voice_avatar and voice_avatar.voice_url:
-            filename = voice_avatar.voice_url.split("/")[-1]
+        # Check in Voice Library first
+        library_voice = db.query(Voice).filter(Voice.id == voice_id).first()
+        if library_voice:
+            filename = library_voice.voice_url.split("/")[-1]
             speaker_wav_path = Path(settings.UPLOAD_DIR) / "voices" / filename
-            if not speaker_wav_path.exists():
-                speaker_wav_path = None
+        else:
+            # Fallback to Avatar-linked voice
+            voice_avatar = db.query(Avatar).filter(Avatar.id == voice_id).first()
+            if voice_avatar and voice_avatar.voice_url:
+                filename = voice_avatar.voice_url.split("/")[-1]
+                speaker_wav_path = Path(settings.UPLOAD_DIR) / "voices" / filename
+        
+        if speaker_wav_path and not speaker_wav_path.exists():
+            speaker_wav_path = None
 
     # Fallback to the avatar's own voice
     if not speaker_wav_path and avatar_id:

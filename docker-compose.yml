@@ -59,8 +59,6 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     container_name: talkflow-frontend
-    ports:
-      - "80:80"
     depends_on:
       - backend
 

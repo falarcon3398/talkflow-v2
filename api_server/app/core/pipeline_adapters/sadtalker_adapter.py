@@ -9,9 +9,9 @@ logger = logging.getLogger(__name__)
 
 class SadTalkerAdapter:
     def __init__(self):
-        self.sadtalker_dir = Path(settings.SADTALKER_DIR)
-        self.venv_python = Path(settings.SADTALKER_VENV_PYTHON)
-        self.output_dir = Path(settings.OUTPUT_DIR)
+        self.sadtalker_dir = Path(settings.SADTALKER_DIR) if settings.SADTALKER_DIR else None
+        self.venv_python = Path(settings.SADTALKER_VENV_PYTHON) if settings.SADTALKER_VENV_PYTHON else None
+        self.output_dir = Path(settings.OUTPUT_DIR) if settings.OUTPUT_DIR else None
         
     def check_environment(self):
         """Verifies if SadTalker environment is ready."""

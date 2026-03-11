@@ -36,7 +36,9 @@ RUN pip3 install --upgrade pip setuptools wheel
 
 # Install Python requirements
 COPY requirements.txt .
+COPY api_server/requirements.txt api_requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
+RUN pip3 install --no-cache-dir -r api_requirements.txt
 
 # Copy the entire project
 COPY . .

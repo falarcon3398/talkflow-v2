@@ -12,22 +12,10 @@ router = APIRouter()
 
 @router.get("/")
 async def list_avatars(db: Session = Depends(get_db)):
+    # Simply return whatever is in the database — no auto-seeding
     avatars = db.query(Avatar).all()
-    # Add default avatars if none exist (for the first time)
-    if not avatars:
-        defaults = [
-            {"id": "1", "name": "Shakespeare", "type": "Historic", "image_url": "/avatars/shakespeare.jpg"},
-            {"id": "2", "name": "Thomas Aquinas", "type": "Historic", "image_url": "/avatars/monk.jpg"},
-            {"id": "3", "name": "Marcus Aurelius", "type": "Historic", "image_url": "/avatars/marcus_aurelius.jpg"},
-            {"id": "4", "name": "Tech CEO", "type": "Modern", "image_url": "/avatars/modern_male.png"}
-        ]
-        for d in defaults:
-            avatar = Avatar(**d)
-            db.add(avatar)
-        db.commit()
-        avatars = db.query(Avatar).all()
-    
     return avatars
+
 
 @router.post("/")
 async def create_avatar(

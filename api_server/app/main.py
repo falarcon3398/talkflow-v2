@@ -13,7 +13,7 @@ def start_stuck_jobs():
     from app.database import SessionLocal
     from app.models.job import Job
     from app.models.avatar import Avatar
-    from app.workers.tasks import run_text_to_video_task, run_audio_to_video_task
+    from app.workers.tasks import process_text_to_video_task, process_audio_to_video_task
     from app.config import settings
     from pathlib import Path
     import threading
@@ -51,15 +51,14 @@ def start_stuck_jobs():
 
                     if job.type == "text_to_video":
                         print(f"[STARTUP] Re-triggering text-to-video for {job_id}")
-                        run_text_to_video_task(job_id, avatar_path, params.get("text"), params.get("voice_id"), params.get("resolution"))
+                        process_text_to_video_task.delay(job_id, avatar_path, params.get("text"), params.get("voice_id"), params.get("resolution"))
                     elif job.type == "audio_to_video":
                         audio_path = params.get("audio_path")
                         if not audio_path:
-                            # Try to find audio in upload dir
                             audio_path = str(Path(settings.UPLOAD_DIR) / job_id / "audio.wav")
                         
                         print(f"[STARTUP] Re-triggering audio-to-video for {job_id}")
-                        run_audio_to_video_task(job_id, avatar_path, audio_path, params.get("enhance_quality"))
+                        process_audio_to_video_task.delay(job_id, avatar_path, audio_path, params.get("enhance_quality"))
         except Exception as e:
             print(f"[STARTUP] Recovery failed: {e}")
         finally:

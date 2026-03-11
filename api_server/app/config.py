@@ -40,9 +40,13 @@ class Settings(BaseSettings):
     SADTALKER_DIR: Optional[str] = os.environ.get("SADTALKER_DIR")
     SADTALKER_VENV_PYTHON: Optional[str] = os.environ.get("SADTALKER_VENV_PYTHON")
     
-    UPLOAD_DIR: str = os.environ.get("UPLOAD_DIR", "/tmp/uploads" if IS_VERCEL else str(_BASE_DIR / "uploads"))
-    PROCESSING_DIR: str = os.environ.get("PROCESSING_DIR", "/tmp/processing" if IS_VERCEL else str(_BASE_DIR / "processing"))
-    OUTPUT_DIR: str = os.environ.get("OUTPUT_DIR", "/tmp/outputs" if IS_VERCEL else str(_BASE_DIR / "outputs"))
+    # Detect if we are inside docker (by checking if /app/data exists)
+    _in_docker: bool = os.path.exists("/app/api_server") or os.environ.get("DOCKER") == "1"
+
+    UPLOAD_DIR: str = "/app/data/uploads" if _in_docker else os.environ.get("UPLOAD_DIR", "/tmp/uploads" if IS_VERCEL else str(_BASE_DIR / "uploads"))
+    PROCESSING_DIR: str = "/app/data/processing" if _in_docker else os.environ.get("PROCESSING_DIR", "/tmp/processing" if IS_VERCEL else str(_BASE_DIR / "processing"))
+    OUTPUT_DIR: str = "/app/data/outputs" if _in_docker else os.environ.get("OUTPUT_DIR", "/tmp/outputs" if IS_VERCEL else str(_BASE_DIR / "outputs"))
+
 
     class Config:
         env_file = ".env"

@@ -238,17 +238,34 @@ def main(args):
             temp_vid_path = f"{temp_dir}/temp_{input_basename}_{audio_basename}.mp4"
             cmd_img2video = f"ffmpeg -y -v warning -r {fps} -f image2 -i {result_img_save_path}/%08d.png -vcodec libx264 -vf format=yuv420p -crf 18 {temp_vid_path}"
             print("Video generation command:", cmd_img2video)
-            os.system(cmd_img2video)   
             
-            cmd_combine_audio = f"ffmpeg -y -v warning -i {audio_path} -i {temp_vid_path} {output_vid_name}"
-            print("Audio combination command:", cmd_combine_audio) 
-            os.system(cmd_combine_audio)
+            try:
+                subprocess.run(cmd_img2video, shell=True, check=True, capture_output=True, text=True)
+                
+                # Combine audio and video with explicit stream mapping and copy video codec for speed
+                # Note: mapped video from first input (0:v) and audio from second input (1:a)
+                cmd_combine_audio = f"ffmpeg -y -v warning -i {temp_vid_path} -i {audio_path} -c:v copy -c:a aac -shortest -map 0:v:0 -map 1:a:0 {output_vid_name}"
+                print("Audio combination command:", cmd_combine_audio) 
+                subprocess.run(cmd_combine_audio, shell=True, check=True, capture_output=True, text=True)
+                
+                if os.path.exists(output_vid_name):
+                    print(f"Final video created at: {output_vid_name} (Size: {os.path.getsize(output_vid_name)} bytes)")
+                else:
+                    print(f"ERROR: ffmpeg finished but {output_vid_name} is missing")
+
+            except subprocess.CalledProcessError as e:
+                print(f"FFmpeg failed with exit code {e.returncode}")
+                print(f"FFmpeg stdout: {e.stdout}")
+                print(f"FFmpeg stderr: {e.stderr}")
+                raise e
             
             # Clean up temporary files
-            shutil.rmtree(result_img_save_path)
-            os.remove(temp_vid_path)
+            if os.path.exists(result_img_save_path):
+                shutil.rmtree(result_img_save_path)
+            if os.path.exists(temp_vid_path):
+                os.remove(temp_vid_path)
             
-            if 'save_dir_full' in locals():
+            if 'save_dir_full' in locals() and os.path.exists(save_dir_full):
                 shutil.rmtree(save_dir_full)
             if not args.saved_coord:
                 # os.remove(crop_coord_save_path)

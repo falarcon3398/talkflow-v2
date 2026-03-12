@@ -25,7 +25,12 @@ class MuseTalkAdapter:
         
         missing = []
         for model in required_models:
-            if not (self.models_dir / model).exists():
+            check_path = self.models_dir / model
+            # Special case for face-parsing models which are mounted separately for persistence
+            if "face-parse-bisent" in model:
+                check_path = Path("/app/api_server/musetalk/models/face-parse-bisent") / Path(model).name
+                
+            if not check_path.exists():
                 missing.append(model)
         
         if missing:
@@ -63,8 +68,9 @@ job_{job_id}:
         unet_model = self.models_dir / "musetalk" / "checkpoints" / "musetalk" / "pytorch_model.bin"
         whisper_dir = "openai/whisper-tiny"
         vae_dir = self.models_dir / "musetalk" / "checkpoints" / "sd-vae-ft-mse"
-        resnet_path = self.models_dir / "musetalk" / "checkpoints" / "face-parse-bisent" / "resnet18-5c106cde.pth"
-        face_parsing_model_path = self.models_dir / "musetalk" / "checkpoints" / "face-parse-bisent" / "79999_iter.pth"
+        # Face parsing weights are now mounted via persistent volume for DevOps persistence
+        resnet_path = Path("/app/api_server/musetalk/models/face-parse-bisent/resnet18-5c106cde.pth")
+        face_parsing_model_path = Path("/app/api_server/musetalk/models/face-parse-bisent/79999_iter.pth")
         result_dir = self.output_dir / job_id
         result_dir.mkdir(parents=True, exist_ok=True)
 
@@ -101,20 +107,34 @@ job_{job_id}:
                 cwd=str(musetalk_dir),
                 capture_output=True, 
                 text=True,
-                check=True,
+                check=False,  # Don't throw yet, we want to log outputs
                 env=env
             )
-            logger.info("MuseTalk inference completed successfully.")
+            
+            if result.stdout:
+                logger.info(f"MuseTalk Stdout: {result.stdout}")
+            if result.stderr:
+                logger.warning(f"MuseTalk Stderr: {result.stderr}")
+
+            if result.returncode != 0:
+                logger.error(f"MuseTalk inference failed with exit code {result.returncode}")
+                return None
+
+            logger.info("MuseTalk inference completed successfully. Checking for outputs...")
             
             # 4. Handle output
-            # MuseTalk v1.5 with result_dir and v15 version puts things in:
-            # {result_dir}/v15/{video_basename}_{audio_basename}.mp4
-            # Or uses --output_vid_name if provided. We check the result_dir recursively.
+            # List all files for debugging
+            all_files = list(result_dir.rglob("*"))
+            logger.info(f"Files found in {result_dir}: {[str(f.relative_to(result_dir)) for f in all_files]}")
+
             generated_files = list(result_dir.rglob("*.mp4"))
             if generated_files:
+                # Sort by size or modification time to get the most likely actual video if multiple exist
+                generated_files.sort(key=lambda x: x.stat().st_size, reverse=True)
                 final_output_path = self.output_dir / output_filename
                 import shutil
                 shutil.move(str(generated_files[0]), str(final_output_path))
+                logger.info(f"Successfully moved {generated_files[0]} to {final_output_path}")
                 
                 # Cleanup
                 if temp_config_path.exists():
@@ -125,13 +145,10 @@ job_{job_id}:
                 logger.error(f"MuseTalk finished but no MP4 found in {result_dir}")
                 return None
                 
-        except subprocess.CalledProcessError as e:
-            logger.error(f"MuseTalk inference failed with exit code {e.returncode}")
-            logger.error(f"Stdout: {e.stdout}")
-            logger.error(f"Stderr: {e.stderr}")
-            return None
         except Exception as e:
             logger.error(f"Unexpected error during MuseTalk inference: {str(e)}")
+            import traceback
+            logger.error(traceback.format_exc())
             return None
 
 musetalk_adapter = MuseTalkAdapter()

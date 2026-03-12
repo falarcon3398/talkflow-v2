@@ -1,8 +1,8 @@
 torch>=2.0.1
 torchvision>=0.15.2
 diffusers==0.24.0
-huggingface-hub<=0.25.2
-transformers>=4.35.2
+huggingface-hub==0.23.2
+transformers==4.36.0
 accelerate>=0.24.1
 opencv-python>=4.8.1.78
 ffmpeg-python>=0.2.0

@@ -82,8 +82,6 @@ services:
       OUTPUT_DIR: /app/data/outputs
     volumes:
       - .:/app
-      - models_data:/app/models
-      - data:/app/data
     ports:
       - "8000:8000"
     depends_on:
@@ -114,8 +112,6 @@ services:
       OUTPUT_DIR: /app/data/outputs
     volumes:
       - .:/app
-      - models_data:/app/models
-      - data:/app/data
     depends_on:
       - postgres
       - redis
@@ -161,5 +157,3 @@ volumes:
   postgres_data:
   redis_data:
   minio_data:
-  models_data:
-  data:

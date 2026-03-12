@@ -20,8 +20,7 @@ class MuseTalkAdapter:
             "musetalk/checkpoints/musetalk/pytorch_model.bin",
             "musetalk/checkpoints/dwpose/dw-ll_ucoco_384.onnx",
             "musetalk/checkpoints/face-parse-bisent/79999_iter.pth",
-            "musetalk/checkpoints/sd-vae-ft-mse/diffusion_pytorch_model.bin",
-            "musetalk/checkpoints/whisper/tiny.pt"
+            "musetalk/checkpoints/sd-vae-ft-mse/diffusion_pytorch_model.bin"
         ]
         
         missing = []
@@ -62,7 +61,7 @@ job_{job_id}:
         # We use the corrected MODELS_PATH which points to the root models/
         unet_config = self.models_dir / "musetalk" / "checkpoints" / "musetalk" / "musetalk.json"
         unet_model = self.models_dir / "musetalk" / "checkpoints" / "musetalk" / "pytorch_model.bin"
-        whisper_dir = self.models_dir / "musetalk" / "checkpoints" / "whisper"
+        whisper_dir = "openai/whisper-tiny"
         vae_dir = self.models_dir / "musetalk" / "checkpoints" / "sd-vae-ft-mse"
         result_dir = self.output_dir / job_id
         result_dir.mkdir(parents=True, exist_ok=True)
@@ -81,7 +80,7 @@ job_{job_id}:
             "--result_dir", str(result_dir),
             "--unet_config", str(unet_config),
             "--unet_model_path", str(unet_model),
-            "--whisper_dir", str(whisper_dir),
+            "--whisper_dir", whisper_dir,
             "--vae_type", str(vae_dir),
             "--bbox_shift", "0"
         ]

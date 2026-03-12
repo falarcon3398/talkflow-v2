@@ -25,12 +25,7 @@ class MuseTalkAdapter:
         
         missing = []
         for model in required_models:
-            check_path = self.models_dir / model
-            # Special case for face-parsing models which are mounted separately for persistence
-            if "face-parse-bisent" in model:
-                check_path = Path("/app/api_server/musetalk/models/face-parse-bisent") / Path(model).name
-                
-            if not check_path.exists():
+            if not (self.models_dir / model).exists():
                 missing.append(model)
         
         if missing:
@@ -68,9 +63,8 @@ job_{job_id}:
         unet_model = self.models_dir / "musetalk" / "checkpoints" / "musetalk" / "pytorch_model.bin"
         whisper_dir = "openai/whisper-tiny"
         vae_dir = self.models_dir / "musetalk" / "checkpoints" / "sd-vae-ft-mse"
-        # Face parsing weights are now mounted via persistent volume for DevOps persistence
-        resnet_path = Path("/app/api_server/musetalk/models/face-parse-bisent/resnet18-5c106cde.pth")
-        face_parsing_model_path = Path("/app/api_server/musetalk/models/face-parse-bisent/79999_iter.pth")
+        resnet_path = self.models_dir / "musetalk" / "checkpoints" / "face-parse-bisent" / "resnet18-5c106cde.pth"
+        face_parsing_model_path = self.models_dir / "musetalk" / "checkpoints" / "face-parse-bisent" / "79999_iter.pth"
         result_dir = self.output_dir / job_id
         result_dir.mkdir(parents=True, exist_ok=True)
 

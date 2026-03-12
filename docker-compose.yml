@@ -112,6 +112,7 @@ services:
       OUTPUT_DIR: /app/data/outputs
     volumes:
       - .:/app
+      - /opt/talkflow/models/face-parse-bisent:/app/models/musetalk/checkpoints/face-parse-bisent
     depends_on:
       - postgres
       - redis

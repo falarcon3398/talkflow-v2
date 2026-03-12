@@ -63,6 +63,7 @@ job_{job_id}:
         unet_config = self.models_dir / "musetalk" / "checkpoints" / "musetalk" / "musetalk.json"
         unet_model = self.models_dir / "musetalk" / "checkpoints" / "musetalk" / "pytorch_model.bin"
         whisper_dir = self.models_dir / "musetalk" / "checkpoints" / "whisper"
+        vae_dir = self.models_dir / "musetalk" / "checkpoints" / "sd-vae-ft-mse"
         result_dir = self.output_dir / job_id
         result_dir.mkdir(parents=True, exist_ok=True)
 
@@ -81,6 +82,7 @@ job_{job_id}:
             "--unet_config", str(unet_config),
             "--unet_model_path", str(unet_model),
             "--whisper_dir", str(whisper_dir),
+            "--vae_type", str(vae_dir),
             "--bbox_shift", "0"
         ]
         

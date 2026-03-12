@@ -1632,13 +1632,13 @@ const VideoPlayerModal = ({ isOpen, onClose, videoUrl, title }) => {
       <div className="space-y-4">
         <div className="aspect-video overflow-hidden rounded-xl bg-black shadow-2xl">
           <video controls autoPlay className="h-full w-full">
-            <source src={`http://localhost:8000${videoUrl}`} type="video/mp4" />
+            <source src={videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
         <div className="flex justify-end">
           <a
-            href={`http://localhost:8000${videoUrl}`}
+            href={videoUrl}
             download
             className="rounded-lg bg-blue-600 px-6 py-2.5 text-sm font-bold text-white shadow-lg shadow-blue-200 hover:bg-blue-700"
           >
@@ -1872,7 +1872,7 @@ const VideoClipCard = ({ video, onClick, onDeleteJob, onRename, onMove, isSelect
         style={{ aspectRatio: '16/9' }}
       >
         <img
-          src={video.image && video.image.startsWith('http') ? video.image : `http://localhost:8000${video.image}`}
+          src={video.image && video.image.startsWith('http') ? video.image : video.image}
           alt={video.title}
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           onError={(e) => { e.target.style.display = 'none' }}
@@ -1890,8 +1890,8 @@ const VideoClipCard = ({ video, onClick, onDeleteJob, onRename, onMove, isSelect
           </div>
         )}
         {video.status === 'completed' && (
-          <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-white/15 text-white backdrop-blur-sm">
-            Draft
+          <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide bg-emerald-500/90 text-white backdrop-blur-sm">
+            Completed
           </div>
         )}
 

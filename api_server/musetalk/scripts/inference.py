@@ -70,11 +70,16 @@ def main(args):
     # Initialize face parser with configurable parameters based on version
     if args.version == "v15":
         fp = FaceParsing(
+            resnet_path=args.resnet_path,
+            model_pth=args.face_parsing_model_path,
             left_cheek_width=args.left_cheek_width,
             right_cheek_width=args.right_cheek_width
         )
     else:  # v1
-        fp = FaceParsing()
+        fp = FaceParsing(
+            resnet_path=args.resnet_path,
+            model_pth=args.face_parsing_model_path
+        )
     
     # Load inference configuration
     inference_config = OmegaConf.load(args.inference_config)
@@ -274,6 +279,8 @@ if __name__ == "__main__":
     parser.add_argument("--saved_coord", action="store_true", help='Save coordinates for future use')
     parser.add_argument("--use_float16", action="store_true", help="Use float16 for faster inference")
     parser.add_argument("--parsing_mode", default='jaw', help="Face blending parsing mode")
+    parser.add_argument("--resnet_path", type=str, default="./models/face-parse-bisent/resnet18-5c106cde.pth", help="Path to resnet18 model")
+    parser.add_argument("--face_parsing_model_path", type=str, default="./models/face-parse-bisent/79999_iter.pth", help="Path to face parsing model")
     parser.add_argument("--left_cheek_width", type=int, default=90, help="Width of left cheek region")
     parser.add_argument("--right_cheek_width", type=int, default=90, help="Width of right cheek region")
     parser.add_argument("--version", type=str, default="v15", choices=["v1", "v15"], help="Model version to use")

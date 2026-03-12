@@ -63,6 +63,8 @@ job_{job_id}:
         unet_model = self.models_dir / "musetalk" / "checkpoints" / "musetalk" / "pytorch_model.bin"
         whisper_dir = "openai/whisper-tiny"
         vae_dir = self.models_dir / "musetalk" / "checkpoints" / "sd-vae-ft-mse"
+        resnet_path = self.models_dir / "musetalk" / "checkpoints" / "face-parse-bisent" / "resnet18-5c106cde.pth"
+        face_parsing_model_path = self.models_dir / "musetalk" / "checkpoints" / "face-parse-bisent" / "79999_iter.pth"
         result_dir = self.output_dir / job_id
         result_dir.mkdir(parents=True, exist_ok=True)
 
@@ -82,6 +84,8 @@ job_{job_id}:
             "--unet_model_path", str(unet_model),
             "--whisper_dir", whisper_dir,
             "--vae_type", str(vae_dir),
+            "--resnet_path", str(resnet_path),
+            "--face_parsing_model_path", str(face_parsing_model_path),
             "--bbox_shift", "0"
         ]
         

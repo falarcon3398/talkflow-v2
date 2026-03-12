@@ -1,11 +1,11 @@
 setuptools
-diffusers==0.27.2
+diffusers==0.25.1
 accelerate==0.28.0
 opencv-python-headless
 soundfile
-transformers
+transformers==4.32.1
 omegaconf
-huggingface_hub
+huggingface_hub==0.25.2
 requests
 gdown
 Pillow

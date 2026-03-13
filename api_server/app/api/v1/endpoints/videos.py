@@ -46,6 +46,8 @@ async def create_text_to_video(
 
     # Resolve optional speaker WAV for voice cloning
     speaker_wav_path = None
+    
+    # Priority 1: Specifically requested voice from library
     if voice_id and voice_id not in ("voice_en_male_01", "voice_en_female_01"):
         library_voice = db.query(Voice).filter(Voice.id == voice_id).first()
         if library_voice:
@@ -53,6 +55,14 @@ async def create_text_to_video(
             candidate = Path(settings.UPLOAD_DIR) / "voices" / fname
             if candidate.exists():
                 speaker_wav_path = str(candidate)
+
+    # Priority 2: Fallback to Avatar's default voice if no specific voice selected
+    if speaker_wav_path is None and avatar.voice_url:
+        fname = avatar.voice_url.split("/")[-1]
+        candidate = Path(settings.UPLOAD_DIR) / "voices" / fname
+        if candidate.exists():
+            speaker_wav_path = str(candidate)
+            logger.info(f"Using avatar default voice: {speaker_wav_path}")
 
     # Create job record
     job_id = str(uuid.uuid4())

@@ -46,9 +46,14 @@ async def update_job(job_id: str, data: dict, db: Session = Depends(get_db)):
 
 @router.get("/{job_id}/download")
 async def download_video(job_id: str):
-    video_path = Path(settings.OUTPUT_DIR) / f"{job_id}.mp4"
+    video_path = Path(settings.OUTPUT_DIR).resolve() / f"{job_id}.mp4"
+    import logging
+    logger = logging.getLogger(__name__)
+    logger.info(f"Checking for video at: {video_path}")
+    
     if not video_path.exists():
-        raise HTTPException(404, "Video not found or still processing")
+        logger.warning(f"Video NOT FOUND at: {video_path}")
+        raise HTTPException(404, f"Video not found or still processing. Path checked: {video_path}")
     return FileResponse(
         video_path,
         media_type="video/mp4",

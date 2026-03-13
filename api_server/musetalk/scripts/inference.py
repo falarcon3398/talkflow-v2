@@ -236,17 +236,41 @@ def main(args):
 
             print(f"Total frames written to {result_img_save_path}: {len(os.listdir(result_img_save_path))}")
             temp_vid_path = f"{temp_dir}/temp_{input_basename}_{audio_basename}.mp4"
-            cmd_img2video = f"ffmpeg -y -v warning -r {fps} -f image2 -i {result_img_save_path}/%08d.png -vcodec libx264 -vf format=yuv420p -crf 18 {temp_vid_path}"
-            print("Video generation command:", cmd_img2video)
+            
+            # Use list of arguments for better handling of spaces in paths
+            cmd_img2video = [
+                "ffmpeg", "-y", "-v", "warning",
+                "-r", str(fps),
+                "-f", "image2",
+                "-i", f"{result_img_save_path}/%08d.png",
+                "-vcodec", "libx264",
+                "-vf", "format=yuv420p",
+                "-crf", "18",
+                temp_vid_path
+            ]
+            print("Video generation command:", " ".join(cmd_img2video))
             
             try:
-                subprocess.run(cmd_img2video, shell=True, check=True, capture_output=True, text=True)
+                # Ensure we have frames before converting
+                if not os.path.exists(result_img_save_path) or not os.listdir(result_img_save_path):
+                    raise FileNotFoundError(f"No frames found in {result_img_save_path}")
+
+                subprocess.run(cmd_img2video, check=True, capture_output=True, text=True)
                 
-                # Combine audio and video with explicit stream mapping and copy video codec for speed
-                # Note: mapped video from first input (0:v) and audio from second input (1:a)
-                cmd_combine_audio = f"ffmpeg -y -v warning -i {temp_vid_path} -i {audio_path} -c:v copy -c:a aac -shortest -map 0:v:0 -map 1:a:0 {output_vid_name}"
-                print("Audio combination command:", cmd_combine_audio) 
-                subprocess.run(cmd_combine_audio, shell=True, check=True, capture_output=True, text=True)
+                # Combine audio and video with explicit stream mapping
+                cmd_combine_audio = [
+                    "ffmpeg", "-y", "-v", "warning",
+                    "-i", temp_vid_path,
+                    "-i", audio_path,
+                    "-c:v", "copy",
+                    "-c:a", "aac",
+                    "-shortest",
+                    "-map", "0:v:0",
+                    "-map", "1:a:0",
+                    output_vid_name
+                ]
+                print("Audio combination command:", " ".join(cmd_combine_audio)) 
+                subprocess.run(cmd_combine_audio, check=True, capture_output=True, text=True)
                 
                 if os.path.exists(output_vid_name):
                     print(f"Final video created at: {output_vid_name} (Size: {os.path.getsize(output_vid_name)} bytes)")

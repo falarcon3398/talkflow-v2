@@ -61,7 +61,7 @@ job_{job_id}:
         # We use the corrected MODELS_PATH which points to the root models/
         unet_config = self.models_dir / "musetalk" / "checkpoints" / "musetalk" / "musetalk.json"
         unet_model = self.models_dir / "musetalk" / "checkpoints" / "musetalk" / "pytorch_model.bin"
-        whisper_dir = "openai/whisper-tiny"
+        whisper_dir = str(self.models_dir / "musetalk" / "checkpoints" / "whisper")
         vae_dir = self.models_dir / "musetalk" / "checkpoints" / "sd-vae-ft-mse"
         resnet_path = self.models_dir / "musetalk" / "checkpoints" / "face-parse-bisent" / "resnet18-5c106cde.pth"
         face_parsing_model_path = self.models_dir / "musetalk" / "checkpoints" / "face-parse-bisent" / "79999_iter.pth"

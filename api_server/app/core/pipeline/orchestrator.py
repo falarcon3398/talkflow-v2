@@ -42,16 +42,16 @@ def apply_aspect_ratio(input_path: str, output_path: str, aspect_ratio: str) -> 
 
         cmd = [
             "ffmpeg", "-y",
-            "-i", input_path,
+            "-i", str(input_path),
             "-vf", vf,
             "-c:v", "libx264", "-preset", "fast", "-crf", "23",
             "-c:a", "aac", "-b:a", "128k",
-            output_path
+            str(output_path)
         ]
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
         if result.returncode == 0:
             logger.info(f"Applied {aspect_ratio} ({target_w}x{target_h}) to {output_path}")
-            return output_path
+            return str(output_path)
         else:
             logger.warning(f"ffmpeg aspect ratio failed: {result.stderr[-300:]}")
             return input_path

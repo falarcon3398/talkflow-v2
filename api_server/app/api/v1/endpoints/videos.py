@@ -32,6 +32,7 @@ async def create_text_to_video(
     voice_id: str = Form(default="voice_en_male_01"),
     output_resolution: str = Form(default="720p"),
     aspect_ratio: str = Form(default="16:9"),
+    language: str = Form(default="en"),
     db: Session = Depends(get_db)
 ):
     if not avatar_id:
@@ -79,7 +80,8 @@ async def create_text_to_video(
             voice_id,
             output_resolution,
             speaker_wav_path,
-            aspect_ratio
+            aspect_ratio,
+            language=language
         )
         job.task_id = task.id
         db.commit()

@@ -2,99 +2,133 @@
 
 @layer theme {
   :root {
-    --glass-bg: rgba(255, 255, 255, 0.4);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    /* Design Tokens */
     --primary-blue: #3b82f6;
-    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --primary-blue-light: #eff6ff;
+    --primary-blue-dark: #1d4ed8;
+    
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+
+    --glass-bg: rgba(255, 255, 255, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.3);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    
+    --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #764ba2 100%);
   }
 }
 
 @layer base {
   body {
-    @apply min-h-screen bg-slate-50 font-sans text-slate-900;
+    @apply min-h-screen bg-slate-50 font-sans text-slate-900 antialiased;
     background-image:
-      radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0, transparent 50%),
-      radial-gradient(at 50% 0%, rgba(139, 92, 246, 0.1) 0, transparent 50%),
-      radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.1) 0, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.08) 0, transparent 50%),
+      radial-gradient(at 50% 0%, rgba(139, 92, 246, 0.08) 0, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(236, 72, 153, 0.08) 0, transparent 50%);
   }
 }
 
 @layer components {
+  /* Cards & Surfaces */
   .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
-    border-radius: 1rem;
+    border-radius: 1.25rem;
+    @apply transition-all duration-300;
+  }
+
+  .interactive-card {
+    @apply glass-card cursor-pointer hover:border-blue-400/50 hover:shadow-xl hover:shadow-blue-500/10 hover:-translate-y-1;
   }
 
   .glass-sidebar {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     border-right: 1px solid rgba(255, 255, 255, 0.3);
   }
 
+  /* Buttons */
+  .btn-base {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 font-bold transition-all active:scale-95 disabled:pointer-events-none disabled:opacity-50;
+  }
+
   .btn-primary {
-    @apply rounded-lg bg-blue-600 px-4 py-2 font-medium text-white shadow-lg shadow-blue-500/30 transition-all hover:bg-blue-700 active:scale-95;
+    @apply btn-base bg-blue-600 text-white shadow-lg shadow-blue-500/30 hover:bg-blue-700 hover:shadow-blue-500/40;
   }
 
-  .glass-card-white {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 1rem;
+  .btn-secondary {
+    @apply btn-base border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 hover:border-slate-300;
   }
 
-  .upload-zone {
-    @apply flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-200 p-8 transition-all hover:border-blue-400 hover:bg-blue-50/50;
+  .btn-ghost {
+    @apply btn-base text-slate-500 hover:bg-slate-100 hover:text-slate-900;
   }
 
-  .badge-realistic {
-    @apply rounded bg-blue-100 px-2 py-0.5 text-[10px] font-bold tracking-wider text-blue-600 uppercase;
+  .btn-danger {
+    @apply btn-base bg-red-50 text-red-600 hover:bg-red-100;
   }
 
+  /* Inputs & Forms */
+  .input-base {
+    @apply w-full rounded-xl border border-slate-200 bg-white/80 px-4 py-3 text-slate-900 shadow-sm transition-all outline-none focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10;
+  }
+
+  .input-label {
+    @apply mb-2 block text-xs font-bold tracking-widest text-slate-500 uppercase;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center rounded-lg px-2.5 py-1 text-[10px] font-black tracking-widest uppercase;
+  }
+
+  .badge-primary {
+    @apply badge bg-blue-100 text-blue-700;
+  }
+
+  .badge-success {
+    @apply badge bg-emerald-100 text-emerald-700;
+  }
+
+  /* Navigation */
   .nav-item {
-    @apply flex w-full items-center gap-3 rounded-xl p-2.5 transition-all outline-none;
+    @apply flex w-full items-center gap-3 rounded-xl p-3 text-sm font-bold transition-all;
   }
 
   .nav-item-active {
-    @apply bg-blue-50 font-medium text-blue-600;
+    @apply bg-blue-600/10 text-blue-600 shadow-sm;
   }
 
   .nav-item-inactive {
-    @apply text-slate-500 hover:bg-white/50;
+    @apply text-slate-400 hover:bg-white/60 hover:text-slate-700;
   }
 
-  /* Specific styles for Scripts View */
-  .tab-item {
-    @apply cursor-pointer border-b-2 px-6 py-2 text-sm font-medium transition-all outline-none;
-  }
-
-  .tab-active {
-    @apply border-blue-500 text-blue-600;
-  }
-
-  .tab-inactive {
-    @apply border-transparent text-slate-400 hover:text-slate-600;
-  }
-
-  .script-container {
-    @apply overflow-hidden rounded-xl border border-slate-200 bg-white/50 shadow-sm backdrop-blur-sm;
-  }
-
-  .voice-card {
-    @apply flex cursor-pointer items-center justify-between rounded-xl border border-blue-100 bg-blue-50/50 p-4 transition-all hover:bg-blue-100/50;
-  }
-
+  /* Sliders */
   input[type='range'].speed-slider {
     @apply h-1.5 w-full cursor-pointer appearance-none rounded-lg bg-slate-200 accent-blue-600;
   }
 
   input[type='range'].speed-slider::-webkit-slider-thumb {
-    @apply h-4 w-4 appearance-none rounded-full border-2 border-blue-600 bg-white shadow-sm;
+    @apply h-5 w-5 appearance-none rounded-full border-2 border-blue-600 bg-white shadow-md;
   }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeIn 0.4s ease-out forwards;
 }

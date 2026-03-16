@@ -13,3 +13,5 @@ einops
 insightface==0.7.3
 facexlib
 mmcv-full==1.7.1
+gfpgan
+TTS

@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { videoApi, avatarApi, voiceApi } from './api/client'
+import UIPreview from './views/UIPreview'
+
+// Core UI Components
+import Button from './components/ui/Button'
+import Card from './components/ui/Card'
+import ModalComponent from './components/ui/Modal'
+import Input from './components/ui/Input'
+import Badge from './components/ui/Badge'
 
 const Sidebar = ({ view, setView, onLogout }) => {
   const [openSections, setOpenSections] = useState({
@@ -30,6 +38,13 @@ const Sidebar = ({ view, setView, onLogout }) => {
 
       <nav className="flex-1 space-y-6">
         <div>
+          <button
+            onClick={() => setView('ui-preview')}
+            className={`nav-item mb-4 ${view === 'ui-preview' ? 'nav-item-active' : 'nav-item-inactive'} border border-dashed border-slate-200`}
+          >
+            <span className="text-sm">🎨 Design System</span>
+          </button>
+
           <div
             onClick={() => toggleSection('avatars')}
             className="mb-3 flex cursor-pointer items-center justify-between px-2 text-xs font-semibold tracking-widest text-slate-400 uppercase transition-colors hover:text-slate-600"
@@ -165,83 +180,72 @@ const LoginPage = ({ onLogin }) => {
       <div className="relative flex w-full flex-col items-center justify-center p-12 lg:w-[450px]">
         <div className="w-full max-w-[320px] space-y-10">
           <div className="space-y-2 text-center">
-            <div className="mb-6 flex items-center justify-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-lg font-bold text-white shadow-lg shadow-blue-200">
+            <div className="mb-6 flex items-center justify-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-600 text-xl font-black text-white shadow-xl shadow-blue-200">
                 T
               </div>
-              <h1 className="text-2xl font-black text-slate-800">TalkFlow</h1>
+              <h1 className="text-3xl font-black tracking-tight text-slate-800">TalkFlow</h1>
             </div>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900">
-              Create Your Own Agent
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+              Create Your Avatar
             </h2>
-            <p className="text-sm text-slate-500">
-              Supported by personalized agents. Privacy first.
+            <p className="text-xs font-bold tracking-widest text-slate-400 uppercase">
+              Powered by IBL.AI
             </p>
           </div>
 
-          <div className="glass-card space-y-6 border-slate-100 bg-white/40 p-8 shadow-2xl">
+          <Card className="p-8 space-y-6 bg-white/40 shadow-2xl border-slate-100">
             <form onSubmit={handleLogin} className="space-y-4">
-              <input
+              <Input
                 type="email"
-                placeholder="Email"
-                className="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-700 shadow-sm transition-all outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <button
+              <Button
                 type="submit"
-                className="w-full rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 py-3 font-bold text-white shadow-lg shadow-blue-200 transition-all hover:shadow-blue-300 active:scale-[0.98]"
+                className="w-full py-4 text-base"
               >
                 Continue
-              </button>
+              </Button>
             </form>
             <div className="relative py-4">
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full border-t border-slate-100"></div>
               </div>
-              <span className="relative mx-auto flex w-fit bg-white/0 px-3 text-[10px] font-bold tracking-widest text-slate-400 uppercase">
+              <span className="relative mx-auto flex w-fit bg-transparent px-3 text-[10px] font-black tracking-widest text-slate-400 uppercase">
                 OR
               </span>
             </div>
             <div className="space-y-3">
-              <button
+              <Button
+                variant="secondary"
                 onClick={onLogin}
-                className="group flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white py-3 text-sm font-bold text-slate-700 shadow-sm transition-all hover:bg-slate-50"
+                className="w-full py-3 text-sm"
+                icon="🍎"
               >
-                <span className="opacity-80 grayscale transition-all group-hover:grayscale-0">
-                  🍎
-                </span>
                 Continue with Apple
-              </button>
-              <button
+              </Button>
+              <Button
+                variant="secondary"
                 onClick={onLogin}
-                className="group flex w-full items-center justify-center gap-3 rounded-xl border border-slate-200 bg-white py-3 text-sm font-bold text-slate-700 shadow-sm transition-all hover:bg-slate-50"
+                className="w-full py-3 text-sm font-bold"
               >
-                <div className="flex h-4 w-4 items-center justify-center overflow-hidden opacity-80 transition-all group-hover:opacity-100">
-                  <svg viewBox="0 0 24 24" className="h-4 w-4">
-                    <path
-                      d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                      fill="#4285F4"
-                    />
-                    <path
-                      d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                      fill="#34A853"
-                    />
-                    <path
-                      d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
-                      fill="#FBBC05"
-                    />
-                    <path
-                      d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                      fill="#EA4335"
-                    />
-                  </svg>
+                <div className="flex items-center gap-3">
+                  <div className="flex h-4 w-4 items-center justify-center overflow-hidden">
+                    <svg viewBox="0 0 24 24" className="h-4 w-4">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                    </svg>
+                  </div>
+                  Continue with Google
                 </div>
-                Continue with Google
-              </button>
+              </Button>
             </div>
-          </div>
+          </Card>
         </div>
       </div>
       <div className="hidden flex-1 items-center justify-center overflow-hidden bg-slate-50 p-20 lg:flex">
@@ -289,20 +293,10 @@ const LoginPage = ({ onLogin }) => {
 }
 
 const Modal = ({ children, isOpen, onClose, title }) => {
-  if (!isOpen) return null
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={onClose}></div>
-      <div className="animate-in fade-in zoom-in relative w-full max-w-xl overflow-hidden rounded-2xl bg-white shadow-2xl duration-200">
-        <div className="flex items-center justify-between border-b border-slate-100 p-6">
-          <h2 className="text-xl font-bold text-slate-800">{title}</h2>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">
-            <span className="text-sm font-bold opacity-60">✕</span>
-          </button>
-        </div>
-        <div className="p-8">{children}</div>
-      </div>
-    </div>
+    <ModalComponent isOpen={isOpen} onClose={onClose} title={title}>
+      {children}
+    </ModalComponent>
   )
 }
 
@@ -2728,9 +2722,20 @@ function App() {
 
   return (
     <div className="flex min-h-screen bg-slate-50/50">
-      <Sidebar view={view} setView={setView} onLogout={handleLogout} />
-      <main className="ml-64 flex-1 p-8">
+      {view !== 'ui-preview' && <Sidebar view={view} setView={setView} onLogout={handleLogout} />}
+      <main className={`${view === 'ui-preview' ? 'w-full' : 'ml-64'} flex-1 p-8`}>
         <div className="mx-auto max-w-7xl">
+          {view === 'ui-preview' && (
+            <div className="relative">
+              <button 
+                onClick={() => setView('library')}
+                className="fixed top-8 right-8 z-[100] btn-secondary shadow-xl"
+              >
+                ← Back to App
+              </button>
+              <UIPreview />
+            </div>
+          )}
           {view === 'library' && (
             <AvatarLibraryView
               avatarList={avatars}

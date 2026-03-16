@@ -23,6 +23,16 @@ def update_job_status(job_id: str, status: str = None, progress: int = None, res
     finally:
         db.close()
 
+def cleanup_job_data(job_id: str):
+    """Purge temporary processing data for a specific job."""
+    try:
+        proc_dir = Path(settings.PROCESSING_DIR) / job_id
+        if proc_dir.exists():
+            shutil.rmtree(str(proc_dir))
+            logger.info(f"Cleaned up processing data for job {job_id}")
+    except Exception as e:
+        logger.warning(f"Failed to cleanup processing data for {job_id}: {e}")
+
 def apply_aspect_ratio(input_path: str, output_path: str, aspect_ratio: str) -> str:
     """
     Use ffmpeg to crop/pad the video to the target aspect ratio.
@@ -60,12 +70,12 @@ def apply_aspect_ratio(input_path: str, output_path: str, aspect_ratio: str) -> 
         return input_path
 
 
-def run_text_to_video_pipeline(job_id, avatar_image_path, text, voice_id, resolution, speaker_wav_path=None, aspect_ratio="16:9"):
+def run_text_to_video_pipeline(job_id, avatar_image_path, text, voice_id, resolution, speaker_wav_path=None, aspect_ratio="16:9", language="en"):
     try:
         update_job_status(job_id, status="processing", progress=10)
         
         # 1. TTS
-        audio_path = tts.generate_speech(text, voice_id, job_id, speaker_wav_path)
+        audio_path = tts.generate_speech(text, voice_id, job_id, speaker_wav_path, language=language)
         update_job_status(job_id, progress=30)
         
         # 2. Lip Sync
@@ -90,6 +100,7 @@ def run_text_to_video_pipeline(job_id, avatar_image_path, text, voice_id, resolu
                 shutil.copy(str(raw_video_path), str(dest_path))
         
         update_job_status(job_id, status="completed", progress=100, result_url=f"/api/v1/jobs/{job_id}/download")
+        cleanup_job_data(job_id)
         
     except Exception as e:
         update_job_status(job_id, status="failed", error_message=str(e))
@@ -119,6 +130,7 @@ def run_audio_to_video_pipeline(job_id, avatar_image_path, audio_file_path, enab
             shutil.copy(str(final_video_path), str(dest_path))
         
         update_job_status(job_id, status="completed", progress=100, result_url=f"/api/v1/jobs/{job_id}/download")
+        cleanup_job_data(job_id)
         
     except Exception as e:
         update_job_status(job_id, status="failed", error_message=str(e))

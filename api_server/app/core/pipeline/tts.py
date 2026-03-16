@@ -17,15 +17,24 @@ except ImportError as e:
     generate_voiceover = None
 
 
-def _generate_with_elevenlabs(text: str, output_path: Path) -> bool:
+def _generate_with_elevenlabs(text: str, output_path: Path, voice_id: str = None) -> bool:
     """Generate speech using ElevenLabs API."""
     api_key = os.environ.get("ELEVENLABS_API_KEY")
-    voice_id = os.environ.get("ELEVENLABS_VOICE_ID", "bwCXcoVxWNYMlC6Esa8u")
+    # Priority: passed voice_id > env variable > default fallback
+    el_voice_id = voice_id or os.environ.get("ELEVENLABS_VOICE_ID", "bwCXcoVxWNYMlC6Esa8u")
+    
+    # Mapping for internal defaults to actual ElevenLabs IDs if needed
+    mapping = {
+        "voice_en_male_01": "pNInz6obpgmqMArAY7XM", # George
+        "voice_en_female_01": "21m00Tcm4TlvDq8ikWAM" # Rachel
+    }
+    el_voice_id = mapping.get(el_voice_id, el_voice_id)
+
     if not api_key:
         return False
     try:
         import requests
-        url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
+        url = f"https://api.elevenlabs.io/v1/text-to-speech/{el_voice_id}"
         headers = {
             "Accept": "audio/mpeg",
             "Content-Type": "application/json",
@@ -95,7 +104,7 @@ def _create_silent_wav(output_path: Path, duration_secs: int = 5):
             f.write(b'RIFF$\x00\x00\x00WAVEfmt \x10\x00\x00\x00\x01\x00\x01\x00D\xac\x00\x00D\xac\x00\x00\x01\x00\x08\x00data\x00\x00\x00\x00')
 
 
-def generate_speech(text: str, voice_id: str, job_id: str, speaker_wav_path: str = None) -> str:
+def generate_speech(text: str, voice_id: str, job_id: str, speaker_wav_path: str = None, language: str = "en") -> str:
     """
     Generate speech audio for the given text.
     Priority order:
@@ -111,16 +120,26 @@ def generate_speech(text: str, voice_id: str, job_id: str, speaker_wav_path: str
     # 1. Try XTTS voice cloning
     if speaker_wav_path and generate_voiceover:
         try:
-            logger.info(f"XTTS cloning with speaker: {speaker_wav_path}")
-            generated = generate_voiceover(text, speaker_wav_path)
+            logger.info(f"XTTS cloning with speaker: {speaker_wav_path} (Language: {language})")
+            
+            # Convert MP3 to WAV if needed (XTTS/torchaudio struggles with mp3 without torchcodec)
+            actual_speaker_path = speaker_wav_path
+            if speaker_wav_path.lower().endswith(".mp3"):
+                temp_wav = output_dir / "temp_speaker.wav"
+                subprocess.run(
+                    ["ffmpeg", "-y", "-i", speaker_wav_path, "-ac", "1", "-ar", "22050", str(temp_wav)],
+                    capture_output=True, check=True
+                )
+                actual_speaker_path = str(temp_wav)
+
+            generated = generate_voiceover(text, actual_speaker_path, language=language)
             shutil.copy(generated, str(audio_output))
             logger.info(f"XTTS cloning success: {audio_output}")
             return str(audio_output)
         except Exception as e:
             logger.warning(f"XTTS cloning failed: {e}, trying next method")
-
     # 2. Try ElevenLabs API
-    if _generate_with_elevenlabs(text, audio_output):
+    if _generate_with_elevenlabs(text, audio_output, voice_id=voice_id):
         return str(audio_output)
 
     # 3. Try gTTS

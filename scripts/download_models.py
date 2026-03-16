@@ -45,6 +45,16 @@ def download_models():
         allow_patterns=["*.onnx", "*.pth"]
     )
 
+    print("--- Downloading GFPGAN v1.4 ---")
+    gfpgan_dir = models_root / "gfpgan" / "weights"
+    gfpgan_dir.mkdir(parents=True, exist_ok=True)
+    # Using a reliable mirror for GFPGAN v1.4
+    hf_hub_download(
+        repo_id="gmk123/GFPGAN",
+        filename="GFPGANv1.4.pth",
+        local_dir=str(gfpgan_dir)
+    )
+
     print("--- Models Download Complete ---")
 
 if __name__ == "__main__":

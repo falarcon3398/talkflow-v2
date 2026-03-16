@@ -99,7 +99,7 @@ services:
       dockerfile: Dockerfile
     container_name: talkflow-worker
     working_dir: /app/api_server
-    command: python3 -m celery -A app.workers.celery_app worker --loglevel=info --concurrency=1
+    command: python3 -m celery -A app.workers.celery_app worker --loglevel=info --concurrency=1 --pool=solo
     environment:
       DATABASE_URL: postgresql://${POSTGRES_USER:-talkflow}:${POSTGRES_PASSWORD:-changeme}@postgres:5432/${POSTGRES_DB:-talkflow}
       REDIS_URL: redis://redis:6379/0

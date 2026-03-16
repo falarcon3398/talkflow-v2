@@ -12,8 +12,9 @@ import torch
 # Fix for newer PyTorch versions (2.6+) that require explicit global allowlisting
 try:
     from TTS.tts.configs.xtts_config import XttsConfig
+    from TTS.tts.models.xtts import XttsAudioConfig, XttsArgs
     if hasattr(torch.serialization, 'add_safe_globals'):
-        torch.serialization.add_safe_globals([XttsConfig])
+        torch.serialization.add_safe_globals([XttsConfig, XttsAudioConfig, XttsArgs])
 except ImportError:
     pass
 
@@ -36,10 +37,11 @@ def get_tts_model():
                 raise
     return _tts_model
 
-def generate_voiceover(text, speaker_wav_path, language="es"):
+def generate_voiceover(text, speaker_wav_path, language="en"):
     """
     Generates a WAV file using XTTS-v2 for a specific speaker.
     """
+    logger.info(f"XTTS: Generating voiceover with speaker: {speaker_wav_path} (Language: {language})")
     if len(text) > 500:
         raise ValueError("Text length exceeds the 500 character limit.")
 
